@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{8D7111AA-5863-4644-8C88-A37EAC600E87}|Default">
+  <MonoDevelop.Ide.ItemProperties.ClientAppOD.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ClientAppOD/MenuPages/MenuPropertyListPage.xaml.cs">
+    <Files>
+      <File FileName="ClientAppOD/MenuPages/MenuCategoryPage.xaml" Line="75" Column="29" IsPinned="True" />
+      <File FileName="ClientAppOD/MenuPages/MenuPropertyListPage.xaml" />
+      <File FileName="ClientAppOD/MenuPages/MenuCategoryPage.xaml.cs" />
+      <File FileName="ClientAppOD/MenuPages/MenuPropertyListPage.xaml.cs" Line="316" Column="21" />
+      <File FileName="ClientAppOD.iOS/AppDelegate.cs" />
+      <File FileName="ClientAppOD.Android/MainActivity.cs" />
+      <File FileName="ClientAppOD/TrialPages/TransparentModel.cs" />
+      <File FileName="ClientAppOD/MenuPages/OptionsModalPageView.xaml.cs" />
+      <File FileName="ClientAppOD/App.xaml.cs" />
+      <File FileName="ClientAppOD/MenuPages/OptionsModalPageView.xaml" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ClientAppOD" expanded="True">
+            <Node name="ClientAppOD" expanded="True">
+              <Node name="MenuPages" expanded="True">
+                <Node name="MenuPropertyListPage.xaml" expanded="True">
+                  <Node name="MenuPropertyListPage.xaml.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.ClientAppOD.iOS automaticSigning="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.33F45F4F-FE29-46C7-99BB-3C84756896A8" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

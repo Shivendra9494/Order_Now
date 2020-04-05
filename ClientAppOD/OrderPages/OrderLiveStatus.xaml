@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientAppOD.OrderPages.OrderLiveStatus">
+    <StackLayout Padding="0,20,0,0">
+        <StackLayout Orientation="Horizontal" Spacing="20">
+            <Image Source="clock.png" HeightRequest="20"></Image>
+            <Label Text="40:23 MINS" TextColor="Green" HorizontalOptions="StartAndExpand"></Label>
+            <Label Text="#3454545" Margin="0,0,50,0"></Label>
+        </StackLayout>
+        <Grid Padding="10" Margin="0" RowSpacing="0" ColumnSpacing="10" HeightRequest="300" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30" ></ColumnDefinition>
+                <ColumnDefinition Width="30"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <BoxView CornerRadius="10" Color="Green" WidthRequest="20" HeightRequest="20" VerticalOptions="Center"  HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"></BoxView>
+            <Image Source="DoubleCheckBlack.png" HeightRequest="30" VerticalOptions="Center"  HorizontalOptions="Center" Grid.Row="0" Grid.Column="1"></Image>
+            
+            <Label Text="Your order has been successfully placed." TextColor="Black" Grid.Row="0" HorizontalOptions="StartAndExpand" FontSize="14" Grid.Column="2"></Label>
+            <ProgressBar Progress="0.6" FlowDirection="LeftToRight" Rotation="90" BackgroundColor="Gray"  ProgressColor="Green"   Grid.Row="1" Grid.Column="0"  VerticalOptions="CenterAndExpand" Margin="-35,0" ></ProgressBar>
+         <BoxView Color="Gray" CornerRadius="10" WidthRequest="20"  HeightRequest="20" VerticalOptions="Center"  HorizontalOptions="Center" Grid.Row="2" Grid.Column="0"></BoxView>
+            <Image Source="chefGray.png" HeightRequest="30" VerticalOptions="Center"  HorizontalOptions="Center" Grid.Row="2" Grid.Column="1"></Image>
+            
+            <Label Text="Your order is confirmed and your food is getting prepared." TextColor="Gray" Grid.Row="2" HorizontalOptions="StartAndExpand" FontSize="14" Grid.Column="2"></Label>
+             <ProgressBar Progress="0" FlowDirection="LeftToRight" Rotation="90" BackgroundColor="Gray"  ProgressColor="Green"   Grid.Row="3" Grid.Column="0"  VerticalOptions="CenterAndExpand" Margin="-35,0" ></ProgressBar>
+       <BoxView Color="Gray" CornerRadius="10" WidthRequest="20"  HeightRequest="20" VerticalOptions="Center"  HorizontalOptions="Center" Grid.Row="4" Grid.Column="0"></BoxView>
+            <Image Source="homeGray.png" HeightRequest="30" VerticalOptions="Center"  HorizontalOptions="Center" Grid.Row="4" Grid.Column="1"></Image>
+            <Label Text="Your order has been delivered. Enjoy the food!" TextColor="Gray" Grid.Row="4" HorizontalOptions="StartAndExpand" FontSize="14" Grid.Column="2"></Label>
+       </Grid>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="CASH" HorizontalOptions="StartAndExpand"></Label>
+            <Label Text="Total $10.54" HorizontalOptions="End"></Label>
+        </StackLayout>
+        <BoxView />
+          <Label VerticalOptions="CenterAndExpand" Margin="20" Text="If you have any questions, one of our live agents will be happy to help"></Label>
+          
+        
+            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" Spacing="30">
+                <Button Text="Call Restaurant" BorderColor="Gray" TextColor="Green" BorderWidth="2" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="View Order" BorderColor="Gray" TextColor="White" BackgroundColor="Green" BorderWidth="2" HorizontalOptions="FillAndExpand"></Button>
+
+            </StackLayout>
+        
+    </StackLayout>
+
+</ContentPage>

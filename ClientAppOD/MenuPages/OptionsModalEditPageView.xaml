@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientAppOD.MenuPages.OptionsModalEditPageView">
+    <StackLayout Padding="0" >
+        <Frame x:Name="frameTop" BorderColor="#f1edef"  VerticalOptions="Start" IsVisible="false" CornerRadius="0" BackgroundColor="White" Padding="8">
+            <StackLayout Padding="0" Orientation="Horizontal">
+            <ImageButton Source="left.png" Clicked="btnCollectionClicked" HorizontalOptions="Start" WidthRequest="30" HeightRequest="30"></ImageButton>
+                <Label x:Name="lblTopMenuName" HorizontalOptions="CenterAndExpand" Margin="-30,0,0,0" FontSize="16" TextColor="#494749" ></Label>
+                </StackLayout>
+        </Frame>
+         <ScrollView x:Name="scroll" VerticalScrollBarVisibility="Always" VerticalOptions="EndAndExpand" Margin="0" Padding="0,100,0,0">
+            <StackLayout Padding="0"  >
+               <ImageButton Source="closeWhite.png" Clicked="btnCollectionClicked" HeightRequest="20" WidthRequest="20" HorizontalOptions="End" Margin="0,0,30,20" ></ImageButton>
+
+                 <Frame Margin="0,0,0,-10" Padding="0" BackgroundColor="White" HasShadow="False" BorderColor="White">
+                     <StackLayout  Padding="0" VerticalOptions="FillAndExpand" x:Name="stackOptions">
+                     <StackLayout Padding="10,30,10,0" Spacing="6">
+                        <Label x:Name="lblMenuName" FontSize="18" TextColor="#494749"  HorizontalTextAlignment="Center"></Label>
+                        <Label x:Name="lblMenuPrice" FontSize="16"  TextColor="#494749"  HorizontalTextAlignment="Center"></Label>
+                        <Label x:Name="lblMenuDesc" Margin="0,0,0,20" HorizontalTextAlignment="Center"></Label>
+                        
+                     </StackLayout>
+                   
+                   
+                </StackLayout>
+      </Frame>
+               <StackLayout x:Name="stackQuantity" Spacing="10" Padding="30" IsVisible="False" BackgroundColor="White" Orientation="Horizontal" VerticalOptions="End">
+                   <ImageButton Source="minus.png" x:Name="btnRemoveQuantity" IsEnabled="False" Clicked="OrderQtyRemoved" WidthRequest="35" Margin="0,0,10,0" HorizontalOptions="EndAndExpand"></ImageButton>
+                   <Label Text="1" FontSize="36" Margin="-10,0,0,0" FontFamily="Nunito-ExtraLight" TextColor="#3B3B3B" HorizontalOptions="Center"></Label>
+                  <ImageButton Source="plus.png" Clicked="OrderQtyAdded" VerticalOptions="Center" WidthRequest="30" HeightRequest="30" HorizontalOptions="StartAndExpand"></ImageButton>
+          
+               </StackLayout>
+                 <StackLayout x:Name="stackMissedItems" IsVisible="False" BackgroundColor="#F4F4F4" Spacing="6" Padding="30"   VerticalOptions="End">
+                    <ImageButton Source="arrowWhite.png" Rotation="180" HeightRequest="60" Clicked="MissedItem_Clicked" WidthRequest="60"  HorizontalOptions="Center" BackgroundColor="#E65051" CornerRadius="30" Padding="10"></ImageButton>
+                   <Button Text="See what you missed" Clicked="MissedItem_Clicked" TextColor="#E65051" WidthRequest="35" Margin="0,-10,0,10" HorizontalOptions="FillAndExpand"></Button>
+                    <Label Text="Make sure you pick all your options for this item. You're almost there." HorizontalOptions="CenterAndExpand" FontSize="12" HorizontalTextAlignment="Center"></Label>
+                   </StackLayout>
+               
+            </StackLayout>
+                    
+         </ScrollView>   
+    
+        <Frame x:Name="FrameAddToOrder" CornerRadius="0" BackgroundColor="White" VerticalOptions="End" >
+            <StackLayout Padding="0" Margin="0">
+              <Button Text="Remove from order" Clicked="RemoveClicked"  HorizontalOptions="CenterAndExpand"></Button>
+            <StackLayout x:Name="stackAddToOrder" Orientation="Horizontal" Padding="20,10" BackgroundColor="#f1edef">
+            <Label x:Name="btnAddToOrder" Text="Ok" FontSize="18"  TextColor="#B0B2B2"  HorizontalOptions="StartAndExpand" ></Label>
+            <Label  x:Name="lblPrice" VerticalTextAlignment="Center"  FontSize="18" TextColor="#494749" HorizontalOptions="End"></Label>
+                </StackLayout>
+                </StackLayout>
+        </Frame >
+   </StackLayout>
+</ContentView>

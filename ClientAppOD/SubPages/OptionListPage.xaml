@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ClientAppOD"
+             x:Class="ClientAppOD.OptionListPage"
+             BackgroundColor="White">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <StackLayout BackgroundColor="White" HorizontalOptions="CenterAndExpand">
+           <Label FontSize="14" x:Name="lblMenuName" HorizontalTextAlignment="Center"></Label>
+            <Label FontSize="10" x:Name="lblOptionName" HorizontalTextAlignment="Center"></Label>
+               
+       </StackLayout>
+             <Button Text="Cancel" TextColor="Red"  Clicked="CancelClicked" ></Button>
+        </StackLayout>
+       
+   </NavigationPage.TitleView>
+     <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:DecimalToStringConverter x:Key="DecimalToStringConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+     <AbsoluteLayout>
+   <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,1"  AbsoluteLayout.LayoutFlags="All">
+    <StackLayout HorizontalOptions="Fill" Padding="0" VerticalOptions="Fill" x:Name="StackMain" >
+        
+        
+        <ListView x:Name="ListOption"  SeparatorVisibility="None" Footer="" ItemSelected="OptionListItemSelected">
+             <ListView.Header>
+                 <StackLayout >
+                    <Label Margin="0,20,0,10" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" TextColor="#404040" Text="Choose one"></Label>
+                    <BoxView Margin="-15,0,-15,5"/>
+                </StackLayout>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="0">
+                                
+                                <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                                    <Label Text="{Binding DishProperty}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"></Label>
+                                    <Label Text="{Binding DishPropertyPrice,Converter={StaticResource DecimalToStringConverter}}" HorizontalTextAlignment="End" HorizontalOptions="End" VerticalTextAlignment="Center"></Label>
+                                </StackLayout>
+                            <BoxView/>
+                            </StackLayout>
+                    </ViewCell>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+         
+        
+        
+    </StackLayout>
+             </ScrollView>
+         
+         </AbsoluteLayout>
+</ContentPage>

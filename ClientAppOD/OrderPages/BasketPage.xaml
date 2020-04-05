@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ClientAppOD.BasketPage"
+    Title="Your order" BackgroundColor="White"
+    NavigationPage.BackButtonTitle="Cancel"
+    NavigationPage.HasBackButton="False">
+   
+         
+ 
+    <NavigationPage.TitleView>
+      <StackLayout Padding="0,0,0,0" VerticalOptions="Center" Orientation="Horizontal" >
+                <ImageButton Clicked="backClicked" Source="left.png" HeightRequest="30" VerticalOptions="Center" Padding="0,0,0,0" Margin="0,0,10,0"></ImageButton>
+        
+        <StackLayout Padding="-50,0,0,0" HorizontalOptions="CenterAndExpand">
+            <Label Text="Your order"  FontSize="15" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"></Label>
+            <Label x:Name="lbltitleMessage" TextColor="#EB6361" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"></Label>
+        </StackLayout>
+           </StackLayout>
+    </NavigationPage.TitleView>
+     <ContentPage.Resources>
+        <ResourceDictionary>
+           <Style TargetType="Label">
+                
+                <Setter Property="FontFamily" Value="Nunito-ExtraLight"></Setter>
+               
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout Padding="0" >
+
+    
+    <StackLayout x:Name="stackMain" Padding="0" IsVisible="true">
+        
+        <StackLayout BackgroundColor="White" x:Name="stackOrderItem" Padding="0,10"  >
+            <ListView HasUnevenRows="True"  x:Name="listViewItems" ItemSelected="listOrderItems_ItemSelected" Margin="0" VerticalOptions="CenterAndExpand">
+                <ListView.Header>
+                    <StackLayout x:Name="TopStack" Padding="-10,0">
+        <StackLayout BackgroundColor="white" x:Name="alergyStack" Spacing="10"  Orientation="Horizontal" Margin="0,10">
+                        <Image Source="info.png" HeightRequest="20" WidthRequest="20"  Rotation="180" HorizontalOptions="Center"  ></Image>
+                        <Label HorizontalOptions="StartAndExpand" FontAttributes="None" TextColor="#EB6361" Text="If you or someone you are ordering for has a food allergy or intolerance please click here"></Label>
+
+        </StackLayout>
+   
+      
+       <Frame BackgroundColor="#F6F6F6" HasShadow="false" Padding="15" HorizontalOptions="FillAndExpand" CornerRadius="0" VerticalOptions="CenterAndExpand">
+           <StackLayout Spacing="0" Padding="0">
+           
+             <Frame Margin="20,10" BackgroundColor="#EDEDED" CornerRadius="25" HeightRequest="40" HasShadow="False" Padding="4">
+
+                 <StackLayout Orientation="Horizontal" Padding="0" >
+                  <Frame Padding="30,0" x:Name="btnDelivery"  HorizontalOptions="FillAndExpand" HasShadow="False" CornerRadius="20" BackgroundColor="White" VerticalOptions="FillAndExpand" >
+                      <StackLayout Orientation="Horizontal" Margin="0" VerticalOptions="FillAndExpand" Spacing="6">
+                          <Image Source="delivery.png" HeightRequest="20"  HorizontalOptions="EndAndExpand" ></Image>
+                          <Label Text="Delivery" FontFamily="Nunito-ExtraLight" FontSize="13" HorizontalOptions="StartAndExpand"  TextColor="#236adb"></Label>
+                      </StackLayout>
+                  </Frame>
+                    <Frame Padding="0" x:Name="btnCollection" HorizontalOptions="FillAndExpand" HasShadow="False" CornerRadius="20" BackgroundColor="#EDEDED" VerticalOptions="FillAndExpand" >
+                      <StackLayout Orientation="Horizontal" Margin="0" VerticalOptions="FillAndExpand" Spacing="6">
+                          <Image Source="BasketBlue.png" HeightRequest="20"  HorizontalOptions="EndAndExpand" ></Image>
+                          <Label Text="Collection" FontFamily="Nunito-ExtraLight"  FontSize="13" HorizontalOptions="StartAndExpand"  TextColor="#236adb"></Label>
+                      </StackLayout>
+                  </Frame>
+              </StackLayout>
+
+          </Frame>
+             <StackLayout Orientation="Horizontal" IsVisible="false" x:Name="stackPostcodeApplied" Padding="0">
+            <Label Text="Your postcode : " HorizontalOptions="EndAndExpand"></Label>
+            <Label x:Name="lblAppliedPostCode"  HorizontalOptions="Start"></Label>
+                <ImageButton Source="edit.png" Clicked="ImageButton_Clicked" Margin="10,0" HorizontalOptions="StartAndExpand" HeightRequest="18"></ImageButton>
+        </StackLayout>
+               </StackLayout>
+       </Frame>
+      </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                 <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
+                            </ViewCell.ContextActions>
+                            <StackLayout Padding="20,0">
+                                <StackLayout Orientation="Horizontal" Padding="0,10,0,0">
+                                    <Label Text="{Binding Qta}" FontFamily="Nunito-Light" TextColor="#236adb" HorizontalOptions="Start"></Label>
+                                     <Label Text=" x " TextColor="#236adb" FontFamily="Nunito-Light" HorizontalOptions="Start"></Label>
+                                    <Label Text="{Binding ItemName}" TextColor="#236adb" HorizontalOptions="Start"></Label>
+                                    <Label Text="{Binding Total,StringFormat='£{0:F2}'}"  HorizontalOptions="EndAndExpand" MinimumWidthRequest="50"></Label>
+                                </StackLayout>
+                                
+                                 <Label HorizontalOptions="StartAndExpand" TextColor="#858687" Text="{Binding OptionsText}"></Label>
+                                                    
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <StackLayout Padding="20,0" Margin="0">
+                        <BoxView Margin="-20,0"/>
+                         <StackLayout Orientation="Horizontal" Padding="0,20,0,10">
+            <Label FontFamily="Nunito-General" Text="Subtotal" HorizontalOptions="StartAndExpand"></Label>
+            <Label x:Name="lblTotalPrice" FontFamily="Nunito-General" Text="" HorizontalOptions="End"></Label>
+        </StackLayout>
+                         <StackLayout x:Name="stackDiscount" IsVisible="false" Orientation="Horizontal" Padding="0,0,0,10">
+            <Label x:Name="lblDiscountPercentage" TextColor="#CE0000" HorizontalOptions="StartAndExpand"></Label>
+            <Label x:Name="lblDiscount" TextColor="#CE0000" HorizontalOptions="End"></Label>
+        </StackLayout>
+        <StackLayout x:Name="stackDeliveryFee" IsVisible="false" Orientation="Horizontal" Padding="0,0,0,10">
+            <Label Text="Delivery Fee"  HorizontalOptions="StartAndExpand"></Label>
+            <Label x:Name="lblDeliveryFee" HorizontalOptions="End"></Label>
+        </StackLayout>
+                        
+                    </StackLayout>
+                </ListView.Footer>
+            </ListView>
+        </StackLayout>
+        
+       
+        
+      
+        </StackLayout>
+        <StackLayout Padding="30" Spacing="10" x:Name="stackEmptyMenu" IsVisible="false" VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+            <Frame  Padding="20" Margin="0" CornerRadius="35" HorizontalOptions="Center"  BackgroundColor="#EDEDED">
+                <Image Source="BasketBlack.png" HeightRequest="30"  HorizontalOptions="Center" Margin="0" ></Image>
+            </Frame>
+            <Label Text="Your order is empty"></Label>
+             <Button  Clicked="BackToMenuClicked" TextColor="#CE0000"  Text="Back to menu"></Button>
+   
+        </StackLayout>
+       
+        <Button HeightRequest="20" FontSize="12" x:Name="btnDiscountLess" Margin="0,-10,0,2" TextColor="#CE0000"   VerticalOptions="EndAndExpand" Padding="0" Text=""></Button>
+      
+    <Frame Padding="15" x:Name="frameCheckOut" BackgroundColor="White" CornerRadius="0" VerticalOptions="End">
+        <StackLayout Padding="0" Spacing="0">
+              <StackLayout Orientation="Horizontal" x:Name="stackGotoPayment" Padding="20,15" BackgroundColor="#236abd">
+           
+            <Label Text="Go to payment" x:Name="lblDeliveryMessage" TextColor="#FFFFFF" FontSize="18" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"></Label>
+                <Label x:Name="lblSubTotal" Text="" TextColor="#FFFFFF" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End" FontSize="18" VerticalOptions="EndAndExpand"></Label>
+             
+        </StackLayout>
+            </StackLayout>
+    </Frame>
+        </StackLayout>
+</ContentPage>

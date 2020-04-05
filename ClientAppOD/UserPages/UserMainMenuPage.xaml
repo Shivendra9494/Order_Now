@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="ClientAppOD.UserPages.UserMainMenuPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    BackgroundColor="#f5f5f5">
+    <NavigationPage.TitleView>
+        <Label
+            Margin="0"
+            FontSize="16"
+            Text="Settings" />
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Nunito-ExtraLight" />
+                <Setter Property="TextColor" Value="#626262" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout Padding="0">
+            <ActivityIndicator
+                x:Name="Loader"
+                IsRunning="True"
+                VerticalOptions="CenterAndExpand" />
+            <StackLayout
+                x:Name="stackMain"
+                Padding="0,20,0,0"
+                IsVisible="false"
+                Spacing="20">
+                <StackLayout
+                    x:Name="stackUserDetails"
+                    Padding="10,1"
+                    IsVisible="false"
+                    Spacing="6">
+                    <Image HeightRequest="60" Source="user.png" />
+                    <Label x:Name="lblUserName" />
+                    <Label x:Name="lblUserEmail" />
+                </StackLayout>
+                <StackLayout
+                    x:Name="stackUserHistory"
+                    Padding="0"
+                    BackgroundColor="White"
+                    IsVisible="false"
+                    Spacing="15"
+                    VerticalOptions="Start">
+                    <StackLayout
+                        x:Name="stackUserOrderHistory"
+                        Padding="10,10,10,0"
+                        Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Order history" />
+                        <Image
+                            HeightRequest="20"
+                            Rotation="180"
+                            Source="leftBlue.png" />
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackProfile"
+                        Padding="10,0,10,0"
+                        Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Profile" />
+                        <Image
+                            HeightRequest="20"
+                            Rotation="180"
+                            Source="leftBlue.png" />
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackCard"
+                        Padding="10,0,10,10"
+                        Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Saved Cards" />
+                        <Image
+                            HeightRequest="20"
+                            Rotation="180"
+                            Source="leftBlue.png" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    Padding="0"
+                    BackgroundColor="White"
+                    Spacing="15"
+                    VerticalOptions="Start">
+                    <StackLayout
+                        x:Name="stackDirection"
+                        Padding="10,10,10,0"
+                        Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Direction" />
+                        <Image
+                            HeightRequest="20"
+                            Rotation="180"
+                            Source="leftBlue.png" />
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackInfo"
+                        Padding="10,0,10,0"
+                        Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Info" />
+                        <Image
+                            HeightRequest="20"
+                            Rotation="180"
+                            Source="leftBlue.png" />
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackCall"
+                        Padding="10,0,10,10"
+                        Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Call Restaurant" />
+                        <Image
+                            HeightRequest="20"
+                            Rotation="180"
+                            Source="leftBlue.png" />
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackIconChange"
+                        Padding="10,0,10,10"
+                        IsVisible="false"
+                        Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Change app icon to original" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    Padding="0"
+                    BackgroundColor="White"
+                    Spacing="15"
+                    VerticalOptions="Start">
+                    <StackLayout
+                        x:Name="stackTerms"
+                        Padding="10,10,10,0"
+                        Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Terms and conditions" />
+                        <Image
+                            HeightRequest="20"
+                            Rotation="180"
+                            Source="leftBlue.png" />
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackPrivacy"
+                        Padding="10,0,10,0"
+                        Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Privacy Policy" />
+                        <Image
+                            HeightRequest="20"
+                            Rotation="180"
+                            Source="leftBlue.png" />
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackEULA"
+                        Padding="10,0,10,0"
+                        IsVisible="false"
+                        Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="EULA" />
+                        <Image
+                            HeightRequest="20"
+                            Rotation="180"
+                            Source="leftBlue.png" />
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackCookies"
+                        Padding="10,0,10,10"
+                        Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Cookies Policy" />
+                        <Image
+                            HeightRequest="20"
+                            Rotation="180"
+                            Source="leftBlue.png" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    x:Name="stackLogin"
+                    Padding="0"
+                    BackgroundColor="White"
+                    VerticalOptions="StartAndExpand">
+                    <StackLayout Padding="10,10,10,10" Orientation="Horizontal">
+                        <Label
+                            x:Name="lblLogin"
+                            HorizontalOptions="StartAndExpand"
+                            Text="Login" />
+                        <Image
+                            HeightRequest="20"
+                            Rotation="180"
+                            Source="leftBlue.png" />
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

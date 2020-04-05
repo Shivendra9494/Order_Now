@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientAppOD.UserPages.UserProfilePage"
+             Title="Profile"
+             BackgroundColor="#f5f5f5">
+     <ContentPage.Resources>
+        <ResourceDictionary>
+           <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Nunito-ExtraLight"></Setter>
+               <Setter Property="TextColor" Value="#626262"></Setter>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="FontFamily" Value="Nunito-ExtraLight"></Setter>
+               <Setter Property="TextColor" Value="#626262"></Setter>
+                <Setter Property="FontSize" Value="14"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+      <StackLayout Padding="0,20,0,0"   x:Name="stackMain">
+   <StackLayout  BackgroundColor="White" Spacing="15"  Padding="0" VerticalOptions="Start">
+            <StackLayout   Orientation="Horizontal"  Padding="10,10,10,0">
+                <Label WidthRequest="100" Text="Name" HorizontalOptions="Start"></Label>
+                <Entry Placeholder="Name" x:Name="entryName" HorizontalOptions="StartAndExpand"></Entry>
+            </StackLayout>
+       <StackLayout   Orientation="Horizontal"  Padding="10,10,10,0">
+                <Label WidthRequest="100" Text="Email" HorizontalOptions="Start"></Label>
+                <Entry Placeholder="e.g. abc@example.com" x:Name="entryEmail" IsEnabled="False" Keyboard="Email" HorizontalOptions="StartAndExpand"></Entry>
+            </StackLayout>
+       <StackLayout   Orientation="Horizontal"  Padding="10,10,10,0">
+                <Label WidthRequest="100" Text="Phone" HorizontalOptions="Start"></Label>
+                <Entry Placeholder="Phone" x:Name="entryPhone" Keyboard="Telephone" HorizontalOptions="StartAndExpand"></Entry>
+            </StackLayout>
+       <StackLayout   Orientation="Horizontal"  Padding="10,10,10,0">
+                <Label WidthRequest="100" Text="Address 1" HorizontalOptions="Start"></Label>
+                <Entry Placeholder="Address 1" x:Name="entryAddress1" HorizontalOptions="StartAndExpand"></Entry>
+            </StackLayout>
+       <StackLayout   Orientation="Horizontal"  Padding="10,10,10,0">
+                <Label WidthRequest="100" Text="Address 2" HorizontalOptions="Start"></Label>
+                <Entry Placeholder="Address 2" x:Name="entryAddress2" HorizontalOptions="StartAndExpand"></Entry>
+            </StackLayout>
+       <StackLayout   Orientation="Horizontal"  Padding="10,10,10,0">
+                <Label WidthRequest="100" Text="City" HorizontalOptions="Start"></Label>
+                <Entry Placeholder="City" x:Name="entryCity" HorizontalOptions="StartAndExpand"></Entry>
+            </StackLayout>
+       <StackLayout   Orientation="Horizontal"  Padding="10,10,10,0">
+                <Label WidthRequest="100" Text="Postcode" HorizontalOptions="Start"></Label>
+                <Entry Placeholder="Postcode" x:Name="entryPostCode" HorizontalOptions="StartAndExpand"></Entry>
+            </StackLayout>
+       <StackLayout   Orientation="Horizontal"  Padding="10,10,10,0">
+                <Label  x:Name="lblError" TextColor="Red" HorizontalOptions="Start"></Label>
+               
+            </StackLayout>
+       </StackLayout>
+  
+        <Button VerticalOptions="Start" Clicked="btnUpdateClicked" Text="Update" BackgroundColor="Red" FontSize="20" Margin="20,10" TextColor="white"></Button>
+        </StackLayout>
+</ContentPage>

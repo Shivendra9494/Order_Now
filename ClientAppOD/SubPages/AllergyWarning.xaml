@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientAppOD.SubPages.AllergyWarning"
+             >
+    <Frame HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="10"  Padding="20" WidthRequest="250">
+   <StackLayout Spacing="0" VerticalOptions="Center" Padding="0">
+       <Label Text="Do you have a food allergy?" Margin="0,0,0,20" FontSize="18" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
+        <Label FontSize="13" Text="If you or someone you are ordering for" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
+        <Label FontSize="13" Text="has a food allergy or intolerance phone" HorizontalTextAlignment="Center" HorizontalOptions="Center"></Label>
+        
+       <StackLayout Orientation="Horizontal" Spacing="3" Padding="0">
+           <Label FontSize="13" Text="the restaurant on " HorizontalOptions="EndAndExpand"></Label>
+           <Label FontSize="13" Text="" x:Name="btnCall"  TextColor="#348FDE" HorizontalOptions="StartAndExpand"></Label>
+       </StackLayout>
+       <Label FontSize="13" Text="before placing your order."></Label>
+       <Button FontSize="13" Text="Close" CornerRadius="1" Clicked="Button_Clicked" BackgroundColor="#E45454" Margin="0,20,0,0" TextColor="White"></Button>
+   </StackLayout>
+        </Frame>
+</ContentView>

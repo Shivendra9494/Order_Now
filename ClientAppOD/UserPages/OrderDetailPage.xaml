@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="ClientAppOD.UserPages.OrderDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ClientAppOD"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:TopImageHeightConverter x:Key="ImageConvertor" />
+            <local:TopBarVisibilityConverter x:Key="TopBarVisibilityConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <RelativeLayout x:Name="relativeLayout" Padding="0">
+
+        <Image
+            x:Name="TopImage"
+            Aspect="AspectFill"
+            HeightRequest="{Binding Source={x:Reference scrolll}, Path=ScrollY, Converter={StaticResource ImageConvertor}}"
+            IsVisible="false"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                  Property=Width,
+                                                                  Factor=1,
+                                                                  Constant=0}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                              Property=Width,
+                                                              Factor=0,
+                                                              Constant=0}"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                              Property=Height,
+                                                              Factor=0}" />
+
+
+        <Grid
+            x:Name="GridMain"
+            Margin="0"
+            Padding="10,0,10,10"
+            BackgroundColor="#236adb"
+            ColumnSpacing="10"
+            HeightRequest="220"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                  Property=Width,
+                                                                  Factor=1,
+                                                                  Constant=0}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                              Property=Width,
+                                                              Factor=0,
+                                                              Constant=0}"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                              Property=Height,
+                                                              Factor=0}"
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="60" />
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30" />
+
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Row="0"
+                Grid.Column="0"
+                BackgroundColor="White"
+                CornerRadius="12"
+                HeightRequest="24"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
+                WidthRequest="24" />
+            <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                HeightRequest="24"
+                HorizontalOptions="Center"
+                Source="check.png"
+                VerticalOptions="EndAndExpand"
+                WidthRequest="15" />
+
+            <Label
+                Grid.Row="0"
+                Grid.Column="1"
+                FontSize="14"
+                HorizontalOptions="StartAndExpand"
+                Text="Your order has been successfully placed."
+                TextColor="White"
+                VerticalOptions="EndAndExpand" />
+            <BoxView
+                x:Name="OrderConfirmedThinLine"
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0"
+                HorizontalOptions="Center"
+                VerticalOptions="FillAndExpand"
+                WidthRequest="2" />
+            <Frame
+                x:Name="OrderConfirmedThickLine"
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="0,-5,0,-5"
+                Padding="0"
+                BackgroundColor="White"
+                HasShadow="False"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                VerticalOptions="StartAndExpand"
+                WidthRequest="4" />
+            <Label
+                x:Name="lblSupportHandlingMessage"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="0,-5,0,0"
+                FontSize="14"
+                HorizontalOptions="StartAndExpand"
+                IsVisible="false"
+                Text="We are contacing restaurant to accept your order."
+                TextColor="White"
+                VerticalOptions="Center"
+                VerticalTextAlignment="Start" />
+            <Button
+                x:Name="OrderConfirmedCircle"
+                Grid.Row="2"
+                Grid.Column="0"
+                Padding="0"
+                BorderColor="White"
+                BorderWidth="3"
+                CornerRadius="10"
+                HeightRequest="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                WidthRequest="20" />
+            <Image
+                x:Name="OrderConfirmCheckImage"
+                Grid.Row="2"
+                Grid.Column="0"
+                HeightRequest="24"
+                HorizontalOptions="Center"
+                IsVisible="false"
+                Source="check.png"
+                VerticalOptions="Start"
+                WidthRequest="15" />
+
+            <Label
+                Grid.Row="2"
+                Grid.Column="1"
+                Margin="0,-5,0,0"
+                FontSize="14"
+                HorizontalOptions="StartAndExpand"
+                Text="Your order is confirmed and your food is getting prepared."
+                TextColor="White"
+                VerticalOptions="Start"
+                VerticalTextAlignment="Start" />
+        </Grid>
+
+        <ScrollView
+            x:Name="scrolll"
+            Padding="0,0,0,-200"
+            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                   Property=Height,
+                                                                   Factor=1,
+                                                                   Constant=0}"
+            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                  Property=Width,
+                                                                  Factor=1,
+                                                                  Constant=0}"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                              Property=Width,
+                                                              Factor=0,
+                                                              Constant=0}"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                              Property=Height,
+                                                              Factor=0,
+                                                              Constant=0}">
+            <StackLayout
+                x:Name="stackMain"
+                Margin="0,200,0,0"
+                Padding="10,20,10,10"
+                BackgroundColor="White"
+                Spacing="12">
+                <Label
+                    x:Name="lblOrderDate"
+                    HorizontalTextAlignment="Center"
+                    Text="Arriving around" />
+                <Label
+                    x:Name="lblDeliveryType"
+                    FontSize="28"
+                    Text="3:58 pm - 4:13 pm" />
+
+
+
+                <Button
+                    x:Name="btnRepeat"
+                    Margin="50,0"
+                    BackgroundColor="#ffeef2"
+                    Clicked="Rbutton_Clicked"
+                    Text="Repeat this order"
+                    TextColor="#236adb" />
+
+                <Image x:Name="ImageStore" HeightRequest="70" />
+                <Label
+                    x:Name="lblStoreName"
+                    FontSize="18"
+                    TextColor="#236adb" />
+                <Label x:Name="lblStoreAddress" />
+                <StackLayout Padding="0" Spacing="10">
+                    <BoxView />
+                    <StackLayout
+                        Padding="0"
+                        Orientation="Horizontal"
+                        Spacing="10">
+                        <Image
+                            HeightRequest="20"
+                            HorizontalOptions="Start"
+                            Source="location.png" />
+                        <Label x:Name="lblDeliveringTo" HorizontalOptions="StartAndExpand" />
+                    </StackLayout>
+                    <Label x:Name="lblDeliveryAddress" HorizontalOptions="StartAndExpand" />
+                </StackLayout>
+                <StackLayout
+                    x:Name="stackNotes"
+                    Padding="0"
+                    Spacing="10">
+                    <BoxView />
+                    <StackLayout
+                        Padding="0"
+                        Orientation="Horizontal"
+                        Spacing="10">
+                        <Image
+                            HeightRequest="25"
+                            HorizontalOptions="Start"
+                            Source="notes.png" />
+                        <Label HorizontalOptions="StartAndExpand" Text="Note for the restaurant" />
+                    </StackLayout>
+                    <Label x:Name="lblNotes" HorizontalOptions="StartAndExpand" />
+                </StackLayout>
+
+                <BoxView />
+                <StackLayout
+                    Padding="0"
+                    Orientation="Horizontal"
+                    Spacing="10">
+                    <Image
+                        HeightRequest="25"
+                        HorizontalOptions="Start"
+                        Source="receipt.png" />
+                    <Label x:Name="lblOrderNumber" HorizontalOptions="StartAndExpand" />
+                </StackLayout>
+                <StackLayout
+                    x:Name="stackOrderItem"
+                    Padding="0,10"
+                    BackgroundColor="White" />
+                <BoxView />
+                <StackLayout Padding="0">
+                    <StackLayout Padding="0" Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Subtotal" />
+                        <Label
+                            x:Name="lblTotalPrice"
+                            HorizontalOptions="End"
+                            Text="" />
+                    </StackLayout>
+
+                    <StackLayout
+                        x:Name="stackDiscount"
+                        Padding="0"
+                        IsVisible="false"
+                        Orientation="Horizontal">
+                        <Label
+                            x:Name="lblDiscountPercentage"
+                            HorizontalOptions="StartAndExpand"
+                            TextColor="#EB6361" />
+                        <Label
+                            x:Name="lblDiscount"
+                            HorizontalOptions="End"
+                            TextColor="#EB6361" />
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackDeliveryFee"
+                        Padding="0"
+                        IsVisible="false"
+                        Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Delivery Fee" />
+                        <Label x:Name="lblDeliveryFee" HorizontalOptions="End" />
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackServiceCharge"
+                        Padding="0"
+                        IsVisible="false"
+                        Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Service Charge" />
+                        <Label x:Name="lblServiceCharge" HorizontalOptions="End" />
+                    </StackLayout>
+                </StackLayout>
+                <BoxView />
+                <StackLayout Padding="0" Orientation="Horizontal">
+                    <Label
+                        x:Name="lblDeliveryMessage"
+                        FontSize="16"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Total"
+                        VerticalOptions="CenterAndExpand" />
+                    <Label
+                        x:Name="lblSubTotal"
+                        FontSize="16"
+                        HorizontalOptions="FillAndExpand"
+                        HorizontalTextAlignment="End"
+                        VerticalOptions="EndAndExpand" />
+
+                </StackLayout>
+                <BoxView />
+                <StackLayout Padding="0">
+                    <Label HorizontalOptions="StartAndExpand" Text="Payment" />
+                    <Label x:Name="lblPayment" HorizontalOptions="StartAndExpand" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <ImageButton
+            Clicked="ImageButton_Clicked"
+            HeightRequest="20"
+            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                              Property=Width,
+                                                              Factor=0.9}"
+            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                              Property=Height,
+                                                              Factor=0,
+                                                              Constant=50}"
+            Source="closeWhite.png" />
+    </RelativeLayout>
+</ContentPage>

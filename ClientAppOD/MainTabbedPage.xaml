@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="ClientAppOD.MainTabbedPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ClientAppOD.MenuPages"
+    xmlns:users="clr-namespace:ClientAppOD.UserPages">
+    <NavigationPage
+        Title="Menu"
+        BarBackgroundColor="White"
+        BarTextColor="White"
+        IconImageSource="menu.png">
+        <x:Arguments>
+            <local:MenuCategoryPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage
+        Title="Orders"
+        BarTextColor="#236adb"
+        IconImageSource="orders.png">
+        <x:Arguments>
+            <users:OrderHistoryPage />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage
+        Title="Settings"
+        BarTextColor="#236adb"
+        IconImageSource="settings.png">
+        <x:Arguments>
+            <users:UserMainMenuPage />
+        </x:Arguments>
+    </NavigationPage>
+
+
+</TabbedPage>

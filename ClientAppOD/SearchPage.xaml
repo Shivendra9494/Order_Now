@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="ClientAppOD.SearchPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <NavigationPage.TitleView>
+        <SearchBar
+            x:Name="SearchBar"
+            BackgroundColor="White"
+            FontSize="12"
+            HeightRequest="50"
+            Placeholder="Search by name or postcode"
+            TextChanged="HandleSearch" />
+    </NavigationPage.TitleView>
+    <StackLayout Padding="0">
+
+        <ActivityIndicator
+            x:Name="loader"
+            IsRunning="true"
+            VerticalOptions="CenterAndExpand" />
+
+        <ListView
+            x:Name="MainList"
+            BackgroundColor="#FFFFFF"
+            Footer=""
+            HasUnevenRows="true"
+            Header=""
+            IsVisible="false"
+            ItemTapped="LaunchTapped"
+            SeparatorColor="#000"
+            SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+
+                        <StackLayout Margin="0,0,0,20" Padding="0">
+
+                            <Image
+                                Aspect="AspectFill"
+                                HeightRequest="250"
+                                HorizontalOptions="FillAndExpand"
+                                Source="{Binding MinimumOrder}" />
+                            <Frame
+                                Margin="10,-60,10,0"
+                                BackgroundColor="#FBFAFB"
+                                CornerRadius="0"
+                                HasShadow="True">
+                                <StackLayout Padding="0" Spacing="10">
+                                    <Frame
+                                        Margin="0,-60,0,0"
+                                        Padding="0"
+                                        CornerRadius="1"
+                                        HasShadow="True"
+                                        HorizontalOptions="Center">
+                                        <Image
+                                            HeightRequest="50"
+                                            MinimumHeightRequest="50"
+                                            Source="{Binding Image}"
+                                            WidthRequest="50" />
+                                    </Frame>
+                                    <Label FontSize="20" Text="{Binding Name}" />
+
+                                    <Label FontFamily="Nunito-ExtraLight" Text="{Binding FoodType}" />
+                                    <Label FontFamily="Nunito-ExtraLight" Text="{Binding DeliveryFee}" />
+                                    <StackLayout
+                                        Padding="0"
+                                        Orientation="Horizontal"
+                                        Spacing="6">
+                                        <Image
+                                            HeightRequest="24"
+                                            HorizontalOptions="Start"
+                                            Source="clock.png" />
+                                        <Label
+                                            FontFamily="Nunito-ExtraLight"
+                                            HorizontalOptions="StartAndExpand"
+                                            Text="{Binding DeliveryTime}" />
+                                        <Button Clicked="Button_Clicked" Text="Set App Icon" />
+                                        <Label IsVisible="False" Text="{Binding ID}" />
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

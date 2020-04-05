@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientAppOD.UserPages.UserSignUpPage"
+             xmlns:local="clr-namespace:ClientAppOD"
+    xmlns:subpages="clr-namespace:ClientAppOD.SubPages"
+             BackgroundColor="White"
+             NavigationPage.HasBackButton="true">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+              <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Nunito-ExtraLight"></Setter>
+                 
+            </Style>
+             <Style TargetType="Editor">
+                <Setter Property="FontFamily" Value="Nunito-ExtraLight"></Setter>
+                  
+            </Style>
+             <Style TargetType="Button">
+                <Setter Property="FontFamily" Value="Nunito-ExtraLight"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <NavigationPage.TitleView>
+         
+            
+             <Label Text="Sign up" TextColor="#2E3032" Margin="-90,0,0,0" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" FontSize="16" ></Label>
+       
+    </NavigationPage.TitleView>
+   <StackLayout BackgroundColor="#f2f2f2" Padding="10" Spacing="10">
+       
+       <Label Text="" x:Name="lblError0" FontSize="13" HorizontalOptions="StartAndExpand" TextColor="Brown"></Label>
+        <Label Text="" x:Name="lblError1" FontSize="13" HorizontalOptions="StartAndExpand" TextColor="Brown"></Label>
+        <Label Text="" x:Name="lblError2" FontSize="13" HorizontalOptions="StartAndExpand" TextColor="Brown"></Label>
+        <StackLayout Margin="-15,0" Padding="0" Spacing="0">
+            <StackLayout Orientation="Horizontal" BackgroundColor="White"  Padding="30,12,10,12">
+                <Label Text="Name" FontSize="13"  WidthRequest="100" HorizontalOptions="Start"  HorizontalTextAlignment="Start" TextColor="Black"></Label>
+                <Entry x:Name="entryName" FontSize="13"  Placeholder="name" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"  TextColor="Black" ></Entry>
+            </StackLayout>
+             <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="30,12,0,12">
+                <Label Text="Email" FontSize="13"  WidthRequest="100" HorizontalOptions="Start"  HorizontalTextAlignment="Start" TextColor="Black"></Label>
+                <Entry x:Name="entryEmail" FontSize="13" Keyboard="Email" Placeholder="name@example.com" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"  TextColor="Black" ></Entry>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal" BackgroundColor="White" Padding="30,12,0,12">
+                <Label Text="Password" FontSize="13"  WidthRequest="100" HorizontalOptions="Start" HorizontalTextAlignment="Start"  TextColor="Black"></Label>
+                <Entry x:Name="entryPassword" FontSize="13" IsPassword="True" Placeholder="Password" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"  TextColor="Black" ></Entry>
+            </StackLayout>
+            <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="1" Color="#f9f9f9"></BoxView>
+            </StackLayout>
+        <Button Text="Create account" Clicked="btnLoginclicked" FontSize="18" BackgroundColor="#236adb" CornerRadius="2" Margin="10,30,10,10" TextColor="White"></Button>
+
+        <StackLayout Orientation="Horizontal" >
+            <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="Center"   HeightRequest="0.5" Color="black"></BoxView>
+            <Label Text="or" HorizontalOptions="CenterAndExpand" FontSize="16" TextColor="#404040"  ></Label>
+            <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="0.5" Color="black"></BoxView>
+        </StackLayout>
+       <local:FacebookLoginButton  Margin="20,10"  HorizontalOptions="CenterAndExpand"  HeightRequest="50" WidthRequest="416"
+            OnSuccess="{Binding OnFacebookLoginSuccessCmd}"
+            OnError="{Binding OnFacebookLoginErrorCmd}"
+            OnCancel="{Binding OnFacebookLoginCancelCmd}" />
+      
+        
+          <subpages:AppleSignInButton SignIn="SignIn_Event" BackgroundColor="Transparent" ButtonStyle="Black" HorizontalOptions="Center" WidthRequest="416" HeightRequest="50" Margin="20,10"  />
+       
+       
+        <Label Margin="10,0,0,0" Text="By logging into your account you agree to our " HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start"></Label>
+        <Label x:Name="lblTerms" Text="Terms and Conditions" TextColor="#236adb" Margin="10,0,0,0" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start"></Label>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Margin="10,20,0,0" Padding="0" Spacing="0">
+            <Label FontSize="12" Text="Please read our " HorizontalOptions="StartAndExpand"></Label>
+            <Label FontSize="12" x:Name="lblPrivacy" Text="Privacy Policy " TextColor="#236adb"  HorizontalOptions="Center"></Label>
+            <Label FontSize="12" Text="and " HorizontalOptions="Center"></Label>
+            <Label FontSize="12" x:Name="lblCookies" Text="Cookies Policy" TextColor="#236adb"  HorizontalOptions="StartAndExpand"></Label>
+        </StackLayout>
+       
+        
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientAppOD.ErrorPages.AskPostCode"
+             >
+   <StackLayout Padding="20,0" >
+
+        <Frame BackgroundColor="White" VerticalOptions="CenterAndExpand" x:Name="frameTop" Padding="0,20">
+           
+            <StackLayout Spacing="6" x:Name="stack">
+                 <Label FontSize="18" Text="Enter your postcode"  HorizontalOptions="CenterAndExpand"  HorizontalTextAlignment="Center" TextColor="Black"></Label>
+                <Frame Padding="0" Margin="10,10,10,0" CornerRadius="2">
+                <Entry x:Name="entryPostcode" HeightRequest="40" FontSize="20" Placeholder="e.g. W5 1ED" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center"  TextColor="Black" ></Entry>
+        </Frame>
+                <Label Text=" "  x:Name="lblError1" HorizontalOptions="CenterAndExpand" TextColor="Brown"></Label>
+       
+                 <Button  Text="Continue" Clicked="btnContimueclicked" FontSize="18" BackgroundColor="#236adb" CornerRadius="2" Margin="10,0,10,10" TextColor="White"></Button>
+        <Button  Text="I'm happy to collect my food" Clicked="btnCollectionClicked" FontSize="14" CornerRadius="2" Margin="10" TextColor="#236adb"></Button>
+       
+            </StackLayout>
+               
+        </Frame>
+       
+   
+    </StackLayout>
+</ContentView>

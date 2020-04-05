@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientAppOD.OrderPages.ThankyouPage"
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="White"
+             Title="Thank you">
+    <ScrollView>
+        <StackLayout Spacing="10">
+            <Label HorizontalTextAlignment="Center" Text="Please check your email for confirmation of your order, including potential delivery time changes"></Label>
+            <Label Text="Thanks for your Order!" TextColor="Black" FontSize="22"></Label>
+            <Button Text="Place another order" Clicked="btnHomeClicked" TextColor="White" BackgroundColor="#236adb"></Button>
+            <Label x:Name="lblPayment"></Label>
+            <BoxView/>
+             <Label x:Name="lblOrderDate" ></Label>
+             <StackLayout Padding="0" Spacing="10" >
+            <BoxView/>
+            <StackLayout Orientation="Horizontal" Spacing="10" Padding="0">
+                <Image Source="location.png" HeightRequest="20" HorizontalOptions="Start"></Image>
+                <Label x:Name="lblDeliveringTo" TextColor="Black" HorizontalOptions="StartAndExpand"></Label>
+            </StackLayout>
+            <Label x:Name="lblDeliveryAddress" HorizontalOptions="StartAndExpand"></Label>
+            </StackLayout>
+            <StackLayout Padding="0" Spacing="10" x:Name="stackNotes">
+                <BoxView/>
+            <StackLayout Orientation="Horizontal" Spacing="10" Padding="0" >
+                <Image Source="notes.png" HeightRequest="25" HorizontalOptions="Start"></Image>
+                <Label Text="Note for the restaurant" TextColor="Black" HorizontalOptions="StartAndExpand"></Label>
+            </StackLayout>
+            <Label x:Name="lblNotes" HorizontalOptions="StartAndExpand"></Label>
+                </StackLayout>
+          
+                <BoxView/>
+            <StackLayout Orientation="Horizontal" Spacing="10" Padding="0">
+                <Image Source="receipt.png" HeightRequest="25" HorizontalOptions="Start"></Image>
+                <Label x:Name="lblOrderNumber"  TextColor="Black" HorizontalOptions="StartAndExpand"></Label>
+            </StackLayout>
+            <Label Text="Order Summary" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start"></Label>
+             <StackLayout BackgroundColor="White" x:Name="stackOrderItem" Padding="0,10">
+            
+            </StackLayout>
+            <BoxView/>
+            <StackLayout Padding="0" Spacing="6">
+            <StackLayout Orientation="Horizontal" Padding="20,20,20,10">
+                <Label  Text="Subtotal" HorizontalOptions="StartAndExpand"></Label>
+                <Label x:Name="lblTotalPrice" Text="$20.00" HorizontalOptions="End"></Label>
+            </StackLayout>
+        
+           <StackLayout x:Name="stackDiscount" IsVisible="false" Orientation="Horizontal">
+                <Label x:Name="lblDiscountPercentage" TextColor="#EB6361" HorizontalOptions="StartAndExpand"></Label>
+                <Label x:Name="lblDiscount" TextColor="#EB6361" HorizontalOptions="End"></Label>
+            </StackLayout>
+            <StackLayout x:Name="stackDeliveryFee" IsVisible="false" Orientation="Horizontal">
+                <Label Text="Delivery Fee"  HorizontalOptions="StartAndExpand"></Label>
+                <Label x:Name="lblDeliveryFee" HorizontalOptions="End"></Label>
+            </StackLayout>
+                <StackLayout x:Name="stackServiceCharge" IsVisible="false" Orientation="Horizontal">
+                <Label Text="Service Charge"  HorizontalOptions="StartAndExpand"></Label>
+                <Label x:Name="lblServiceCharge" HorizontalOptions="End"></Label>
+            </StackLayout>
+                </StackLayout>
+            <BoxView/>
+            <StackLayout Orientation="Horizontal" >
+                 <Label Text="Total" x:Name="lblDeliveryMessage"  TextColor="Black" FontSize="16" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"></Label>
+                <Label x:Name="lblSubTotal" TextColor="Black"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="End"  FontSize="16" VerticalOptions="EndAndExpand"></Label>
+             
+        </StackLayout>
+   </StackLayout>
+    </ScrollView>
+   
+</ContentPage>

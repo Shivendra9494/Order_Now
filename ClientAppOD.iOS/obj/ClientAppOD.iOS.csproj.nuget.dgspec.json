@@ -1,0 +1,288 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/ClientAppOD.iOS/ClientAppOD.iOS.csproj": {}
+  },
+  "projects": {
+    "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/ClientAppOD.iOS/ClientAppOD.iOS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/ClientAppOD.iOS/ClientAppOD.iOS.csproj",
+        "projectName": "ClientAppOD.iOS",
+        "projectPath": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/ClientAppOD.iOS/ClientAppOD.iOS.csproj",
+        "packagesPath": "/Users/shivendrasingh/.nuget/packages/",
+        "outputPath": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/ClientAppOD.iOS/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/shivendrasingh/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "xamarinios10"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "xamarinios10": {
+            "projectReferences": {
+              "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/ClientAppOD/ClientAppOD.csproj": {
+                "projectPath": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/ClientAppOD/ClientAppOD.csproj"
+              },
+              "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.csproj": {
+                "projectPath": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.csproj"
+              },
+              "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/Xamarin.AppleSignIn.csproj": {
+                "projectPath": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/Xamarin.AppleSignIn.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "xamarinios10": {
+          "dependencies": {
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Plugin.FacebookClient": {
+              "target": "Package",
+              "version": "[2.2.1, )"
+            },
+            "Plugin.Permissions": {
+              "target": "Package",
+              "version": "[3.0.0.12, )"
+            },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[1.2.0.223, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.5.2, )"
+            },
+            "Xamarin.Facebook.iOS": {
+              "target": "Package",
+              "version": "[5.12.0, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.5.0.530, )"
+            },
+            "Xamarin.Forms.InputKit": {
+              "target": "Package",
+              "version": "[3.2.2, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.6.292, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    },
+    "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/ClientAppOD/ClientAppOD.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/ClientAppOD/ClientAppOD.csproj",
+        "projectName": "ClientAppOD",
+        "projectPath": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/ClientAppOD/ClientAppOD.csproj",
+        "packagesPath": "/Users/shivendrasingh/.nuget/packages/",
+        "outputPath": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/ClientAppOD/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/shivendrasingh/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/Xamarin.AppleSignIn.csproj": {
+                "projectPath": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/Xamarin.AppleSignIn.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Com.OneSignal": {
+              "target": "Package",
+              "version": "[3.7.3, )"
+            },
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "Plugin.FacebookClient": {
+              "target": "Package",
+              "version": "[2.2.1, )"
+            },
+            "Plugin.Permissions": {
+              "target": "Package",
+              "version": "[3.0.0.12, )"
+            },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[1.2.0.223, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.5.2, )"
+            },
+            "Xamarin.Facebook.iOS": {
+              "target": "Package",
+              "version": "[5.12.0, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[4.5.0.530, )"
+            },
+            "Xamarin.Forms.InputKit": {
+              "target": "Package",
+              "version": "[3.2.2, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.6.292, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.csproj",
+        "projectName": "OneSignalNotificationServiceExtension",
+        "projectPath": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/OneSignalNotificationServiceExtension/OneSignalNotificationServiceExtension.csproj",
+        "packagesPath": "/Users/shivendrasingh/.nuget/packages/",
+        "projectStyle": "PackagesConfig",
+        "configFilePaths": [
+          "/Users/shivendrasingh/.config/NuGet/NuGet.Config"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "xamarinios10": {
+            "projectReferences": {}
+          }
+        },
+        "packagesConfigPath": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/OneSignalNotificationServiceExtension/packages.config"
+      },
+      "frameworks": {
+        "xamarinios10": {}
+      }
+    },
+    "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/Xamarin.AppleSignIn.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/Xamarin.AppleSignIn.csproj",
+        "projectName": "Xamarin.AppleSignIn",
+        "projectPath": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/Xamarin.AppleSignIn.csproj",
+        "packagesPath": "/Users/shivendrasingh/.nuget/packages/",
+        "outputPath": "/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/shivendrasingh/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Security.Cryptography.Cng": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClientAppOD.OrderPages.CheckOutPage"
+             BackgroundColor="#F6F6F6"
+             Title=""
+             NavigationPage.HasBackButton="False">
+     <NavigationPage.TitleView>
+        <Label Text="Checkout" Margin="0,0,-40,0" FontSize="16"></Label>
+    </NavigationPage.TitleView>
+   <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="ddd" Text="Cancel" Clicked="btnCancelClicked"></ToolbarItem>
+   </ContentPage.ToolbarItems>
+     <ContentPage.Resources>
+        <ResourceDictionary>
+           <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Nunito-ExtraLight"></Setter>
+               </Style>
+            <Style TargetType="Editor">
+                <Setter Property="FontFamily" Value="Nunito-ExtraLight"></Setter>
+               </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+    <StackLayout Padding="0,30" BackgroundColor="#F6F6F6" Spacing="0">
+        <BoxView HeightRequest="1" Margin="0" BackgroundColor="#E7E7E7" Color="#E7E7E7"/>
+        <StackLayout  Padding="15,10" BackgroundColor="White" x:Name="stackDelivery" Orientation="Horizontal"  Spacing="5">
+           <Label Text="Delivery Time" FontFamily="Nunito-Light" x:Name="lblDeliveryName" FontSize="14"   HorizontalOptions="Start"></Label>
+            <Picker x:Name="pickerDelivery" FontFamily="Nunito-ExtraLight" TextColor="#2E3032" HorizontalOptions="FillAndExpand"  FontSize="14" VerticalOptions="FillAndExpand">
+            </Picker>
+            <ImageButton Source="leftBlue.png" Clicked="focus" HeightRequest="25" Rotation="180" VerticalOptions="End" ></ImageButton>
+        </StackLayout>
+       <BoxView HeightRequest="1" Margin="0" BackgroundColor="#E7E7E7" Color="#E7E7E7"/>
+        <Frame CornerRadius="0" HasShadow="False" Padding="15,0">
+            <Editor x:Name="editorNotes" FontSize="14" BackgroundColor="White" HeightRequest="100" Placeholder="Leave a note for the restaurant" ></Editor>
+        
+        </Frame>
+        <BoxView HeightRequest="1" Margin="0" BackgroundColor="#E7E7E7" Color="#E7E7E7"/>
+        <Frame CornerRadius="0" BackgroundColor="#EDEDED"  HasShadow="False" Margin="15" Padding="15">
+            <Editor FontSize="14" TextColor="#2E3032" FontFamily="Nunito-ExtraLight" BackgroundColor="#EDEDED" VerticalOptions="CenterAndExpand"  IsEnabled="False"  Text="Leave a note for the restaurant(e.g. doorbell doesn't work). Do not include details about any allergies here instead call directly to restaurant" ></Editor>
+        
+        </Frame>
+       <BoxView HeightRequest="1" Margin="0" BackgroundColor="#E7E7E7" Color="#E7E7E7"/>
+        <StackLayout x:Name="stackVoucherClick" BackgroundColor="White" Padding="15,25,15,25" Orientation="Horizontal">
+            <Label HorizontalOptions="StartAndExpand" Text="I have a discount voucher" TextColor="#236adb"></Label>
+             <ImageButton Source="left.png" HeightRequest="20" Rotation="270" Clicked="DownArraowClicked" VerticalOptions="StartAndExpand" Margin="0,10,0,0" ></ImageButton>
+                  
+        </StackLayout>
+        <StackLayout x:Name="stackVoucher" BackgroundColor="White" Padding="15,0,15,25" IsVisible="false">
+              <Label x:Name="lblError" TextColor="#EB6361" Text="" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"></Label>
+               <Frame BorderColor="#F6F6F6" CornerRadius="0" HasShadow="False" Padding="0">
+                   <StackLayout Orientation="Horizontal" Padding="0">
+                       <Entry HorizontalOptions="StartAndExpand" x:Name="entryVoucher" Placeholder="Voucher code"></Entry>
+                     
+                       <Button Text="Apply" Clicked="VoucherClicked" HorizontalOptions="Center" WidthRequest="100" HeightRequest="50" BackgroundColor="#236adb" TextColor="white"></Button>
+                   </StackLayout>
+               </Frame>
+        </StackLayout>
+        
+         <BoxView HeightRequest="1" Margin="0" BackgroundColor="#E7E7E7" Color="#E7E7E7"/>
+        <StackLayout Padding="15,30" Spacing="15">
+            <ImageButton Source="ApplePay.png" IsVisible="false" Clicked="VoucherClicked" Aspect="AspectFill" HeightRequest="40" HorizontalOptions="FillAndExpand" ></ImageButton>
+        <StackLayout Orientation="Horizontal" IsVisible="false">
+            <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="Center"   HeightRequest="1" Color="Black"></BoxView>
+            <Label Text="or" HorizontalOptions="CenterAndExpand" FontSize="16" TextColor="#404040"  ></Label>
+            <BoxView HorizontalOptions="FillAndExpand" VerticalOptions="Center" HeightRequest="1" Color="black"></BoxView>
+        </StackLayout>
+            <Button Text="Pay by card or cash" FontFamily="Nunito-General" Clicked="PayButtonClicked" FontSize="18" BorderColor="#F6F6F6" TextColor="#236adb" BackgroundColor="White"></Button>
+        </StackLayout>
+          </StackLayout>
+        </ScrollView>
+</ContentPage>

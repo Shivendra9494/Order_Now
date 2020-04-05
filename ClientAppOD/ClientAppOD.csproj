@@ -1,0 +1,86 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.530" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Xamarin.Forms.InputKit" Version="3.2.2" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="1.2.0.223" />
+    <PackageReference Include="Plugin.FacebookClient" Version="2.2.1" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Xamarin.Facebook.iOS" Version="5.12.0" />
+    <PackageReference Include="Com.OneSignal" Version="3.7.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\..\..\..\Library\Frameworks\Xamarin.iOS.framework\Versions\13.10.0.17\lib\mono\Xamarin.iOS\Xamarin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\..\Documents\QManja\QManja.iOS\obj\iPhoneSimulator\Release\mtouch-cache\1-Link\Xamarin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.iOS">
+      <HintPath>..\..\Xamarin.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xamarin.AppleSignIn\Xamarin.AppleSignIn.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.xaml" />
+    <None Include="SearchMenuPage.xaml" />
+    <None Include="SearchPage.xaml" />
+    <None Include="ErrorPages\LoginErrorPage.xaml" />
+    <None Include="ErrorPages\AskPostCode.xaml" />
+    <None Include="SubPages\ExtraListPage.xaml" />
+    <None Include="SubPages\OptionListPage.xaml" />
+    <None Include="UserPages\ForgetPasswordPage.xaml" />
+    <None Include="UserPages\OrderHistoryPage.xaml" />
+    <None Include="UserPages\UserLoginPage.xaml" />
+    <None Include="UserPages\UserProfilePage.xaml" />
+    <None Include="UserPages\UserSignUpPage.xaml" />
+    <None Include="UserPages\OrderDetailPage.xaml" />
+    <None Include="UserPages\ProviderLoginPage.xaml" />
+    <None Include="UserPages\Info.xaml" />
+    <None Include="UserPages\UserMainMenuPage.xaml" />
+    <None Include="UserPages\SavedCardsPage.xaml" />
+    <None Include="UserPages\DirectionPage.xaml" />
+    <None Include="MenuPages\MenuCategoryPage.xaml" />
+    <None Include="MenuPages\OptionsModalPageView.xaml" />
+    <None Include="MenuPages\OptionsModalEditPageView.xaml" />
+    <None Include="OrderPages\ConfirmDetailsPage.xaml" />
+    <None Include="OrderPages\PaymentWebView.xaml" />
+    <None Include="OrderPages\BasketPage.xaml" />
+    <None Include="OrderPages\PostCodePage.xaml" />
+    <None Include="OrderPages\CheckOutPage.xaml" />
+    <None Include="OrderPages\ThankyouPage.xaml" />
+    <None Include="OrderPages\PaymentPage.xaml" />
+    <None Include="OrderPages\OrderSummarySubPage.xaml" />
+    <None Include="obj\ClientAppOD.csproj.nuget.dgspec.json" />
+    <None Include="obj\ClientAppOD.csproj.nuget.g.props" />
+    <None Include="obj\project.assets.json" />
+    <None Include="obj\ClientAppOD.csproj.nuget.cache" />
+    <None Include="obj\ClientAppOD.csproj.nuget.g.targets" />
+    <None Include="obj\Debug\netstandard2.0\ClientAppOD.csproj.FileListAbsolute.txt" />
+    <None Include="obj\Debug\netstandard2.0\ClientAppOD.assets.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+    <Folder Include="PushNotification\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="UserPages\MainTabbedPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
