@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="ClientAppOD.MenuPages.MenuCategoryPagesMaster"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Master">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Nunito-ExtraLight" />
+                <Setter Property="TextColor" Value="#626262" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout Padding="0">
+            <ActivityIndicator
+                x:Name="Loader"
+                IsRunning="True"
+                VerticalOptions="CenterAndExpand" />
+            <StackLayout
+                x:Name="stackMain"
+                Padding="0,20,0,0"
+                IsVisible="false"
+                Spacing="15">
+                <StackLayout
+                    x:Name="stackUserDetails"
+                    Padding="10,1"
+                    IsVisible="false"
+                    Spacing="4">
+                    <Image HeightRequest="40" Source="user.png" />
+                    <Label x:Name="lblUserName" />
+                    <Label x:Name="lblUserEmail" />
+                </StackLayout>
+                <StackLayout
+                    x:Name="stackUserHistory"
+                    Padding="0"
+                    BackgroundColor="White"
+                    IsVisible="false"
+                    Spacing="25"
+                    VerticalOptions="Start">
+                    <StackLayout
+                        x:Name="stackUserOrderHistory"
+                        Padding="10,10,10,0"
+                        Orientation="Horizontal">
+                        <StackLayout />
+                        <Image WidthRequest="30" />
+                        <Label
+                            FontSize="15"
+                            HorizontalOptions="StartAndExpand"
+                            Text="Order history" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="UserOrderHistory" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackProfile"
+                        Padding="10,0,10,0"
+                        Orientation="Horizontal">
+                        <StackLayout />
+                        <Image WidthRequest="30" />
+                        <Label HorizontalOptions="StartAndExpand" Text="Profile" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Profile" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackCard"
+                        Padding="10,0,10,10"
+                        Orientation="Horizontal">
+                        <StackLayout />
+                        <Image WidthRequest="30" />
+                        <Label HorizontalOptions="StartAndExpand" Text="Saved Cards" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="SavedCards" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+
+                    <StackLayout
+                        x:Name="stackDirection"
+                        Padding="10,0,10,10"
+                        Orientation="Horizontal">
+                        <StackLayout />
+                        <Image WidthRequest="30" />
+                        <Label HorizontalOptions="StartAndExpand" Text="Direction" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Direction_Tapped" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackInfo"
+                        Padding="10,0,10,10"
+                        Orientation="Horizontal">
+                        <StackLayout />
+                        <Image WidthRequest="30" />
+                        <Label HorizontalOptions="StartAndExpand" Text="Info" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Info" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackCall"
+                        Padding="10,0,10,10"
+                        Orientation="Horizontal">
+                        <StackLayout />
+                        <Image WidthRequest="30" />
+                        <Label HorizontalOptions="StartAndExpand" Text="Call Restaurant" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="CallRestaurant" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackIconChange"
+                        Padding="10,0,10,10"
+                        IsVisible="false"
+                        Orientation="Horizontal">
+                        <Label HorizontalOptions="StartAndExpand" Text="Change app icon to original" />
+                    </StackLayout>
+
+                    <StackLayout
+                        x:Name="stackTerms"
+                        Padding="10,0,10,10"
+                        Orientation="Horizontal">
+                        <StackLayout />
+                        <Image WidthRequest="30" />
+                        <Label HorizontalOptions="StartAndExpand" Text="Terms and conditions" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Termsconditions" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackPrivacy"
+                        Padding="10,0,10,0"
+                        Orientation="Horizontal">
+                        <StackLayout />
+                        <Image WidthRequest="30" />
+                        <Label HorizontalOptions="StartAndExpand" Text="Privacy Policy" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="PrivacyPolicy" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackEULA"
+                        Padding="10,0,10,0"
+                        IsVisible="false"
+                        Orientation="Horizontal">
+                        <StackLayout />
+                        <Image WidthRequest="30" />
+                        <Label HorizontalOptions="StartAndExpand" Text="EULA" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="EULA" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <StackLayout
+                        x:Name="stackCookies"
+                        Padding="10,0,10,10"
+                        Orientation="Horizontal">
+                        <StackLayout />
+                        <Image WidthRequest="30" />
+                        <Label HorizontalOptions="StartAndExpand" Text="Cookies Policy" />
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="CookiesPolicy" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    x:Name="stackLogin"
+                    Padding="0"
+                    BackgroundColor="White"
+                    VerticalOptions="StartAndExpand">
+                    <StackLayout Padding="10,15,10,10" Orientation="Horizontal">
+                        <StackLayout />
+                        <Image WidthRequest="30" />
+                        <Label
+                            x:Name="lblLogin"
+                            FontSize="16"
+                            HorizontalOptions="StartAndExpand"
+                            Text="Login" />
+
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

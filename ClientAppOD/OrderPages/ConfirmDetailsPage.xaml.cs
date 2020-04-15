@@ -41,20 +41,20 @@ namespace ClientAppOD.OrderPages
             {
                 order.SubTotal -= (decimal)StaticFields.CurrentStoreInfo.ServiceCharge;
                 order.ServiceCharge = null;
-                
+
             }
             scroll.IsVisible = true;
             loader.IsVisible = false;
         }
         protected override void OnAppearing()
         {
-            
-            base.OnAppearing(); 
+
+            base.OnAppearing();
         }
         protected async void btnPaymentClicked(object sender, EventArgs e)
         {
-            
-            if(string.IsNullOrWhiteSpace(entryName.Text))
+
+            if (string.IsNullOrWhiteSpace(entryName.Text))
             {
                 lblError1.Text = "Please enter your name";
                 return;
@@ -72,7 +72,7 @@ namespace ClientAppOD.OrderPages
             {
                 lblError1.Text = " ";
             }
-            if(entryPhone.Text.Replace(" ","").Replace("+","").Length<10 || entryPhone.Text.Replace(" ", "").Replace("+", "").Length>11)
+            if (entryPhone.Text.Replace(" ", "").Replace("+", "").Length < 10 || entryPhone.Text.Replace(" ", "").Replace("+", "").Length > 11)
             {
                 lblError1.Text = "Please enter correct mobile number";
                 return;
@@ -82,7 +82,7 @@ namespace ClientAppOD.OrderPages
                 lblError1.Text = " ";
             }
             StaticFields.CurrentOrder.Phone = entryPhone.Text.Replace(" ", "").Replace("+", "");
-            if (StaticFields.Deliverytype=="d")
+            if (StaticFields.Deliverytype == "d")
             {
                 if (string.IsNullOrWhiteSpace(entryAddress1.Text))
                 {
@@ -174,7 +174,7 @@ namespace ClientAppOD.OrderPages
                                         }
                                     }
 
-                                    
+
                                     StaticFields.CurrentPostCode = deliveryInfo.OrderBy(x => x.MinimumAmount).First().CustomerPostCode;
                                     if (string.IsNullOrEmpty(StaticFields.CurrentCustomer.Phone) ||
                                         string.IsNullOrEmpty(StaticFields.CurrentCustomer.Address1) ||
@@ -212,7 +212,7 @@ namespace ClientAppOD.OrderPages
                     {
                         var customer = await customerPostHelper.UpdateCustomer(StaticFields.CurrentCustomer.ID, entryPhone.Text, entryAddress1.Text, entryAddress2.Text, entryCity.Text, entryPostCode.Text);
                         StaticFields.CurrentCustomer = customer;
-                        
+
                     }
                     GoToPayment();
                     loader.IsVisible = false;
@@ -303,6 +303,11 @@ namespace ClientAppOD.OrderPages
         protected void backClicked(object sender, EventArgs e)
         {
             Navigation.PopAsync();
+        }
+
+        async void ImageButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+           await Navigation.PopModalAsync();
         }
     }
 }

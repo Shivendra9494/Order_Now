@@ -31,7 +31,7 @@ namespace ClientAppOD.MenuPages
         PostCodeHelper postCodeHelper = new PostCodeHelper();
         StoreInfoHelper storeInfoHelper = new StoreInfoHelper();
         MenuCatHelper menuCatHelper = new MenuCatHelper();
-        
+
         public MenuCategoryPage()
         {
             InitializeComponent();
@@ -71,10 +71,9 @@ namespace ClientAppOD.MenuPages
             {
                 DisplayAlert("Error", ex.Message + " | " + ex.StackTrace, "OK");
             }
-
         }
 
-        
+
 
         private async void loginClicked()
         {
@@ -128,13 +127,13 @@ namespace ClientAppOD.MenuPages
                 {
                     ID = Busid
                 };
-                SmallImage.Source = ImageSource.FromFile("store"+Busid+".png");
+                SmallImage.Source = ImageSource.FromFile("store" + Busid + ".png");
             }
             if (StaticFields.ChangeToWebView)
             {
                 Navigation.PushAsync(new PaymentWebView(StaticFields.ServerURL + "/menu/" + Busid));
             }
-            
+
             if (MenuCatHelper.MenuCategories == null)
             {
 
@@ -164,9 +163,9 @@ namespace ClientAppOD.MenuPages
             if (StaticFields.CurrentLocalVersion != StaticFields.CurrentServerVerion)
             {
                 var res = await DisplayAlert("Update Vaialable", "New update available on app store", "Update now", "Later");
-                if(res)
+                if (res)
                 {
-                     Device.OpenUri(new Uri("https://apps.apple.com/us/app/order-now-food-delivery/id1500430187?ls=1"));
+                    Device.OpenUri(new Uri("https://apps.apple.com/us/app/order-now-food-delivery/id1500430187?ls=1"));
                 }
             }
         }
@@ -600,7 +599,7 @@ namespace ClientAppOD.MenuPages
                             }
                         }
                         var minAmt = StaticFields.CurrentStoreInfo.LoyaltyMinimumAmount;
-                        if(minAmt==null)
+                        if (minAmt == null)
                         {
                             minAmt = 0;
                         }
@@ -648,9 +647,9 @@ namespace ClientAppOD.MenuPages
                             {
                                 try
                                 {
-                                    if(i==ValidOrders)
+                                    if (i == ValidOrders)
                                     {
-                                        StackLayout stack1 = addStamp(textDiscount, true,true);
+                                        StackLayout stack1 = addStamp(textDiscount, true, true);
                                         stackLoyalityCards1.Children.Add(stack1);
                                     }
                                     else
@@ -658,17 +657,14 @@ namespace ClientAppOD.MenuPages
                                         StackLayout stack1 = addStamp(textDiscount, true);
                                         stackLoyalityCards1.Children.Add(stack1);
                                     }
-                                    
-                                    
+
+
                                 }
                                 catch (Exception ex)
                                 {
                                     //
                                 }
                             }
-
-
-
                         }
                         for (int i = 3; i < 6; i++)
                         {
@@ -713,11 +709,7 @@ namespace ClientAppOD.MenuPages
                                     //var uu = ex.Message;
                                 }
                             }
-
-
                         }
-
-
                     }
                 }
                 else
@@ -748,7 +740,7 @@ namespace ClientAppOD.MenuPages
 
         }
 
-        private static StackLayout addStamp(string textDiscount, bool IsSelected = false,bool onlive=false)
+        private static StackLayout addStamp(string textDiscount, bool IsSelected = false, bool onlive = false)
         {
             var stack1 = new StackLayout()
             {
@@ -756,12 +748,12 @@ namespace ClientAppOD.MenuPages
                 Margin = new Thickness(0),
                 WidthRequest = 90,
                 Spacing = 0,
-                VerticalOptions=LayoutOptions.Center
+                VerticalOptions = LayoutOptions.Center
             };
             var btn = new Button()
             {
                 ImageSource = ImageSource.FromFile("starGray.png"),
-                BackgroundColor = Color.FromHex("FFFFFF"),
+                BackgroundColor = Color.Transparent,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
                 WidthRequest = 74,
@@ -796,7 +788,7 @@ namespace ClientAppOD.MenuPages
                 lbl1.TextColor = Color.FromHex("ef5850");
                 lbl2.TextColor = Color.FromHex("ef5850");
             }
-            if(onlive)
+            if (onlive)
             {
                 btn.HeightRequest = 86;
                 btn.WidthRequest = 86;
@@ -806,23 +798,23 @@ namespace ClientAppOD.MenuPages
                     HeightRequest = 86,
                     WidthRequest = 86,
                     CornerRadius = 43,
-                    Content=btn,
-                    Padding=new Thickness(0),
-                    Margin=new Thickness(0),
-                    HorizontalOptions=LayoutOptions.Center,
-                    VerticalOptions=LayoutOptions.Center
+                    Content = btn,
+                    Padding = new Thickness(0),
+                    Margin = new Thickness(0),
+                    HorizontalOptions = LayoutOptions.Center,
+                    VerticalOptions = LayoutOptions.Center
                 };
                 stack1.Children.Add(frame);
                 lbl1.Margin = new Thickness(0, -53, 0, 0);
                 lbl2.Margin = new Thickness(0, -5, 0, 0);
-                
+
             }
             else
             {
-                
+
                 stack1.Children.Add(btn);
             }
-            
+
             stack1.Children.Add(lbl1);
             stack1.Children.Add(lbl2);
             return stack1;
@@ -859,7 +851,7 @@ namespace ClientAppOD.MenuPages
 
                 return;
             }
-            await Navigation.PushPopupAsync(new TransparentModel(new AllergyWarning()));
+            await Navigation.PushPopupAsync(new TransparentModel(new SideMenu()));
 
             //await DisplayAlert("Do you have a food allergy?", "If you or someone you are ordering for has a food allergy or intolerance phone the restaurant on "+ StaticFields.CurrentStoreInfo.Phone, "Close");
             _tapCount = 0;
@@ -1033,7 +1025,7 @@ namespace ClientAppOD.MenuPages
                     frameDiscountLess.IsVisible = false;
                 }
             }
-            else if(StaticFields.CurrentDiscount==null && StaticFields.CurrentStoreInfo !=null && StaticFields.CurrentCustomer!=null && TotalPrice > 0)
+            else if (StaticFields.CurrentDiscount == null && StaticFields.CurrentStoreInfo != null && StaticFields.CurrentCustomer != null && TotalPrice > 0)
             {
                 if (StaticFields.CurrentStoreInfo.LoyaltyMinimumAmount != null)
                 {
@@ -1056,11 +1048,20 @@ namespace ClientAppOD.MenuPages
             }
             else
             {
-                
+
                 lblDiscountLess.Text = "";
                 frameDiscountLess.IsVisible = false;
             }
         }
+
+        void TapGestureRecognizer_Tapped(System.Object sender, System.EventArgs e)
+        {
+
+
+
+
+        }
+
 
 
     }

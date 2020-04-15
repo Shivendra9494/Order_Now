@@ -11,7 +11,7 @@ using ClientAppOD.TrialPages;
 using OD.Data;
 using Rg.Plugins.Popup.Extensions;
 using Rg.Plugins.Popup.Services;
-using UIKit;
+
 using Xamarin.Forms;
 
 namespace ClientAppOD.MenuPages
@@ -103,6 +103,7 @@ namespace ClientAppOD.MenuPages
                     VerticalOptions = LayoutOptions.CenterAndExpand,
                     BorderWidth = 0,
                     FontSize = 14,
+                    Padding = 0,
                     BackgroundColor = Color.Green,
                     TextColor = Color.White,
                     WidthRequest = 24,
@@ -367,8 +368,10 @@ namespace ClientAppOD.MenuPages
                     {
                         lblDeliveryMessage.Text = "Ready to checkout";
                         frameCheckOut.BackgroundColor = Color.FromHex("236abd");
+             
                         btnOrderCount.TextColor = Color.FromHex("236adb");
                         btnOrderCount.BackgroundColor = Color.White;
+                  
                         btnOrderCount.BorderColor = Color.FromHex("236abd");
                         imageBasket.Source = ImageSource.FromFile("BasketWhite.png");
                         lblBasket.TextColor = Color.White;
@@ -379,8 +382,10 @@ namespace ClientAppOD.MenuPages
                 {
                     lblDeliveryMessage.Text = "Ready to checkout";
                     frameCheckOut.BackgroundColor = Color.FromHex("236abd");
+                   
                     btnOrderCount.TextColor = Color.FromHex("236adb");
                     btnOrderCount.BackgroundColor = Color.White;
+             
                     btnOrderCount.BorderColor = Color.FromHex("236abd");
                     imageBasket.Source = ImageSource.FromFile("BasketWhite.png");
                     lblBasket.TextColor = Color.White;

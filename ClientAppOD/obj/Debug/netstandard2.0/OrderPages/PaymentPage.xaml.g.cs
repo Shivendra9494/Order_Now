@@ -17,9 +17,6 @@ namespace ClientAppOD.OrderPages {
     public partial class PaymentPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.ImageButton tool;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.ScrollView scroll;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
@@ -44,31 +41,31 @@ namespace ClientAppOD.OrderPages {
         private global::Xamarin.Forms.StackLayout stackNewCard;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry entryCardNumber;
+        private global::ClientAppOD.Helper.XEntry entryCardNumber;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Plugin.InputKit.Shared.Controls.CheckBox SaveCardCheck;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker entryMonth;
+        private global::ClientAppOD.Helper.BorderlessPicker entryMonth;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Image btnMonthSelector;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Picker entryYear;
+        private global::ClientAppOD.Helper.BorderlessPicker entryYear;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Image btnYearSelector;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry entrySecurityCode;
+        private global::ClientAppOD.Helper.XEntry entrySecurityCode;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry entryFirstName;
+        private global::ClientAppOD.Helper.XEntry entryFirstName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry entryLastName;
+        private global::ClientAppOD.Helper.XEntry entryLastName;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Plugin.InputKit.Shared.Controls.CheckBox checkBillingAddress;
@@ -77,16 +74,16 @@ namespace ClientAppOD.OrderPages {
         private global::Xamarin.Forms.StackLayout stackBillingAddress;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry entryAddress1;
+        private global::ClientAppOD.Helper.XEntry entryAddress1;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry entryAddress2;
+        private global::ClientAppOD.Helper.XEntry entryAddress2;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry entryCity;
+        private global::ClientAppOD.Helper.XEntry entryCity;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry entryPostCode;
+        private global::ClientAppOD.Helper.XEntry entryPostCode;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.StackLayout stackCash;
@@ -154,7 +151,6 @@ namespace ClientAppOD.OrderPages {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PaymentPage));
-            tool = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "tool");
             scroll = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ScrollView>(this, "scroll");
             lblError = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblError");
             FramePayment = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Frame>(this, "FramePayment");
@@ -163,21 +159,21 @@ namespace ClientAppOD.OrderPages {
             RadioNewCard = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Plugin.InputKit.Shared.Controls.RadioButton>(this, "RadioNewCard");
             btnArrowNewCard = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "btnArrowNewCard");
             stackNewCard = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "stackNewCard");
-            entryCardNumber = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "entryCardNumber");
+            entryCardNumber = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ClientAppOD.Helper.XEntry>(this, "entryCardNumber");
             SaveCardCheck = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Plugin.InputKit.Shared.Controls.CheckBox>(this, "SaveCardCheck");
-            entryMonth = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "entryMonth");
+            entryMonth = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ClientAppOD.Helper.BorderlessPicker>(this, "entryMonth");
             btnMonthSelector = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "btnMonthSelector");
-            entryYear = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Picker>(this, "entryYear");
+            entryYear = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ClientAppOD.Helper.BorderlessPicker>(this, "entryYear");
             btnYearSelector = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Image>(this, "btnYearSelector");
-            entrySecurityCode = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "entrySecurityCode");
-            entryFirstName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "entryFirstName");
-            entryLastName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "entryLastName");
+            entrySecurityCode = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ClientAppOD.Helper.XEntry>(this, "entrySecurityCode");
+            entryFirstName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ClientAppOD.Helper.XEntry>(this, "entryFirstName");
+            entryLastName = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ClientAppOD.Helper.XEntry>(this, "entryLastName");
             checkBillingAddress = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Plugin.InputKit.Shared.Controls.CheckBox>(this, "checkBillingAddress");
             stackBillingAddress = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "stackBillingAddress");
-            entryAddress1 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "entryAddress1");
-            entryAddress2 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "entryAddress2");
-            entryCity = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "entryCity");
-            entryPostCode = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "entryPostCode");
+            entryAddress1 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ClientAppOD.Helper.XEntry>(this, "entryAddress1");
+            entryAddress2 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ClientAppOD.Helper.XEntry>(this, "entryAddress2");
+            entryCity = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ClientAppOD.Helper.XEntry>(this, "entryCity");
+            entryPostCode = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ClientAppOD.Helper.XEntry>(this, "entryPostCode");
             stackCash = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "stackCash");
             radioCOD = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Plugin.InputKit.Shared.Controls.RadioButton>(this, "radioCOD");
             btnArrowCOD = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "btnArrowCOD");

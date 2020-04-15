@@ -1,78 +1,261 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientAppOD.OrderPages.ConfirmDetailsPage"
-             Title="Confirm details"
-             BackgroundColor="#F6F6F6"
-             NavigationPage.HasBackButton="False"
-             NavigationPage.HasNavigationBar="True">
-      <NavigationPage.TitleView>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="ClientAppOD.OrderPages.ConfirmDetailsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Confirm details"
+    BackgroundColor="#F6F6F6"
+    NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False">
+    <!--<NavigationPage.TitleView>
           <StackLayout Orientation="Horizontal">
              <ImageButton x:Name="tool"  HorizontalOptions="Start"  Margin="-20,0,-5,0" Source="leftBlue.png"   Clicked="backClicked"></ImageButton>
               <Button Text="Checkout" TextColor="#236adb"  HorizontalOptions="Start" Clicked="backClicked"></Button>
              <Label Text="Confirm Details" TextColor="#2E3032" Margin="-65,0,0,0" HorizontalOptions="CenterAndExpand" FontSize="16" ></Label>
         </StackLayout>
-    </NavigationPage.TitleView>
-   <StackLayout Padding="-10,0" Margin="0,10" BackgroundColor="#F6F6F6">
-   
-         <ScrollView x:Name="scroll" IsVisible="false">
-    <StackLayout Padding="10,30" BackgroundColor="#F6F6F6" Spacing="0">
-        <BoxView HeightRequest="1" Margin="0" BackgroundColor="#E7E7E7" Color="#E7E7E7"/>
-        <StackLayout  Padding="15,10" BackgroundColor="White" Orientation="Horizontal"  Spacing="5">
-           <Label Text="Full Name"  FontSize="14" WidthRequest="100" TextColor="Black"  HorizontalOptions="Start"></Label>
-            <Entry   TextColor="#2E3032"   x:Name="entryName"  Placeholder="Full Name" HorizontalOptions="FillAndExpand"  FontSize="14" VerticalOptions="FillAndExpand">
-            </Entry>
-            
-        </StackLayout>
-        <BoxView HeightRequest="1" Margin="0" BackgroundColor="#E7E7E7" Color="#E7E7E7"/>
-        <StackLayout  Padding="15,10" BackgroundColor="White" Orientation="Horizontal"  Spacing="5">
-           <Label Text="Phone"  FontSize="14" WidthRequest="100" TextColor="Black"  HorizontalOptions="Start"></Label>
-            <Entry   TextColor="#2E3032"   x:Name="entryPhone" Keyboard="Telephone"  Placeholder="Your phone number" HorizontalOptions="FillAndExpand"  FontSize="14" VerticalOptions="FillAndExpand">
-            </Entry>
-            
-        </StackLayout>
-        <BoxView HeightRequest="1" Margin="0" BackgroundColor="#E7E7E7" Color="#E7E7E7"/>
-        <StackLayout Padding="0" x:Name="stackDelivery">
-        <StackLayout  Padding="15,10" BackgroundColor="White" Orientation="Horizontal"  Spacing="5">
-           <Label Text="Address"  FontSize="14" WidthRequest="100" TextColor="Black"  HorizontalOptions="Start"></Label>
-            <Entry   TextColor="#2E3032"  x:Name="entryAddress1"  Placeholder="Your address line 1" HorizontalOptions="FillAndExpand"  FontSize="14" VerticalOptions="FillAndExpand">
-            </Entry>
-            
-        </StackLayout>
-        <BoxView HeightRequest="1" Margin="0" BackgroundColor="#E7E7E7" Color="#E7E7E7"/>
-        <StackLayout  Padding="15,10" BackgroundColor="White" Orientation="Horizontal"  Spacing="5">
-           <Label Text=" "  FontSize="14" WidthRequest="100" TextColor="Black"  HorizontalOptions="Start"></Label>
-            <Entry   TextColor="#2E3032"   x:Name="entryAddress2"  Placeholder="Your address line 2" HorizontalOptions="FillAndExpand"  FontSize="14" VerticalOptions="FillAndExpand">
-            </Entry>
-            
-        </StackLayout>
-        <BoxView HeightRequest="1" Margin="0" BackgroundColor="#E7E7E7" Color="#E7E7E7"/>
-        <StackLayout  Padding="15,10" BackgroundColor="White" Orientation="Horizontal"  Spacing="5">
-           <Label Text="City"  FontSize="14" WidthRequest="100" TextColor="Black"  HorizontalOptions="Start"></Label>
-            <Entry   TextColor="#2E3032"   x:Name="entryCity" Placeholder="Your city" HorizontalOptions="FillAndExpand"  FontSize="14" VerticalOptions="FillAndExpand">
-            </Entry>
-            
-        </StackLayout>
-        <BoxView HeightRequest="1" Margin="0" BackgroundColor="#E7E7E7" Color="#E7E7E7"/>
-        <StackLayout  Padding="15,10" BackgroundColor="White" Orientation="Horizontal"  Spacing="5">
-           <Label Text="Postcode"  FontSize="14" WidthRequest="100" TextColor="Black"  HorizontalOptions="Start"></Label>
-            <Entry   TextColor="#2E3032"   x:Name="entryPostCode" Placeholder="Your postcode" HorizontalOptions="FillAndExpand"  FontSize="14" VerticalOptions="FillAndExpand">
-            </Entry>
-            
-        </StackLayout>
+    </NavigationPage.TitleView>-->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        <Frame
+            Grid.Row="0"
+            Padding="0"
+            BackgroundColor="White"
+            HasShadow="True"
+            HeightRequest="70">
+            <StackLayout
+                Padding="0"
+                BackgroundColor="Transparent"
+                HeightRequest="60"
+                Orientation="Horizontal"
+                Spacing="20"
+                VerticalOptions="Center">
+                <ImageButton
+                    Margin="15,0,10,0"
+                    Padding="0,0,0,0"
+                    BackgroundColor="Transparent"
+                    Clicked="ImageButton_Clicked"
+                    HeightRequest="20"
+                    Source="backleft.png"
+                    VerticalOptions="Center" />
+                <Label
+                    Margin="0,0,0,0"
+                    Padding="0"
+                    FontFamily="Nunito-Light"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    HorizontalTextAlignment="Start"
+                    Text="Confirm Details"
+                    VerticalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center" />
+
             </StackLayout>
-        <BoxView HeightRequest="1" Margin="0" BackgroundColor="#E7E7E7" Color="#E7E7E7"/>
-        
+        </Frame>
+        <StackLayout
+            Grid.Row="1"
+            Margin="0,10"
+            Padding="-10,0"
+            BackgroundColor="#F6F6F6">
+
+            <ScrollView x:Name="scroll" IsVisible="false">
+                <StackLayout
+                    Padding="10,30"
+                    BackgroundColor="#F6F6F6"
+                    Spacing="0">
+                    <BoxView
+                        Margin="0"
+                        BackgroundColor="#E7E7E7"
+                        HeightRequest="1"
+                        Color="#E7E7E7" />
+                    <StackLayout
+                        Padding="15,10"
+                        BackgroundColor="White"
+                        Orientation="Horizontal"
+                        Spacing="5">
+                        <Label
+                            FontSize="14"
+                            HorizontalOptions="Start"
+                            Text="Full Name"
+                            TextColor="Black"
+                            WidthRequest="100" />
+                        <Entry
+                            x:Name="entryName"
+                            FontSize="14"
+                            HorizontalOptions="FillAndExpand"
+                            Placeholder="Full Name"
+                            TextColor="#2E3032"
+                            VerticalOptions="FillAndExpand" />
+
+                    </StackLayout>
+                    <BoxView
+                        Margin="0"
+                        BackgroundColor="#E7E7E7"
+                        HeightRequest="1"
+                        Color="#E7E7E7" />
+                    <StackLayout
+                        Padding="15,10"
+                        BackgroundColor="White"
+                        Orientation="Horizontal"
+                        Spacing="5">
+                        <Label
+                            FontSize="14"
+                            HorizontalOptions="Start"
+                            Text="Phone"
+                            TextColor="Black"
+                            WidthRequest="100" />
+                        <Entry
+                            x:Name="entryPhone"
+                            FontSize="14"
+                            HorizontalOptions="FillAndExpand"
+                            Keyboard="Telephone"
+                            Placeholder="Your phone number"
+                            TextColor="#2E3032"
+                            VerticalOptions="FillAndExpand" />
+
+                    </StackLayout>
+                    <BoxView
+                        Margin="0"
+                        BackgroundColor="#E7E7E7"
+                        HeightRequest="1"
+                        Color="#E7E7E7" />
+                    <StackLayout x:Name="stackDelivery" Padding="0">
+                        <StackLayout
+                            Padding="15,10"
+                            BackgroundColor="White"
+                            Orientation="Horizontal"
+                            Spacing="5">
+                            <Label
+                                FontSize="14"
+                                HorizontalOptions="Start"
+                                Text="Address"
+                                TextColor="Black"
+                                WidthRequest="100" />
+                            <Entry
+                                x:Name="entryAddress1"
+                                FontSize="14"
+                                HorizontalOptions="FillAndExpand"
+                                Placeholder="Your address line 1"
+                                TextColor="#2E3032"
+                                VerticalOptions="FillAndExpand" />
+
+                        </StackLayout>
+                        <BoxView
+                            Margin="0"
+                            BackgroundColor="#E7E7E7"
+                            HeightRequest="1"
+                            Color="#E7E7E7" />
+                        <StackLayout
+                            Padding="15,10"
+                            BackgroundColor="White"
+                            Orientation="Horizontal"
+                            Spacing="5">
+                            <Label
+                                FontSize="14"
+                                HorizontalOptions="Start"
+                                Text=" "
+                                TextColor="Black"
+                                WidthRequest="100" />
+                            <Entry
+                                x:Name="entryAddress2"
+                                FontSize="14"
+                                HorizontalOptions="FillAndExpand"
+                                Placeholder="Your address line 2"
+                                TextColor="#2E3032"
+                                VerticalOptions="FillAndExpand" />
+
+                        </StackLayout>
+                        <BoxView
+                            Margin="0"
+                            BackgroundColor="#E7E7E7"
+                            HeightRequest="1"
+                            Color="#E7E7E7" />
+                        <StackLayout
+                            Padding="15,10"
+                            BackgroundColor="White"
+                            Orientation="Horizontal"
+                            Spacing="5">
+                            <Label
+                                FontSize="14"
+                                HorizontalOptions="Start"
+                                Text="City"
+                                TextColor="Black"
+                                WidthRequest="100" />
+                            <Entry
+                                x:Name="entryCity"
+                                FontSize="14"
+                                HorizontalOptions="FillAndExpand"
+                                Placeholder="Your city"
+                                TextColor="#2E3032"
+                                VerticalOptions="FillAndExpand" />
+
+                        </StackLayout>
+                        <BoxView
+                            Margin="0"
+                            BackgroundColor="#E7E7E7"
+                            HeightRequest="1"
+                            Color="#E7E7E7" />
+                        <StackLayout
+                            Padding="15,10"
+                            BackgroundColor="White"
+                            Orientation="Horizontal"
+                            Spacing="5">
+                            <Label
+                                FontSize="14"
+                                HorizontalOptions="Start"
+                                Text="Postcode"
+                                TextColor="Black"
+                                WidthRequest="100" />
+                            <Entry
+                                x:Name="entryPostCode"
+                                FontSize="14"
+                                HorizontalOptions="FillAndExpand"
+                                Placeholder="Your postcode"
+                                TextColor="#2E3032"
+                                VerticalOptions="FillAndExpand" />
+
+                        </StackLayout>
+                    </StackLayout>
+                    <BoxView
+                        Margin="0"
+                        BackgroundColor="#E7E7E7"
+                        HeightRequest="1"
+                        Color="#E7E7E7" />
+
+                </StackLayout>
+            </ScrollView>
+            <Label
+                x:Name="lblError1"
+                Margin="20,0"
+                HorizontalOptions="Start"
+                Text=" "
+                TextColor="#EB6D6B" />
+
+            <StackLayout
+                Padding="20,10"
+                BackgroundColor="#F6F6F6"
+                Orientation="Horizontal"
+                Spacing="5">
+
+                <Button
+                    BackgroundColor="#236adb"
+                    Clicked="btnPaymentClicked"
+                    CornerRadius="1"
+                    FontSize="18"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Continue to payment"
+                    TextColor="White"
+                    VerticalOptions="Start" />
+
+            </StackLayout>
+            <ActivityIndicator
+                x:Name="loader"
+                HorizontalOptions="CenterAndExpand"
+                IsRunning="true"
+                IsVisible="true"
+                VerticalOptions="CenterAndExpand"
+                Color="Black" />
         </StackLayout>
-             </ScrollView>
-       <Label Text=" "  x:Name="lblError1" Margin="20,0" TextColor="#EB6D6B" HorizontalOptions="Start"></Label>
-           
-       <StackLayout  Padding="20,10" BackgroundColor="#F6F6F6" Orientation="Horizontal"  Spacing="5">
-            
-             <Button CornerRadius="1" Text="Continue to payment" Clicked="btnPaymentClicked" VerticalOptions="Start" HorizontalOptions="FillAndExpand" TextColor="White" FontSize="18" BackgroundColor="#236adb"></Button>
-       
-        </StackLayout>
-       <ActivityIndicator IsRunning="true" IsVisible="true" Color="Black" x:Name="loader" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></ActivityIndicator>
-  </StackLayout>
-     
+    </Grid>
 </ContentPage>

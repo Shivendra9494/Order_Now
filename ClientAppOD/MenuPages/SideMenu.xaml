@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="ClientAppOD.MenuPages.SideMenu"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Frame
+        Padding="0"
+        CornerRadius="0"
+        HorizontalOptions="Start"
+        VerticalOptions="FillAndExpand"
+        WidthRequest="250">
+        <StackLayout Padding="0">
+            <ListView
+                x:Name="MenuItemsListView"
+                BackgroundColor="White"
+                HasUnevenRows="true"
+                ItemsSource="{Binding MenuItems}"
+                SeparatorVisibility="None">
+                <ListView.Header>
+                    <Grid BackgroundColor="WhiteSmoke" HeightRequest="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="10" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" />
+
+                        </Grid.RowDefinitions>
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            FontSize="16"
+                            HorizontalOptions="Start"
+                            HorizontalTextAlignment="Start"
+                            Style="{DynamicResource SubtitleStyle}"
+                            Text="Log in" />
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="15,15" HorizontalOptions="FillAndExpand">
+                                <Label
+                                    Margin="50,0,0,0"
+                                    FontSize="17"
+                                    HorizontalOptions="StartAndExpand"
+                                    HorizontalTextAlignment="Start"
+                                    Text="{Binding Title}"
+                                    VerticalOptions="FillAndExpand"
+                                    VerticalTextAlignment="Center" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </Frame>
+    <ContentView.GestureRecognizers>
+        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+    </ContentView.GestureRecognizers>
+</ContentView>

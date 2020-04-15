@@ -24,7 +24,8 @@ namespace ClientAppOD
         public SearchMenuPage()
         {
             InitializeComponent();
-            foreach(var cat in MenuCatHelper.MenuCategories)
+            MasterDetailPage masterDetailRootPage = (MasterDetailPage)Xamarin.Forms.Application.Current.MainPage;
+            foreach (var cat in MenuCatHelper.MenuCategories)
             {
                 foreach(var menu in cat.MenuItems)
                 {
@@ -125,6 +126,10 @@ namespace ClientAppOD
             MessagingCenter.Send(this, MessagingFields.AddOrderItem, "aa");
             search.Unfocus();
         }
+        //async void backClicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PopAsync();
+        //}
         private void UpdateTotalFromModelEditPage(OptionsModalEditPageView sender, int i)
         {
             this.BindingContext = null;

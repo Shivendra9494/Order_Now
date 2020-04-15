@@ -82,5 +82,10 @@ namespace ClientAppOD.UserPages
             }
 
         }
+
+        async void ImageButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
     }
 }

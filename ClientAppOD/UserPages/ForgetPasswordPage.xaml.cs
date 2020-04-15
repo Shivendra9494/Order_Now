@@ -37,7 +37,7 @@ namespace ClientAppOD.UserPages
                 lblError.Text = "";
                 
             }
-            btnSend.IsEnabled = false;
+           // btnSend.IsEnabled = false;
             var customer = await customerPostHelper.GetCustomerExist(entryEmail.Text);
             if (customer>0)
             {
@@ -62,7 +62,12 @@ namespace ClientAppOD.UserPages
             {
                 lblError.Text = "Could not found any user with email " + entryEmail.Text;
             }
-            btnSend.IsEnabled = true;
+          //  btnSend.IsEnabled = true;
+        }
+
+        async void tool_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await Navigation.PopAsync();
         }
     }
 }

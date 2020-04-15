@@ -17,7 +17,7 @@ namespace ClientAppOD.OrderPages {
     public partial class PostCodePage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry entryPostcode;
+        private global::ClientAppOD.Helper.XEntry entryPostcode;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Label lblError1;
@@ -25,7 +25,7 @@ namespace ClientAppOD.OrderPages {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(PostCodePage));
-            entryPostcode = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "entryPostcode");
+            entryPostcode = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ClientAppOD.Helper.XEntry>(this, "entryPostcode");
             lblError1 = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblError1");
         }
     }

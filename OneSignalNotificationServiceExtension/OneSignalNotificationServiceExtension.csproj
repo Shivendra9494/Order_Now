@@ -92,13 +92,13 @@
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
     <Reference Include="Com.OneSignal.Abstractions">
-      <HintPath>..\packages\Com.OneSignal.3.7.3\lib\Xamarin.iOS10\Com.OneSignal.Abstractions.dll</HintPath>
+      <HintPath>..\packages\Com.OneSignal.3.8.1\lib\Xamarin.iOS10\Com.OneSignal.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Com.OneSignal">
-      <HintPath>..\packages\Com.OneSignal.3.7.3\lib\Xamarin.iOS10\Com.OneSignal.dll</HintPath>
+      <HintPath>..\packages\Com.OneSignal.3.8.1\lib\Xamarin.iOS10\Com.OneSignal.dll</HintPath>
     </Reference>
     <Reference Include="OneSignal.iOS.Binding">
-      <HintPath>..\packages\Com.OneSignal.3.7.3\lib\Xamarin.iOS10\OneSignal.iOS.Binding.dll</HintPath>
+      <HintPath>..\packages\Com.OneSignal.3.8.1\lib\Xamarin.iOS10\OneSignal.iOS.Binding.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

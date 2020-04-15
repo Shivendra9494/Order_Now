@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "Xamarin.iOS,Version=v1.0": {
-      "Com.OneSignal/3.7.3": {
+      "Com.OneSignal/3.8.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -51,8 +51,14 @@
           "lib/xamarinios10/Plugin.FacebookClient.dll": {}
         }
       },
-      "Plugin.Permissions/3.0.0.12": {
+      "Plugin.Permissions/6.0.1": {
         "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.5.2"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
         "compile": {
           "lib/xamarinios10/Plugin.Permissions.dll": {}
         },
@@ -60,18 +66,16 @@
           "lib/xamarinios10/Plugin.Permissions.dll": {}
         }
       },
-      "Rg.Plugins.Popup/1.2.0.223": {
+      "Rg.Plugins.Popup/2.0.0.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Forms": "2.5.0.121934"
+          "Xamarin.Forms": "4.5.0.530"
         },
         "compile": {
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         },
         "runtime": {
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         }
       },
       "sqlite-net-pcl/1.6.292": {
@@ -370,16 +374,15 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Com.OneSignal": "3.7.3",
+          "Com.OneSignal": "3.8.1",
           "Microsoft.CSharp": "4.7.0",
           "Newtonsoft.Json": "12.0.3",
           "Plugin.FacebookClient": "2.2.1",
-          "Plugin.Permissions": "3.0.0.12",
-          "Rg.Plugins.Popup": "1.2.0.223",
+          "Plugin.Permissions": "6.0.1",
+          "Rg.Plugins.Popup": "2.0.0.2",
           "Xamarin.AppleSignIn": "1.0.0",
           "Xamarin.Essentials": "1.5.2",
           "Xamarin.Facebook.iOS": "5.12.0",
-          "Xamarin.Forms": "4.5.0.530",
           "Xamarin.Forms.InputKit": "3.2.2",
           "sqlite-net-pcl": "1.6.292"
         },
@@ -415,7 +418,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win": {
-      "Com.OneSignal/3.7.3": {
+      "Com.OneSignal/3.8.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -464,8 +467,14 @@
           "lib/xamarinios10/Plugin.FacebookClient.dll": {}
         }
       },
-      "Plugin.Permissions/3.0.0.12": {
+      "Plugin.Permissions/6.0.1": {
         "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.5.2"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
         "compile": {
           "lib/xamarinios10/Plugin.Permissions.dll": {}
         },
@@ -473,18 +482,16 @@
           "lib/xamarinios10/Plugin.Permissions.dll": {}
         }
       },
-      "Rg.Plugins.Popup/1.2.0.223": {
+      "Rg.Plugins.Popup/2.0.0.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Forms": "2.5.0.121934"
+          "Xamarin.Forms": "4.5.0.530"
         },
         "compile": {
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         },
         "runtime": {
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         }
       },
       "sqlite-net-pcl/1.6.292": {
@@ -777,16 +784,15 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Com.OneSignal": "3.7.3",
+          "Com.OneSignal": "3.8.1",
           "Microsoft.CSharp": "4.7.0",
           "Newtonsoft.Json": "12.0.3",
           "Plugin.FacebookClient": "2.2.1",
-          "Plugin.Permissions": "3.0.0.12",
-          "Rg.Plugins.Popup": "1.2.0.223",
+          "Plugin.Permissions": "6.0.1",
+          "Rg.Plugins.Popup": "2.0.0.2",
           "Xamarin.AppleSignIn": "1.0.0",
           "Xamarin.Essentials": "1.5.2",
           "Xamarin.Facebook.iOS": "5.12.0",
-          "Xamarin.Forms": "4.5.0.530",
           "Xamarin.Forms.InputKit": "3.2.2",
           "sqlite-net-pcl": "1.6.292"
         },
@@ -822,7 +828,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x64": {
-      "Com.OneSignal/3.7.3": {
+      "Com.OneSignal/3.8.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -871,8 +877,14 @@
           "lib/xamarinios10/Plugin.FacebookClient.dll": {}
         }
       },
-      "Plugin.Permissions/3.0.0.12": {
+      "Plugin.Permissions/6.0.1": {
         "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.5.2"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
         "compile": {
           "lib/xamarinios10/Plugin.Permissions.dll": {}
         },
@@ -880,18 +892,16 @@
           "lib/xamarinios10/Plugin.Permissions.dll": {}
         }
       },
-      "Rg.Plugins.Popup/1.2.0.223": {
+      "Rg.Plugins.Popup/2.0.0.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Forms": "2.5.0.121934"
+          "Xamarin.Forms": "4.5.0.530"
         },
         "compile": {
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         },
         "runtime": {
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         }
       },
       "sqlite-net-pcl/1.6.292": {
@@ -1184,16 +1194,15 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Com.OneSignal": "3.7.3",
+          "Com.OneSignal": "3.8.1",
           "Microsoft.CSharp": "4.7.0",
           "Newtonsoft.Json": "12.0.3",
           "Plugin.FacebookClient": "2.2.1",
-          "Plugin.Permissions": "3.0.0.12",
-          "Rg.Plugins.Popup": "1.2.0.223",
+          "Plugin.Permissions": "6.0.1",
+          "Rg.Plugins.Popup": "2.0.0.2",
           "Xamarin.AppleSignIn": "1.0.0",
           "Xamarin.Essentials": "1.5.2",
           "Xamarin.Facebook.iOS": "5.12.0",
-          "Xamarin.Forms": "4.5.0.530",
           "Xamarin.Forms.InputKit": "3.2.2",
           "sqlite-net-pcl": "1.6.292"
         },
@@ -1229,7 +1238,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
-      "Com.OneSignal/3.7.3": {
+      "Com.OneSignal/3.8.1": {
         "type": "package",
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -1278,8 +1287,14 @@
           "lib/xamarinios10/Plugin.FacebookClient.dll": {}
         }
       },
-      "Plugin.Permissions/3.0.0.12": {
+      "Plugin.Permissions/6.0.1": {
         "type": "package",
+        "dependencies": {
+          "Xamarin.Essentials": "1.5.2"
+        },
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
         "compile": {
           "lib/xamarinios10/Plugin.Permissions.dll": {}
         },
@@ -1287,18 +1302,16 @@
           "lib/xamarinios10/Plugin.Permissions.dll": {}
         }
       },
-      "Rg.Plugins.Popup/1.2.0.223": {
+      "Rg.Plugins.Popup/2.0.0.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Forms": "2.5.0.121934"
+          "Xamarin.Forms": "4.5.0.530"
         },
         "compile": {
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         },
         "runtime": {
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll": {},
-          "lib/Xamarin.IOS/Rg.Plugins.Popup.dll": {}
+          "lib/xamarinios10/Rg.Plugins.Popup.dll": {}
         }
       },
       "sqlite-net-pcl/1.6.292": {
@@ -1591,16 +1604,15 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Com.OneSignal": "3.7.3",
+          "Com.OneSignal": "3.8.1",
           "Microsoft.CSharp": "4.7.0",
           "Newtonsoft.Json": "12.0.3",
           "Plugin.FacebookClient": "2.2.1",
-          "Plugin.Permissions": "3.0.0.12",
-          "Rg.Plugins.Popup": "1.2.0.223",
+          "Plugin.Permissions": "6.0.1",
+          "Rg.Plugins.Popup": "2.0.0.2",
           "Xamarin.AppleSignIn": "1.0.0",
           "Xamarin.Essentials": "1.5.2",
           "Xamarin.Facebook.iOS": "5.12.0",
-          "Xamarin.Forms": "4.5.0.530",
           "Xamarin.Forms.InputKit": "3.2.2",
           "sqlite-net-pcl": "1.6.292"
         },
@@ -1637,14 +1649,14 @@
     }
   },
   "libraries": {
-    "Com.OneSignal/3.7.3": {
-      "sha512": "cxzvK+Nz3PzwObmKTh8Ul8DSKgGnw6IPlmoVwhSiXjA+FdBJj6HC2hv7GtB+FTgP0kkPyd0nRiyYqKL4JE/tog==",
+    "Com.OneSignal/3.8.1": {
+      "sha512": "rI2cq7zJeTHo5P+j+78zKbThIrOSqFDGph2dGNgKhQVruhbEd+9SYvTVDaBaPn2Def4QhkRNwtLEGjyIKO4MqQ==",
       "type": "package",
-      "path": "com.onesignal/3.7.3",
+      "path": "com.onesignal/3.8.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "com.onesignal.3.7.3.nupkg.sha512",
+        "com.onesignal.3.8.1.nupkg.sha512",
         "com.onesignal.nuspec",
         "lib/MonoAndroid10/Com.OneSignal.Abstractions.dll",
         "lib/MonoAndroid10/Com.OneSignal.Abstractions.pdb",
@@ -1783,57 +1795,82 @@
         "plugin.facebookclient.nuspec"
       ]
     },
-    "Plugin.Permissions/3.0.0.12": {
-      "sha512": "VrYqI/ufk3bH6gTP1JJlLByjhS0CHu3riKmdozhX9/qXA9hlvLolmcqKJdyAqpzmrVC74m3ZtirUBIrBxvT1Lw==",
+    "Plugin.Permissions/6.0.1": {
+      "sha512": "na/0FNhyKmSicANWZMLSM0y/FW2AvLoawX3lsvBpELwP15sdJRyuBhRKk1OQjRoNrmTIewcON1tJFyydjMGWcA==",
       "type": "package",
-      "path": "plugin.permissions/3.0.0.12",
+      "path": "plugin.permissions/6.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/monoandroid71/Plugin.Permissions.dll",
-        "lib/monoandroid71/Plugin.Permissions.xml",
+        "lib/monoandroid10.0/Plugin.Permissions.dll",
+        "lib/monoandroid10.0/Plugin.Permissions.pdb",
+        "lib/monoandroid80/Plugin.Permissions.dll",
+        "lib/monoandroid80/Plugin.Permissions.pdb",
+        "lib/monoandroid81/Plugin.Permissions.dll",
+        "lib/monoandroid81/Plugin.Permissions.pdb",
+        "lib/monoandroid90/Plugin.Permissions.dll",
+        "lib/monoandroid90/Plugin.Permissions.pdb",
         "lib/netstandard1.0/Plugin.Permissions.dll",
-        "lib/netstandard1.0/Plugin.Permissions.xml",
+        "lib/netstandard1.0/Plugin.Permissions.pdb",
         "lib/netstandard2.0/Plugin.Permissions.dll",
-        "lib/netstandard2.0/Plugin.Permissions.xml",
-        "lib/uap10.0.10240/Plugin.Permissions.dll",
-        "lib/uap10.0.10240/Plugin.Permissions.pri",
-        "lib/uap10.0.10240/Plugin.Permissions.xml",
+        "lib/netstandard2.0/Plugin.Permissions.pdb",
+        "lib/uap10.0.16299/Plugin.Permissions.dll",
+        "lib/uap10.0.16299/Plugin.Permissions.pdb",
+        "lib/uap10.0.16299/Plugin.Permissions.pri",
         "lib/xamarinios10/Plugin.Permissions.dll",
-        "lib/xamarinios10/Plugin.Permissions.xml",
-        "plugin.permissions.3.0.0.12.nupkg.sha512",
+        "lib/xamarinios10/Plugin.Permissions.pdb",
+        "lib/xamarintvos10/Plugin.Permissions.dll",
+        "lib/xamarintvos10/Plugin.Permissions.pdb",
+        "plugin.permissions.6.0.1.nupkg.sha512",
         "plugin.permissions.nuspec",
         "readme.txt"
       ]
     },
-    "Rg.Plugins.Popup/1.2.0.223": {
-      "sha512": "0ruzj7EedYRUhhsk327z7ymaHzf9E/n6Slg2ZJfOYqtZ14tX1dtWbyNRSmGEnWxLyN1qSq4Od4U6vYupHRpdtw==",
+    "Rg.Plugins.Popup/2.0.0.2": {
+      "sha512": "UExzgLevcih/oDokftGPKRqaefS65ByAOeaFzfr1Qy2opeyv9+eR0hDWotGb0hPI5JFHD7NJv5aK6NbTM3WuLw==",
       "type": "package",
-      "path": "rg.plugins.popup/1.2.0.223",
+      "path": "rg.plugins.popup/2.0.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/MonoAndroid/Rg.Plugins.Popup.Droid.dll",
-        "lib/MonoAndroid/Rg.Plugins.Popup.Droid.dll.mdb",
-        "lib/MonoAndroid/Rg.Plugins.Popup.Droid.pdb",
-        "lib/MonoAndroid/Rg.Plugins.Popup.dll",
-        "lib/MonoAndroid/Rg.Plugins.Popup.pdb",
-        "lib/MonoTouch/Rg.Plugins.Popup.IOS.dll",
-        "lib/MonoTouch/Rg.Plugins.Popup.IOS.pdb",
-        "lib/MonoTouch/Rg.Plugins.Popup.dll",
-        "lib/MonoTouch/Rg.Plugins.Popup.pdb",
-        "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.dll",
-        "lib/Xamarin.IOS/Rg.Plugins.Popup.IOS.pdb",
-        "lib/Xamarin.IOS/Rg.Plugins.Popup.dll",
-        "lib/Xamarin.IOS/Rg.Plugins.Popup.pdb",
-        "lib/netstandard1.0/Rg.Plugins.Popup.dll",
-        "lib/netstandard1.0/Rg.Plugins.Popup.pdb",
-        "lib/uap10.0/Rg.Plugins.Popup.UWP.dll",
-        "lib/uap10.0/Rg.Plugins.Popup.UWP.pdb",
-        "lib/uap10.0/Rg.Plugins.Popup.dll",
-        "lib/uap10.0/Rg.Plugins.Popup.pdb",
+        "LICENSE.md",
+        "icon.png",
+        "lib/monoandroid10.0/Rg.Plugins.Popup.dll",
+        "lib/monoandroid10.0/Rg.Plugins.Popup.pdb",
+        "lib/monoandroid10.0/Rg.Plugins.Popup.xml",
+        "lib/monoandroid90/Rg.Plugins.Popup.dll",
+        "lib/monoandroid90/Rg.Plugins.Popup.pdb",
+        "lib/monoandroid90/Rg.Plugins.Popup.xml",
+        "lib/net472/Rg.Plugins.Popup.dll",
+        "lib/net472/Rg.Plugins.Popup.pdb",
+        "lib/net472/Rg.Plugins.Popup.xml",
+        "lib/netcoreapp3.1/Rg.Plugins.Popup.dll",
+        "lib/netcoreapp3.1/Rg.Plugins.Popup.pdb",
+        "lib/netcoreapp3.1/Rg.Plugins.Popup.xml",
+        "lib/netstandard2.0/Rg.Plugins.Popup.dll",
+        "lib/netstandard2.0/Rg.Plugins.Popup.pdb",
+        "lib/netstandard2.0/Rg.Plugins.Popup.xml",
+        "lib/tizen40/Rg.Plugins.Popup.dll",
+        "lib/tizen40/Rg.Plugins.Popup.pdb",
+        "lib/tizen40/Rg.Plugins.Popup.xml",
+        "lib/uap10.0.17763/Rg.Plugins.Popup.dll",
+        "lib/uap10.0.17763/Rg.Plugins.Popup.pdb",
+        "lib/uap10.0.17763/Rg.Plugins.Popup.pri",
+        "lib/uap10.0.17763/Rg.Plugins.Popup.xml",
+        "lib/xamarinios10/Rg.Plugins.Popup.dll",
+        "lib/xamarinios10/Rg.Plugins.Popup.pdb",
+        "lib/xamarinios10/Rg.Plugins.Popup.xml",
+        "lib/xamarinmac20/Rg.Plugins.Popup.dll",
+        "lib/xamarinmac20/Rg.Plugins.Popup.pdb",
+        "lib/xamarinmac20/Rg.Plugins.Popup.xml",
+        "lib/xamarintvos10/Rg.Plugins.Popup.dll",
+        "lib/xamarintvos10/Rg.Plugins.Popup.pdb",
+        "lib/xamarintvos10/Rg.Plugins.Popup.xml",
+        "lib/xamarinwatchos10/Rg.Plugins.Popup.dll",
+        "lib/xamarinwatchos10/Rg.Plugins.Popup.pdb",
+        "lib/xamarinwatchos10/Rg.Plugins.Popup.xml",
         "readme.txt",
-        "rg.plugins.popup.1.2.0.223.nupkg.sha512",
+        "rg.plugins.popup.2.0.0.2.nupkg.sha512",
         "rg.plugins.popup.nuspec"
       ]
     },
@@ -2497,12 +2534,11 @@
       "Newtonsoft.Json >= 12.0.3",
       "OneSignalNotificationServiceExtension >= 1.0.0",
       "Plugin.FacebookClient >= 2.2.1",
-      "Plugin.Permissions >= 3.0.0.12",
-      "Rg.Plugins.Popup >= 1.2.0.223",
+      "Plugin.Permissions >= 6.0.1",
+      "Rg.Plugins.Popup >= 2.0.0.2",
       "Xamarin.AppleSignIn >= 1.0.0",
       "Xamarin.Essentials >= 1.5.2",
       "Xamarin.Facebook.iOS >= 5.12.0",
-      "Xamarin.Forms >= 4.5.0.530",
       "Xamarin.Forms.InputKit >= 3.2.2",
       "sqlite-net-pcl >= 1.6.292"
     ]
@@ -2562,11 +2598,11 @@
           },
           "Plugin.Permissions": {
             "target": "Package",
-            "version": "[3.0.0.12, )"
+            "version": "[6.0.1, )"
           },
           "Rg.Plugins.Popup": {
             "target": "Package",
-            "version": "[1.2.0.223, )"
+            "version": "[2.0.0.2, )"
           },
           "Xamarin.Essentials": {
             "target": "Package",
@@ -2575,10 +2611,6 @@
           "Xamarin.Facebook.iOS": {
             "target": "Package",
             "version": "[5.12.0, )"
-          },
-          "Xamarin.Forms": {
-            "target": "Package",
-            "version": "[4.5.0.530, )"
           },
           "Xamarin.Forms.InputKit": {
             "target": "Package",

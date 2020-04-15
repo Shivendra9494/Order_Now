@@ -68,10 +68,10 @@ namespace ClientAppOD
     public class LoginViewModel
     {
         readonly IFacebookLoginService facebookLoginService;
-        public ICommand OnFacebookLoginSuccessCmd { get; }
-        public ICommand OnFacebookLoginErrorCmd { get; }
-        public ICommand OnFacebookLoginCancelCmd { get; }
-        public Command FacebookLogoutCmd { get; }
+        //public ICommand OnFacebookLoginSuccessCmd { get; }
+        //public ICommand OnFacebookLoginErrorCmd { get; }
+        //public ICommand OnFacebookLoginCancelCmd { get; }
+        //public Command FacebookLogoutCmd { get; }
         UserLoginPage _page;
         UserSignUpPage _pageSignup;
         int ii = 1;
@@ -79,65 +79,65 @@ namespace ClientAppOD
         {
             _page = page;
             ii = 1;
-            facebookLoginService = (Application.Current as App).FacebookLoginService;
-            facebookLoginService.AccessTokenChanged = (string oldToken, string newToken) => FacebookLogoutCmd.ChangeCanExecute();
-            FacebookLogoutCmd = new Command(() =>
-                facebookLoginService.Logout(),
-                () => !string.IsNullOrEmpty(facebookLoginService.AccessToken));
-            OnFacebookLoginSuccessCmd = new Command<string>(
-                 (authToken) => DisplayAlert("Success", $"Authentication succeed: {authToken}"));
+          //  facebookLoginService = (Application.Current as App).FacebookLoginService;
+         //   facebookLoginService.AccessTokenChanged = (string oldToken, string newToken) => FacebookLogoutCmd.ChangeCanExecute();
+         //   FacebookLogoutCmd = new Command(() =>
+         //       facebookLoginService.Logout(),
+         //       () => !string.IsNullOrEmpty(facebookLoginService.AccessToken));
+         //   OnFacebookLoginSuccessCmd = new Command<string>(
+          //       (authToken) => DisplayAlert("Success", $"Authentication succeed: {authToken}"));
 
-            OnFacebookLoginErrorCmd = new Command<string>(
-                (err) => DisplayAlert("Error", $"Authentication failed: { err }"));
+          //  OnFacebookLoginErrorCmd = new Command<string>(
+          //      (err) => DisplayAlert("Error", $"Authentication failed: { err }"));
 
-            OnFacebookLoginCancelCmd = new Command(
-                () => DisplayAlert("Cancel", "Authentication cancelled by the user."));
+         //   OnFacebookLoginCancelCmd = new Command(
+          //      () => DisplayAlert("Cancel", "Authentication cancelled by the user."));
         }
         public LoginViewModel(UserSignUpPage page)
         {
             _pageSignup = page;
             ii = 1;
-            facebookLoginService = (Application.Current as App).FacebookLoginService;
-            facebookLoginService.AccessTokenChanged = (string oldToken, string newToken) => FacebookLogoutCmd.ChangeCanExecute();
-            FacebookLogoutCmd = new Command(() =>
-                facebookLoginService.Logout(),
-                () => !string.IsNullOrEmpty(facebookLoginService.AccessToken));
-            OnFacebookLoginSuccessCmd = new Command<string>(
-                 (authToken) => DisplayAlertSignUp("Success", $"Authentication succeed: {authToken}"));
+            //facebookLoginService = (Application.Current as App).FacebookLoginService;
+            //facebookLoginService.AccessTokenChanged = (string oldToken, string newToken) => FacebookLogoutCmd.ChangeCanExecute();
+            //FacebookLogoutCmd = new Command(() =>
+            //    facebookLoginService.Logout(),
+            //    () => !string.IsNullOrEmpty(facebookLoginService.AccessToken));
+            //OnFacebookLoginSuccessCmd = new Command<string>(
+            //     (authToken) => DisplayAlertSignUp("Success", $"Authentication succeed: {authToken}"));
 
-            OnFacebookLoginErrorCmd = new Command<string>(
-                (err) => DisplayAlertSignUp("Error", $"Authentication failed: { err }"));
+            //OnFacebookLoginErrorCmd = new Command<string>(
+            //    (err) => DisplayAlertSignUp("Error", $"Authentication failed: { err }"));
 
-            OnFacebookLoginCancelCmd = new Command(
-                () => DisplayAlertSignUp("Cancel", "Authentication cancelled by the user."));
+            //OnFacebookLoginCancelCmd = new Command(
+            //    () => DisplayAlertSignUp("Cancel", "Authentication cancelled by the user."));
         }
-        void DisplayAlert(string title, string msg)
-        {
-            if(title=="Success" )
-            {
+        //void DisplayAlert(string title, string msg)
+        //{
+        //    if(title=="Success" )
+        //    {
 
-                _page.LoginFacebookAsync();
+        //        _page.LoginFacebookAsync();
                
-            }
-            else
-            {
-                (Application.Current as App).MainPage.DisplayAlert(title, msg, "OK");
-            }
+        //    }
+        //    else
+        //    {
+        //        (Application.Current as App).MainPage.DisplayAlert(title, msg, "OK");
+        //    }
             
-        }
-        void DisplayAlertSignUp(string title, string msg)
-        {
-            if (title == "Success")
-            {
+        //}
+        //void DisplayAlertSignUp(string title, string msg)
+        //{
+        //    if (title == "Success")
+        //    {
 
-                _pageSignup.LoginFacebookAsync();
+        //        _pageSignup.LoginFacebookAsync();
 
-            }
-            else
-            {
-                (Application.Current as App).MainPage.DisplayAlert(title, msg, "OK");
-            }
+        //    }
+        //    else
+        //    {
+        //        (Application.Current as App).MainPage.DisplayAlert(title, msg, "OK");
+        //    }
 
-        }
+        //}
     }
 }

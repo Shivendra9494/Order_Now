@@ -1,37 +1,76 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
+    x:Class="ClientAppOD.SubPages.ExtraListPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="ClientAppOD.SubPages.ExtraListPage"
     BackgroundColor="White">
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
             <StackLayout BackgroundColor="White" HorizontalOptions="CenterAndExpand">
-           <Label FontSize="14" x:Name="lblMenuName" HorizontalTextAlignment="Center"></Label>
-            <Label FontSize="10" x:Name="lblOptionName" HorizontalTextAlignment="Center"></Label>
-               
-       </StackLayout>
-             <Button Text="Cancel" TextColor="Red" Padding="0" Clicked="CancelClicked" ></Button>
+                <Label
+                    x:Name="lblMenuName"
+                    FontSize="14"
+                    HorizontalTextAlignment="Center" />
+                <Label
+                    x:Name="lblOptionName"
+                    FontSize="10"
+                    HorizontalTextAlignment="Center" />
+
+            </StackLayout>
+            <Button
+                Padding="0"
+                Clicked="CancelClicked"
+                Text="Cancel"
+                TextColor="Red" />
         </StackLayout>
-       
+
     </NavigationPage.TitleView>
     <AbsoluteLayout>
-      <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,0.91"  AbsoluteLayout.LayoutFlags="All">
-          <StackLayout Padding="0"  HorizontalOptions="Fill" VerticalOptions="Fill" x:Name="StackMain" >
-                <StackLayout  BackgroundColor="#fcfbfa" x:Name="WouldLabel" >
-                            <Label Margin="0,0,0,20" TextColor="#404040" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Start" Text="Would you like extras?"></Label>
-                            <BoxView />
+        <ScrollView AbsoluteLayout.LayoutBounds="0,0,1,0.91" AbsoluteLayout.LayoutFlags="All">
+            <StackLayout
+                x:Name="StackMain"
+                Padding="0"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill">
+                <StackLayout x:Name="WouldLabel" BackgroundColor="#fcfbfa">
+                    <Label
+                        Margin="0,0,0,20"
+                        HorizontalOptions="StartAndExpand"
+                        HorizontalTextAlignment="Start"
+                        Text="Would you like extras?"
+                        TextColor="#404040" />
+                    <BoxView />
                 </StackLayout>
-          </StackLayout>
+            </StackLayout>
 
-      </ScrollView>
-         <Frame Padding="20,10" 
-                     AbsoluteLayout.LayoutBounds="0,1,1,0.1" AbsoluteLayout.LayoutFlags="All">
-            <StackLayout x:Name="stackAddToOrder" Orientation="Horizontal" BackgroundColor="#EB6361" Padding="0,0,20,0">
-                <Image Source="left.png" x:Name="imageBack" HorizontalOptions="Start"></Image>
-            <Label x:Name="btnAddToOrder" Text="Back"  FontSize="18"  TextColor="White"   HorizontalOptions="StartAndExpand" ></Label>
-            <Label  x:Name="lblPrice" VerticalTextAlignment="Center" FontSize="18" TextColor="White" HorizontalOptions="End"></Label>
-                </StackLayout>
-        </Frame >
+        </ScrollView>
+        <Frame
+            Padding="20,10"
+            AbsoluteLayout.LayoutBounds="0,1,1,0.1"
+            AbsoluteLayout.LayoutFlags="All">
+            <StackLayout
+                x:Name="stackAddToOrder"
+                Padding="0,0,20,0"
+                BackgroundColor="#EB6361"
+                Orientation="Horizontal">
+                <Image
+                    x:Name="imageBack"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Start"
+                    Source="left.png" />
+                <Label
+                    x:Name="btnAddToOrder"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    Text="Back"
+                    TextColor="White" />
+                <Label
+                    x:Name="lblPrice"
+                    FontSize="18"
+                    HorizontalOptions="End"
+                    TextColor="White"
+                    VerticalTextAlignment="Center" />
+            </StackLayout>
+        </Frame>
     </AbsoluteLayout>
 </ContentPage>

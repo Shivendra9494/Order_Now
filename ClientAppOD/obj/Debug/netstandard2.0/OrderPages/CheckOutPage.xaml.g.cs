@@ -41,7 +41,7 @@ namespace ClientAppOD.OrderPages {
         private global::Xamarin.Forms.Label lblError;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Entry entryVoucher;
+        private global::ClientAppOD.Helper.XEntry entryVoucher;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
@@ -54,7 +54,7 @@ namespace ClientAppOD.OrderPages {
             stackVoucherClick = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "stackVoucherClick");
             stackVoucher = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.StackLayout>(this, "stackVoucher");
             lblError = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "lblError");
-            entryVoucher = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Entry>(this, "entryVoucher");
+            entryVoucher = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::ClientAppOD.Helper.XEntry>(this, "entryVoucher");
         }
     }
 }

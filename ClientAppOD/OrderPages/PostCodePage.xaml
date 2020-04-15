@@ -1,24 +1,53 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientAppOD.OrderPages.PostCodePage"
-             Title="Postcode" BackgroundColor="White">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="ClientAppOD.OrderPages.PostCodePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:helper="clr-namespace:ClientAppOD.Helper"
+    Title="Postcode"
+    BackgroundColor="White">
     <StackLayout Padding="0">
 
-        <Frame CornerRadius="0"  VerticalOptions="CenterAndExpand" Padding="0,20">
+        <Frame
+            Padding="0"
+            CornerRadius="0"
+            VerticalOptions="CenterAndExpand">
             <StackLayout Spacing="6">
-                 <Label FontSize="18" Text="Postcode"  HorizontalOptions="CenterAndExpand"  HorizontalTextAlignment="Center" TextColor="Black"></Label>
-                <BoxView/>
-                <Entry x:Name="entryPostcode" HeightRequest="40" FontSize="20" Placeholder="enter your postcode" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Start"  TextColor="Black" ></Entry>
-         <BoxView/>
-                <Label Text="" x:Name="lblError1" HorizontalOptions="StartAndExpand" TextColor="#EB6361"></Label>
-       
-                 <Button Text="Continue" FontSize="18" BackgroundColor="#EB6361" CornerRadius="2" Margin="10" TextColor="White"></Button>
-       
+                <Label
+                    FontSize="18"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="Postcode"
+                    TextColor="Black" />
+                <BoxView />
+                <helper:XEntry
+                    x:Name="entryPostcode"
+                    FontSize="20"
+                    HeightRequest="40"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Start"
+                    Placeholder="enter your postcode"
+                    TextColor="Black"
+                    VerticalOptions="CenterAndExpand" />
+                <BoxView />
+                <Label
+                    x:Name="lblError1"
+                    HorizontalOptions="StartAndExpand"
+                    Text=""
+                    TextColor="#EB6361" />
+
+                <Button
+                    Margin="10"
+                    BackgroundColor="#EB6361"
+                    CornerRadius="2"
+                    FontSize="18"
+                    Text="Continue"
+                    TextColor="White" />
+
             </StackLayout>
         </Frame>
-       
-   
+
+
     </StackLayout>
-       
+
 </ContentPage>

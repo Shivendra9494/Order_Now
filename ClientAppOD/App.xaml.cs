@@ -41,19 +41,22 @@ namespace ClientAppOD
             var busId = Preferences.Get(PreferenceFields.SelectedStoreId, 0);
 
             var FromSearchPage = Preferences.ContainsKey(PreferenceFields.FromSearchPage);
-            MainPage = new NavigationPage(new MenuCategoryPage());
+       //     MainPage = new NavigationPage(new MenuCategoryPage());
+            //Current.MainPage = new NavigationPage(new MenuCategoryPages());
+           Current.MainPage = new MenuCategoryPages();
+            // MainPage = new NavigationPage(new UserLoginPage());
             //if (busId != 0 && !FromSearchPage)
             //{
             //    if (Device.RuntimePlatform == Device.Android)
             //        MainPage = new NavigationPage(new MenuCategoryPage());
             //    else if (Device.RuntimePlatform == Device.iOS)
-                   
+
             //    MainPage = new MainTabbedPage();
             //}
             //else
             //{
             //    var id = "599";// GetRestroDetails();
-               
+
             //    if (!string.IsNullOrEmpty(id) && id != "0" && !FromSearchPage)
             //    {
             //        Preferences.Set(PreferenceFields.SelectedStoreId, id);
@@ -67,7 +70,7 @@ namespace ClientAppOD
             //    }
 
             //}
-           
+
 
 
         }

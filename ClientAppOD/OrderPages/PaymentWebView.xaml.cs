@@ -5,7 +5,7 @@ using System.Linq;
 using ClientAppOD.CustomModels;
 using ClientAppOD.Helper;
 using ClientAppOD.UserPages;
-using Foundation;
+
 using OD.Data;
 using Xamarin.AppleSignIn;
 using Xamarin.Forms;
@@ -66,7 +66,7 @@ namespace ClientAppOD.OrderPages
                     var id_token1 = e.Url.Substring(e.Url.IndexOf("id_token=") + 9);
                     var id_token = id_token1.Split('&')[0];
                     AppleAccount appleAccount = new AppleAccount();
-                    appleAccount.IdToken = JwtToken.Decode(new NSString(id_token, NSStringEncoding.UTF8).ToString());
+                   // appleAccount.IdToken = JwtToken.Decode(new NSString(id_token, NSStringEncoding.UTF8).ToString());
                     appleAccount.Name = "";
                     MessagingCenter.Send(this, MessagingFields.LoginFromApple, appleAccount);
                 }
@@ -76,6 +76,11 @@ namespace ClientAppOD.OrderPages
                 }
             }
 
+        }
+
+       async void ImageButton_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await Navigation.PopModalAsync();
         }
     }
 }

@@ -6,7 +6,7 @@ using ClientAppOD.CustomModels;
 using ClientAppOD.Helper;
 using OD.Data;
 using Rg.Plugins.Popup.Services;
-using UIKit;
+
 using Xamarin.Forms;
 
 namespace ClientAppOD.MenuPages
@@ -29,18 +29,18 @@ namespace ClientAppOD.MenuPages
             InitializeComponent();
             Double top = 0;
             Double bottom = 0;
-            if (UIApplication.SharedApplication.KeyWindow != null)
-            {
-                var sa = UIApplication.SharedApplication.KeyWindow.SafeAreaInsets;
-                top = sa.Top;
-                bottom = sa.Bottom;
-            }
-            if (bottom == 0)
-            {
-                bottom = 20;
-            }
-            frameTop.Padding = new Thickness(0, top, 0, 0);
-            FrameAddToOrder.Padding = new Thickness(20, 5, 20, bottom);
+            //if (UIApplication.SharedApplication.KeyWindow != null)
+            //{
+            //    var sa = UIApplication.SharedApplication.KeyWindow.SafeAreaInsets;
+            //    top = sa.Top;
+            //    bottom = sa.Bottom;
+            //}
+            //if (bottom == 0)
+            //{
+            //    bottom = 20;
+            //}
+            //frameTop.Padding = new Thickness(0, top, 0, 0);
+            //FrameAddToOrder.Padding = new Thickness(20, 5, 20, bottom);
 
             _menuItem = menuItem;
             _orderItem = orderItem;

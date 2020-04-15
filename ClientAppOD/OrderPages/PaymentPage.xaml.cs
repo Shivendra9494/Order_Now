@@ -75,6 +75,7 @@ namespace ClientAppOD.OrderPages
                     HorizontalOptions = LayoutOptions.End,
                     Source = ImageSource.FromFile("leftBlue.png"),
                     Rotation = 270,
+                    BackgroundColor = Color.Transparent,
                     Padding = new Thickness(0),
                     WidthRequest = 20,
                     VerticalOptions = LayoutOptions.Center
@@ -765,6 +766,9 @@ namespace ClientAppOD.OrderPages
             }
         }
 
-       
+        void ImageButton_Clicked_1(System.Object sender, System.EventArgs e)
+        {
+        }
+
     }
 }

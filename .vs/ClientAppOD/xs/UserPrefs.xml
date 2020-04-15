@@ -1,34 +1,34 @@
 ﻿<Properties StartupConfiguration="{8D7111AA-5863-4644-8C88-A37EAC600E87}|Default">
   <MonoDevelop.Ide.ItemProperties.ClientAppOD.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ClientAppOD/MenuPages/MenuPropertyListPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ClientAppOD/OrderPages/PaymentPage.xaml.cs">
     <Files>
-      <File FileName="ClientAppOD/MenuPages/MenuCategoryPage.xaml" Line="75" Column="29" IsPinned="True" />
-      <File FileName="ClientAppOD/MenuPages/MenuPropertyListPage.xaml" />
-      <File FileName="ClientAppOD/MenuPages/MenuCategoryPage.xaml.cs" />
-      <File FileName="ClientAppOD/MenuPages/MenuPropertyListPage.xaml.cs" Line="316" Column="21" />
-      <File FileName="ClientAppOD.iOS/AppDelegate.cs" />
-      <File FileName="ClientAppOD.Android/MainActivity.cs" />
-      <File FileName="ClientAppOD/TrialPages/TransparentModel.cs" />
-      <File FileName="ClientAppOD/MenuPages/OptionsModalPageView.xaml.cs" />
-      <File FileName="ClientAppOD/App.xaml.cs" />
-      <File FileName="ClientAppOD/MenuPages/OptionsModalPageView.xaml" />
+      <File FileName="ClientAppOD/MenuPages/MenuCategoryPagesMaster.xaml" Line="197" Column="1" />
+      <File FileName="ClientAppOD/OrderPages/PaymentPage.xaml" />
+      <File FileName="ClientAppOD/OrderPages/PaymentPage.xaml.cs" Line="76" Column="52" />
+      <File FileName="ClientAppOD/Helper/BorderlessPicker.cs" />
+      <File FileName="ClientAppOD.Android/Rendrers/BorderlessPickerRenderer.cs" />
+      <File FileName="ClientAppOD.Android/Rendrers/XEntryRenderer.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ClientAppOD" expanded="True">
             <Node name="ClientAppOD" expanded="True">
-              <Node name="MenuPages" expanded="True">
-                <Node name="MenuPropertyListPage.xaml" expanded="True">
-                  <Node name="MenuPropertyListPage.xaml.cs" selected="True" />
-                </Node>
+              <Node name="Helper" expanded="True" />
+              <Node name="OrderPages" expanded="True">
+                <Node name="PaymentPage.xaml.cs" selected="True" />
               </Node>
+              <Node name="UserPages" expanded="True" />
+            </Node>
+            <Node name="ClientAppOD.Android" expanded="True">
+              <Node name="Rendrers" expanded="True" />
+              <Node name="Resources" expanded="True" />
+            </Node>
+            <Node name="ClientAppOD.iOS" expanded="True">
+              <Node name="Resources" expanded="True" />
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

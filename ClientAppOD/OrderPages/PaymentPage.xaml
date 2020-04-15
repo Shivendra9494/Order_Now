@@ -1,225 +1,606 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientAppOD.OrderPages.PaymentPage"
-             xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
-             xmlns:controls="clr-namespace:ClientAppOD.Helper"
-             BackgroundColor="White"
-             NavigationPage.HasBackButton="false">
-    <NavigationPage.TitleView>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="ClientAppOD.OrderPages.PaymentPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:ClientAppOD.Helper"
+    xmlns:input="clr-namespace:Plugin.InputKit.Shared.Controls;assembly=Plugin.InputKit"
+    BackgroundColor="White"
+    NavigationPage.HasBackButton="false"
+    NavigationPage.HasNavigationBar="False">
+    <!--<NavigationPage.TitleView>
           <StackLayout Orientation="Horizontal">
              <ImageButton x:Name="tool"  HorizontalOptions="Start"  Margin="-20,0,-5,0" Source="leftBlue.png"   Clicked="backClicked"></ImageButton>
               <Button Text="Confirm details" TextColor="#236adb"  HorizontalOptions="Start" Clicked="backClicked"></Button>
              <Label Text="Payment" TextColor="#2E3032" Margin="20,0,0,0" HorizontalOptions="StartAndExpand" HorizontalTextAlignment="Center" FontSize="16" ></Label>
         </StackLayout>
-    </NavigationPage.TitleView>
-     <ContentPage.Resources>
+    </NavigationPage.TitleView>-->
+    <ContentPage.Resources>
         <ResourceDictionary>
-           <Style TargetType="Label">
-                <Setter Property="FontFamily" Value="Nunito-ExtraLight"></Setter>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Nunito-ExtraLight" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <ScrollView x:Name="scroll">
-   <StackLayout Spacing="15" Padding="10,15">
-       <Label Text="How would you like to pay?" HorizontalOptions="StartAndExpand" FontSize="Large" TextColor="Black"></Label>
-       <Label x:Name="lblError"  HorizontalOptions="StartAndExpand"  FontSize="Small" TextColor="Red"></Label>
-       <Frame HasShadow="False" BorderColor="#E7E7E7" Padding="10" x:Name="FramePayment" >
-           <input:RadioButtonGroupView x:Name="PaymentGroupRadio" >
-             
-                  
-               <StackLayout Padding="0" Spacing="0" >
-               <StackLayout Padding="0" Orientation="Horizontal" x:Name="stackActionNewCard">
-                   <input:RadioButton x:Name="RadioNewCard" Clicked="RadioButton_Clicked" TextFontSize="14"  FontFamily="Nunito-ExtraLight" HorizontalOptions="StartAndExpand"  IsChecked="False" Color="#236adb" Text="Pay with debit or credit card" />
-                   <ImageButton Clicked="ImageButton_Clicked" Source="leftBlue.png" Rotation="270" x:Name="btnArrowNewCard" Padding="0"  WidthRequest="20" VerticalOptions="Center" HorizontalOptions="End"></ImageButton>
-               </StackLayout>
-                   <StackLayout Padding="0"  x:Name="stackNewCard" IsVisible="false">
-                <StackLayout Orientation="Horizontal" Padding="0">
-                    <Image Source="visa.png" HorizontalOptions="Start"></Image>
-                     <Image Source="mastercard.png" HorizontalOptions="StartAndExpand"></Image>
-                </StackLayout>
-                   <Label Text="Card number" TextColor="Black" HorizontalOptions="StartAndExpand"></Label>
-                   <Frame Padding="0" HasShadow="False" BorderColor="#F1F1F1" VerticalOptions="FillAndExpand" CornerRadius="0">
-                       <Entry x:Name="entryCardNumber" Keyboard="Numeric" HeightRequest="40"></Entry>
-                   </Frame>
-                  <input:CheckBox Margin="2,0,0,0" x:Name="SaveCardCheck" Text="Save this card" BoxSizeRequest="17" BoxBackgroundColor="#eeedee" Type="Check"/>
-                  <Label Text="Expiry date" Margin="0,10,0,0" TextColor="Black" HorizontalOptions="StartAndExpand"></Label>
-                   <StackLayout Orientation="Horizontal" Padding="0,5" Spacing="5">
-                       <Frame Padding="0" HorizontalOptions="Center" HasShadow="False" BorderColor="#F1F1F1" CornerRadius="0">
-                           <StackLayout Orientation="Horizontal" Padding="0" Spacing="2">
-                       <Picker VerticalOptions="Center" HorizontalOptions="Start" Margin="0,0,0,0"
-                      x:Name="entryMonth" FontSize="13"
-                      TextColor="Black" Title="MM">
-                      <Picker.Items>
-                        
-                        <x:String>01</x:String> 
-                        <x:String>02</x:String>
-                        <x:String>03</x:String> 
-                        <x:String>04</x:String>
-                        <x:String>05</x:String> 
-                        <x:String>06</x:String>
-                        <x:String>07</x:String> 
-                        <x:String>08</x:String>
-                        <x:String>09</x:String> 
-                        <x:String>10</x:String>
-                        <x:String>11</x:String> 
-                        <x:String>12</x:String>
-                    </Picker.Items>
-            </Picker>
-                               <Image Source="leftBlue.png" x:Name="btnMonthSelector" Rotation="270" Margin="-10,0,5,0" HeightRequest="20"></Image>
-                               </StackLayout>
-                           </Frame>
-                        <Frame Padding="2,5" HorizontalOptions="Center" HasShadow="False" BorderColor="#F1F1F1" CornerRadius="0">
-                              <StackLayout Orientation="Horizontal" Padding="0" Spacing="4">
-                       <Picker x:Name="entryYear" VerticalOptions="Center" FontSize="13" HorizontalOptions="StartAndExpand" Margin="0,0,0,0"  TextColor="Black"
-                     Title="YY">
-                      <Picker.Items>
-                       
-                        <x:String>20</x:String>
-                        <x:String>21</x:String> 
-                        <x:String>22</x:String>
-                        <x:String>23</x:String>
-                        <x:String>24</x:String> 
-                        <x:String>25</x:String>
-                        <x:String>26</x:String>
-                        <x:String>27</x:String> 
-                        <x:String>28</x:String>
-                        <x:String>29</x:String>
-                        <x:String>30</x:String> 
-                        <x:String>31</x:String>
-                        <x:String>32</x:String>
-                        <x:String>33</x:String> 
-                        <x:String>34</x:String>
-                        <x:String>35</x:String> 
-                        <x:String>36</x:String>
-                        <x:String>37</x:String>
-                        <x:String>38</x:String> 
-                        <x:String>39</x:String>
-                    </Picker.Items>
-            </Picker>
-                                   <Image Source="leftBlue.png" Rotation="270" x:Name="btnYearSelector" Margin="-10,0,5,0" HeightRequest="20"></Image>
-                                  </StackLayout>
-                            </Frame>
-                   </StackLayout>
-                   <Label Text="Security number" Margin="0,10,0,0" TextColor="Black" HorizontalOptions="StartAndExpand"></Label>
-                 <StackLayout Spacing="10" Orientation="Horizontal" Padding="0,5">
-                     <Frame Padding="0" HasShadow="False" BorderColor="#F1F1F1" VerticalOptions="FillAndExpand" CornerRadius="0">
-                       <Entry Keyboard="Numeric" x:Name="entrySecurityCode" WidthRequest="60" MaxLength="3" HeightRequest="40"></Entry>
-                   </Frame>
-                     <Image Source="cvv.png" VerticalOptions="Center" HeightRequest="30"></Image>
-                     <Label Text="The 3 digit number on the back of your card"></Label>
-                 </StackLayout>
-                    <Label Margin="0,20,0,10"  Text="First name" TextColor="Black" HorizontalOptions="StartAndExpand"></Label>
-                   <Frame Padding="0" HasShadow="False" BorderColor="#F1F1F1" VerticalOptions="FillAndExpand" CornerRadius="0">
-                       <Entry HeightRequest="40" x:Name="entryFirstName"></Entry>
-                   </Frame>
-                    <Label Margin="0,10,0,10"  Text="Last name" TextColor="Black" HorizontalOptions="StartAndExpand"></Label>
-                   <Frame Padding="0" HasShadow="False" BorderColor="#F1F1F1" VerticalOptions="FillAndExpand" CornerRadius="0">
-                       <Entry HeightRequest="40" x:Name="entryLastName"></Entry>
-                   </Frame>
-                     <input:CheckBox Margin="2,0,0,0" FontFamily="Nunito-ExtraLight" x:Name="checkBillingAddress" CheckChanged="checkBillingAddressCheckChanged"  BoxSizeRequest="17" BoxBackgroundColor="#eeedee" Type="Check"/>
-                   <StackLayout Padding="0" x:Name="stackBillingAddress" IsVisible="false">
-                        <Label Margin="0,20,0,10" Text="Address line 1" TextColor="Black" HorizontalOptions="StartAndExpand"></Label>
-                        <Frame Padding="0" HasShadow="False" BorderColor="#F1F1F1" VerticalOptions="FillAndExpand" CornerRadius="0">
-                            <Entry HeightRequest="40" x:Name="entryAddress1" ></Entry>
-                        </Frame>
-                       <Label Margin="0,20,0,10"   Text="Address line 2" TextColor="Black" HorizontalOptions="StartAndExpand"></Label>
-                        <Frame Padding="0" HasShadow="False" BorderColor="#F1F1F1" VerticalOptions="FillAndExpand" CornerRadius="0">
-                            <Entry HeightRequest="40" x:Name="entryAddress2"></Entry>
-                        </Frame>
-                       <Label Margin="0,20,0,10"   Text="City" TextColor="Black" HorizontalOptions="StartAndExpand"></Label>
-                        <Frame Padding="0" HasShadow="False" BorderColor="#F1F1F1" VerticalOptions="FillAndExpand" CornerRadius="0">
-                            <Entry HeightRequest="40" x:Name="entryCity"></Entry>
-                        </Frame>
-                       <Label Margin="0,20,0,10"  Text="Postcode" TextColor="Black" HorizontalOptions="StartAndExpand"></Label>
-                        <Frame Padding="0" HasShadow="False" BorderColor="#F1F1F1" VerticalOptions="FillAndExpand" CornerRadius="0">
-                            <Entry HeightRequest="40" x:Name="entryPostCode"></Entry>
-                        </Frame>
-                   </StackLayout>
-                   <BoxView Margin="0"/>
-                       <StackLayout Padding="0,0,150,10" Spacing="10">
-                   <Button Margin="-20,10,0,-10"  HorizontalOptions="FillAndExpand" Clicked="VoucherButton_Clicked" FontSize="14" TextColor="DarkRed" Text="I have a discount voucher"></Button>
-                           <Frame Padding="0" HasShadow="False" IsVisible="False" BorderColor="#F1F1F1" VerticalOptions="FillAndExpand" CornerRadius="0">
-                            <Entry HeightRequest="40" ></Entry>
-                        </Frame>
-                           <Label Text="" TextColor="#EB6361"  ></Label>
-                           <Button Text="Apply" IsVisible="False" Clicked="VoucherApply_Clicked" CornerRadius="1" TextColor="#236adb" BackgroundColor="#FCF0F1"></Button>
 
-                           </StackLayout>
-                       
-                   <BoxView Margin="0"/>
-                    <Button CornerRadius="1" Text="Place my order"  VerticalOptions="Start" Clicked="btnPaymentClicked" HorizontalOptions="FillAndExpand" TextColor="White" FontSize="18" BackgroundColor="#236adb"></Button>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="10*" />
+        </Grid.RowDefinitions>
+        <Frame
+            Grid.Row="0"
+            Padding="0"
+            BackgroundColor="White"
+            HasShadow="True"
+            HeightRequest="60">
+            <StackLayout
+                Padding="0"
+                BackgroundColor="Transparent"
+                HeightRequest="60"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <ImageButton
+                    Margin="15,0,10,0"
+                    Padding="0,0,0,0"
+                    BackgroundColor="Transparent"
+                    Clicked="backClicked"
+                    HeightRequest="20"
+                    Source="backleft.png"
+                    VerticalOptions="Center" />
+                <Label
+                    Margin="10,0,0,0"
+                    Padding="0"
+                    FontFamily="Nunito-Light"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    HorizontalTextAlignment="Start"
+                    Text="Payment"
+                    VerticalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center" />
+
             </StackLayout>
-                   </StackLayout>
-                <BoxView Margin="-10,0"/>
-                <StackLayout Padding="0" Spacing="0" >
-                <StackLayout Padding="0" Orientation="Horizontal" x:Name="stackCash">
-                   <input:RadioButton Clicked="RadioButton_Clicked" TextFontSize="14"  FontFamily="Nunito-ExtraLight" x:Name="radioCOD" HorizontalOptions="StartAndExpand" Color="#236adb" Text="Pay with cash" />
-                   <ImageButton Source="leftBlue.png" Clicked="ImageButton_Clicked" x:Name="btnArrowCOD" Rotation="270" Padding="0"  WidthRequest="20" VerticalOptions="Center" HorizontalOptions="End"></ImageButton>
+        </Frame>
+        <ScrollView x:Name="scroll" Grid.Row="1">
+            <StackLayout
+                Grid.Row="1"
+                Padding="10,5"
+                Spacing="10">
+                <Label
+                    FontSize="20"
+                    HorizontalOptions="StartAndExpand"
+                    Text="How would you like to pay?"
+                    TextColor="Black" />
+                <Label
+                    x:Name="lblError"
+                    FontSize="Small"
+                    HorizontalOptions="StartAndExpand"
+                    IsVisible="false"
+                    TextColor="Red" />
+                <Frame
+                    x:Name="FramePayment"
+                    Padding="10"
+                    BorderColor="#E7E7E7"
+                    HasShadow="False">
+                    <input:RadioButtonGroupView x:Name="PaymentGroupRadio">
+
+
+                        <StackLayout Padding="0" Spacing="0">
+                            <StackLayout
+                                x:Name="stackActionNewCard"
+                                Padding="0"
+                                Orientation="Horizontal">
+                                <input:RadioButton
+                                    x:Name="RadioNewCard"
+                                    Clicked="RadioButton_Clicked"
+                                    FontFamily="Nunito-ExtraLight"
+                                    HorizontalOptions="StartAndExpand"
+                                    IsChecked="False"
+                                    Text="Pay with debit or credit card"
+                                    TextFontSize="14"
+                                    Color="#236adb" />
+                                <ImageButton
+                                    x:Name="btnArrowNewCard"
+                                    Padding="0"
+                                    BackgroundColor="Transparent"
+                                    Clicked="ImageButton_Clicked"
+                                    HorizontalOptions="End"
+                                    Rotation="270"
+                                    Source="leftBlue.png"
+                                    VerticalOptions="Center"
+                                    WidthRequest="20" />
+                            </StackLayout>
+                            <StackLayout
+                                x:Name="stackNewCard"
+                                Padding="0"
+                                IsVisible="false">
+                                <StackLayout Padding="0" Orientation="Horizontal">
+                                    <Image
+                                        BackgroundColor="Transparent"
+                                        HorizontalOptions="Start"
+                                        Source="visa.png" />
+                                    <Image
+                                        BackgroundColor="Transparent"
+                                        HorizontalOptions="StartAndExpand"
+                                        Source="mastercard.png" />
+                                </StackLayout>
+                                <Label
+                                    HorizontalOptions="StartAndExpand"
+                                    Text="Card number"
+                                    TextColor="Black" />
+                                <Frame
+                                    Padding="0"
+                                    BorderColor="#F1F1F1"
+                                    CornerRadius="0"
+                                    HasShadow="False"
+                                    VerticalOptions="FillAndExpand">
+                                    <controls:XEntry
+                                        x:Name="entryCardNumber"
+                                        HeightRequest="40"
+                                        Keyboard="Numeric" />
+                                </Frame>
+                                <input:CheckBox
+                                    x:Name="SaveCardCheck"
+                                    Margin="2,0,0,0"
+                                    BoxBackgroundColor="#eeedee"
+                                    BoxSizeRequest="17"
+                                    Text="Save this card"
+                                    Type="Check" />
+                                <Label
+                                    Margin="0,10,0,0"
+                                    HorizontalOptions="StartAndExpand"
+                                    Text="Expiry date"
+                                    TextColor="Black" />
+                                <StackLayout
+                                    Padding="0,5"
+                                    Orientation="Horizontal"
+                                    Spacing="5">
+                                    <Frame
+                                        Padding="0"
+                                        BorderColor="DarkGray"
+                                        CornerRadius="0"
+                                        HasShadow="False"
+                                        HorizontalOptions="Center">
+                                        <StackLayout
+                                            Padding="0"
+                                            Orientation="Horizontal"
+                                            Spacing="4">
+                                            <controls:BorderlessPicker
+                                                x:Name="entryMonth"
+                                                Title="MM"
+                                                Margin="5,0,0,0"
+                                                FontSize="14"
+                                                HorizontalOptions="Start"
+                                                TextColor="Black"
+                                                VerticalOptions="Center">
+                                                <Picker.Items>
+                                                    <x:String>01</x:String>
+                                                    <x:String>02</x:String>
+                                                    <x:String>03</x:String>
+                                                    <x:String>04</x:String>
+                                                    <x:String>05</x:String>
+                                                    <x:String>06</x:String>
+                                                    <x:String>07</x:String>
+                                                    <x:String>08</x:String>
+                                                    <x:String>09</x:String>
+                                                    <x:String>10</x:String>
+                                                    <x:String>11</x:String>
+                                                    <x:String>12</x:String>
+                                                </Picker.Items>
+                                            </controls:BorderlessPicker>
+                                            <Image
+                                                x:Name="btnMonthSelector"
+                                                Margin="0,0,5,0"
+                                                BackgroundColor="Transparent"
+                                                HeightRequest="20"
+                                                Rotation="270"
+                                                Source="leftBlue.png" />
+                                        </StackLayout>
+                                    </Frame>
+                                    <Frame
+                                        Padding="2,5"
+                                        BorderColor="DarkGray"
+                                        CornerRadius="0"
+                                        HasShadow="False"
+                                        HorizontalOptions="Center">
+                                        <StackLayout
+                                            Padding="0"
+                                            Orientation="Horizontal"
+                                            Spacing="4">
+                                            <controls:BorderlessPicker
+                                                x:Name="entryYear"
+                                                Title="YY"
+                                                Margin="5,0,0,0"
+                                                FontSize="13"
+                                                HorizontalOptions="StartAndExpand"
+                                                TextColor="Black"
+                                                VerticalOptions="Center">
+                                                <Picker.Items>
+
+                                                    <x:String>20</x:String>
+                                                    <x:String>21</x:String>
+                                                    <x:String>22</x:String>
+                                                    <x:String>23</x:String>
+                                                    <x:String>24</x:String>
+                                                    <x:String>25</x:String>
+                                                    <x:String>26</x:String>
+                                                    <x:String>27</x:String>
+                                                    <x:String>28</x:String>
+                                                    <x:String>29</x:String>
+                                                    <x:String>30</x:String>
+                                                    <x:String>31</x:String>
+                                                    <x:String>32</x:String>
+                                                    <x:String>33</x:String>
+                                                    <x:String>34</x:String>
+                                                    <x:String>35</x:String>
+                                                    <x:String>36</x:String>
+                                                    <x:String>37</x:String>
+                                                    <x:String>38</x:String>
+                                                    <x:String>39</x:String>
+                                                </Picker.Items>
+                                            </controls:BorderlessPicker>
+                                            <Image
+                                                x:Name="btnYearSelector"
+                                                Margin="0,0,5,0"
+                                                BackgroundColor="Transparent"
+                                                HeightRequest="20"
+                                                Rotation="270"
+                                                Source="leftBlue.png" />
+                                        </StackLayout>
+                                    </Frame>
+                                </StackLayout>
+                                <Label
+                                    Margin="0,10,0,0"
+                                    HorizontalOptions="StartAndExpand"
+                                    Text="Security number"
+                                    TextColor="Black" />
+                                <StackLayout
+                                    Padding="0,5"
+                                    Orientation="Horizontal"
+                                    Spacing="10">
+                                    <Frame
+                                        Padding="0"
+                                        BorderColor="DarkGray"
+                                        CornerRadius="0"
+                                        HasShadow="True"
+                                        VerticalOptions="FillAndExpand">
+                                        <controls:XEntry
+                                            x:Name="entrySecurityCode"
+                                            HeightRequest="40"
+                                            Keyboard="Numeric"
+                                            MaxLength="3"
+                                            WidthRequest="60" />
+                                    </Frame>
+                                    <Image
+                                        BackgroundColor="Transparent"
+                                        HeightRequest="30"
+                                        Source="cvv.png"
+                                        VerticalOptions="Center" />
+                                    <Label Text="The 3 digit number on the back of your card" />
+                                </StackLayout>
+                                <Label
+                                    Margin="0,20,0,10"
+                                    HorizontalOptions="StartAndExpand"
+                                    Text="First name"
+                                    TextColor="Black" />
+                                <Frame
+                                    Padding="0"
+                                    BorderColor="DarkGray"
+                                    CornerRadius="0"
+                                    HasShadow="True"
+                                    VerticalOptions="FillAndExpand">
+                                    <controls:XEntry x:Name="entryFirstName" HeightRequest="40" />
+                                </Frame>
+                                <Label
+                                    Margin="0,10,0,10"
+                                    HorizontalOptions="StartAndExpand"
+                                    Text="Last name"
+                                    TextColor="Black" />
+                                <Frame
+                                    Padding="0"
+                                    BorderColor="DarkGray"
+                                    CornerRadius="0"
+                                    HasShadow="True"
+                                    VerticalOptions="FillAndExpand">
+                                    <controls:XEntry x:Name="entryLastName" HeightRequest="40" />
+                                </Frame>
+                                <input:CheckBox
+                                    x:Name="checkBillingAddress"
+                                    Margin="2,0,0,0"
+                                    BoxBackgroundColor="#eeedee"
+                                    BoxSizeRequest="17"
+                                    CheckChanged="checkBillingAddressCheckChanged"
+                                    FontFamily="Nunito-ExtraLight"
+                                    Type="Check" />
+                                <StackLayout
+                                    x:Name="stackBillingAddress"
+                                    Padding="0"
+                                    IsVisible="false">
+                                    <Label
+                                        Margin="0,20,0,10"
+                                        HorizontalOptions="StartAndExpand"
+                                        Text="Address line 1"
+                                        TextColor="Black" />
+                                    <Frame
+                                        Padding="0"
+                                        BorderColor="DarkGray"
+                                        CornerRadius="0"
+                                        HasShadow="True"
+                                        VerticalOptions="FillAndExpand">
+                                        <controls:XEntry x:Name="entryAddress1" HeightRequest="40" />
+                                    </Frame>
+                                    <Label
+                                        Margin="0,20,0,10"
+                                        HorizontalOptions="StartAndExpand"
+                                        Text="Address line 2"
+                                        TextColor="Black" />
+                                    <Frame
+                                        Padding="0"
+                                        BorderColor="DarkGray"
+                                        CornerRadius="0"
+                                        HasShadow="True"
+                                        VerticalOptions="FillAndExpand">
+                                        <controls:XEntry x:Name="entryAddress2" HeightRequest="40" />
+                                    </Frame>
+                                    <Label
+                                        Margin="0,20,0,10"
+                                        HorizontalOptions="StartAndExpand"
+                                        Text="City"
+                                        TextColor="Black" />
+                                    <Frame
+                                        Padding="0"
+                                        BorderColor="DarkGray"
+                                        CornerRadius="0"
+                                        HasShadow="True"
+                                        VerticalOptions="FillAndExpand">
+                                        <controls:XEntry x:Name="entryCity" HeightRequest="40" />
+                                    </Frame>
+                                    <Label
+                                        Margin="0,20,0,10"
+                                        HorizontalOptions="StartAndExpand"
+                                        Text="Postcode"
+                                        TextColor="Black" />
+                                    <Frame
+                                        Padding="0"
+                                        BorderColor="DarkGray"
+                                        CornerRadius="0"
+                                        HasShadow="True"
+                                        VerticalOptions="FillAndExpand">
+                                        <controls:XEntry x:Name="entryPostCode" HeightRequest="40" />
+                                    </Frame>
+                                </StackLayout>
+                                <BoxView Margin="0" />
+                                <StackLayout Padding="0,0,150,10" Spacing="10">
+                                    <Button
+                                        Margin="-20,10,0,-10"
+                                        BackgroundColor="Transparent"
+                                        Clicked="VoucherButton_Clicked"
+                                        FontSize="14"
+                                        HorizontalOptions="FillAndExpand"
+                                        Text="I have a discount voucher"
+                                        TextColor="DarkRed" />
+                                    <Frame
+                                        Padding="0"
+                                        BorderColor="DarkGray"
+                                        CornerRadius="0"
+                                        HasShadow="True"
+                                        IsVisible="False"
+                                        VerticalOptions="FillAndExpand">
+                                        <controls:XEntry HeightRequest="40" />
+                                    </Frame>
+                                    <Label Text="" TextColor="#EB6361" />
+                                    <Button
+                                        BackgroundColor="#FCF0F1"
+                                        Clicked="VoucherApply_Clicked"
+                                        CornerRadius="1"
+                                        IsVisible="False"
+                                        Text="Apply"
+                                        TextColor="#236adb" />
+
+                                </StackLayout>
+
+                                <BoxView Margin="0" />
+                                <Button
+                                    BackgroundColor="#236adb"
+                                    Clicked="btnPaymentClicked"
+                                    CornerRadius="1"
+                                    FontSize="18"
+                                    HorizontalOptions="FillAndExpand"
+                                    Text="Place my order"
+                                    TextColor="White"
+                                    VerticalOptions="Start" />
+                            </StackLayout>
+                        </StackLayout>
+                        <BoxView Margin="-10,0" />
+                        <StackLayout Padding="0" Spacing="0">
+                            <StackLayout
+                                x:Name="stackCash"
+                                Padding="0"
+                                Orientation="Horizontal">
+                                <input:RadioButton
+                                    x:Name="radioCOD"
+                                    Clicked="RadioButton_Clicked"
+                                    FontFamily="Nunito-ExtraLight"
+                                    HorizontalOptions="StartAndExpand"
+                                    Text="Pay with cash"
+                                    TextFontSize="14"
+                                    Color="#236adb" />
+                                <ImageButton
+                                    x:Name="btnArrowCOD"
+                                    Padding="0"
+                                    BackgroundColor="Transparent"
+                                    Clicked="ImageButton_Clicked"
+                                    HorizontalOptions="End"
+                                    Rotation="270"
+                                    Source="leftBlue.png"
+                                    VerticalOptions="Center"
+                                    WidthRequest="20" />
+                            </StackLayout>
+                            <StackLayout
+                                x:Name="stackCOD"
+                                Padding="0"
+                                IsVisible="false">
+                                <BoxView Margin="0" />
+                                <StackLayout Padding="0,0,150,10" Spacing="10">
+                                    <Button
+                                        Margin="-20,10,0,-10"
+                                        Clicked="VoucherButton_Clicked"
+                                        FontSize="14"
+                                        HorizontalOptions="FillAndExpand"
+                                        Text="I have a discount voucher"
+                                        TextColor="DarkRed" />
+                                    <Frame
+                                        Padding="0"
+                                        BorderColor="DarkGray"
+                                        CornerRadius="0"
+                                        HasShadow="True"
+                                        IsVisible="False"
+                                        VerticalOptions="FillAndExpand">
+                                        <controls:XEntry HeightRequest="40" />
+                                    </Frame>
+
+                                    <Button
+                                        BackgroundColor="#FCF0F1"
+                                        Clicked="VoucherApply_Clicked"
+                                        CornerRadius="1"
+                                        IsVisible="False"
+                                        Text="Apply"
+                                        TextColor="#236adb" />
+
+                                </StackLayout>
+
+                                <BoxView Margin="0" />
+                                <Button
+                                    BackgroundColor="#236adb"
+                                    Clicked="btnCODClicked"
+                                    CornerRadius="1"
+                                    FontSize="18"
+                                    HorizontalOptions="FillAndExpand"
+                                    Text="Place my order"
+                                    TextColor="White"
+                                    VerticalOptions="Start" />
+
+                            </StackLayout>
+
+                        </StackLayout>
+                    </input:RadioButtonGroupView>
+                </Frame>
+                <ActivityIndicator
+                    x:Name="Loader"
+                    HorizontalOptions="CenterAndExpand"
+                    IsRunning="True"
+                    IsVisible="false"
+                    VerticalOptions="CenterAndExpand" />
+                <Frame
+                    Padding="10,10,10,0"
+                    BorderColor="#E7E7E7"
+                    HasShadow="False">
+                    <StackLayout Padding="-10,6" Spacing="0">
+                        <Label
+                            Padding="20,0,20,0"
+                            FontFamily="Nunito-Light"
+                            FontSize="18"
+                            HorizontalOptions="StartAndExpand"
+                            HorizontalTextAlignment="Start"
+                            Text="Your order" />
+                        <StackLayout
+                            x:Name="stackOrderItem"
+                            Padding="20,10"
+                            BackgroundColor="White" />
+                        <BoxView Margin="0" />
+                        <StackLayout Padding="20,5,20,0" Orientation="Horizontal">
+                            <Label
+                                FontFamily="Nunito-Light"
+                                FontSize="15"
+                                HorizontalOptions="StartAndExpand"
+                                Text="SUBTOTAL" />
+                            <Label
+                                x:Name="lblTotalPrice"
+                                HorizontalOptions="End"
+                                Text="" />
+                        </StackLayout>
+
+                        <StackLayout
+                            x:Name="stackDiscount"
+                            Padding="20,5,20,0"
+                            IsVisible="false"
+                            Orientation="Horizontal">
+                            <Label
+                                x:Name="lblDiscountPercentage"
+                                HorizontalOptions="StartAndExpand"
+                                TextColor="#EB6361" />
+                            <Label
+                                x:Name="lblDiscount"
+                                HorizontalOptions="End"
+                                TextColor="#EB6361" />
+                        </StackLayout>
+                        <StackLayout
+                            x:Name="stackVoucher"
+                            Padding="20,5,20,0"
+                            IsVisible="false"
+                            Orientation="Horizontal">
+                            <Label
+                                x:Name="lblVoucherCode"
+                                HorizontalOptions="StartAndExpand"
+                                TextColor="#EB6361" />
+                            <Label
+                                x:Name="lblVoucherAmount"
+                                HorizontalOptions="End"
+                                TextColor="#EB6361" />
+                        </StackLayout>
+                        <StackLayout
+                            x:Name="stackDeliveryFee"
+                            Padding="20,5,20,0"
+                            IsVisible="false"
+                            Orientation="Horizontal">
+                            <Label HorizontalOptions="StartAndExpand" Text="Delivery Fee" />
+                            <Label x:Name="lblDeliveryFee" HorizontalOptions="End" />
+                        </StackLayout>
+                        <StackLayout
+                            x:Name="stackServiceCharge"
+                            Padding="20,5,20,0"
+                            IsVisible="false"
+                            Orientation="Horizontal">
+                            <Label HorizontalOptions="StartAndExpand" Text="Service Charge" />
+                            <Label
+                                x:Name="lblServiceCharge"
+                                HorizontalOptions="End"
+                                Text="" />
+                        </StackLayout>
+
+                        <StackLayout Padding="20,5,20,10" Orientation="Horizontal">
+                            <Label
+                                FontFamily="Nunito-Light"
+                                FontSize="18"
+                                HorizontalOptions="StartAndExpand"
+                                Text="TOTAL" />
+                            <Label
+                                x:Name="lblSubTotal"
+                                FontFamily="Nunito-Light"
+                                FontSize="18"
+                                HorizontalOptions="End"
+                                Text="" />
+                        </StackLayout>
+                        <BoxView Margin="0" />
+                        <Label
+                            x:Name="lblAddess"
+                            Padding="20,5,20,10"
+                            HorizontalTextAlignment="Center"
+                            Text="" />
+                        <BoxView Margin="0" />
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Image
+                                x:Name="imgDelivery"
+                                BackgroundColor="Transparent"
+                                HeightRequest="20" />
+                            <Label
+                                x:Name="lblDelivery"
+                                HorizontalOptions="StartAndExpand"
+                                TextColor="#2E3032" />
+                        </StackLayout>
                     </StackLayout>
-                <StackLayout Padding="0" x:Name="stackCOD" IsVisible="false">
-                     <BoxView Margin="0"/>
-                       <StackLayout Padding="0,0,150,10" Spacing="10">
-                   <Button Margin="-20,10,0,-10"  HorizontalOptions="FillAndExpand" Clicked="VoucherButton_Clicked" FontSize="14" TextColor="DarkRed" Text="I have a discount voucher"></Button>
-                           <Frame Padding="0" HasShadow="False" IsVisible="False" BorderColor="#F1F1F1" VerticalOptions="FillAndExpand" CornerRadius="0">
-                            <Entry HeightRequest="40" ></Entry>
-                        </Frame>
-                           <Label Text="" TextColor="#EB6361"   ></Label>
-                           <Button Text="Apply" IsVisible="False" Clicked="VoucherApply_Clicked" CornerRadius="1" TextColor="#236adb" BackgroundColor="#FCF0F1"></Button>
-
-                           </StackLayout>
-                       
-                   <BoxView Margin="0"/>
-                    <Button CornerRadius="1" Text="Place my order" Clicked="btnCODClicked"  VerticalOptions="Start" HorizontalOptions="FillAndExpand" TextColor="White" FontSize="18" BackgroundColor="#236adb"></Button>
-           
-                   </StackLayout>
-                
+                </Frame>
             </StackLayout>
-              </input:RadioButtonGroupView>
-       </Frame>
-       <ActivityIndicator x:Name="Loader" IsVisible="false" IsRunning="True" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></ActivityIndicator>
-          <Frame HasShadow="False" BorderColor="#E7E7E7" Padding="10,10,10,0" >
-       <StackLayout Spacing="0" Padding="-10,6">
-           <Label Text="Your order" HorizontalOptions="StartAndExpand" FontSize="18" FontFamily="Nunito-Light" Padding="20,0,20,0" HorizontalTextAlignment="Start"></Label>
-       <StackLayout BackgroundColor="White" x:Name="stackOrderItem" Padding="20,10">
-            
-        </StackLayout>
-       <BoxView Margin="0"></BoxView>
-        <StackLayout Orientation="Horizontal" Padding="20,5,20,0">
-            <Label  Text="SUBTOTAL" FontSize="15" FontFamily="Nunito-Light" HorizontalOptions="StartAndExpand"></Label>
-            <Label x:Name="lblTotalPrice" Text="" HorizontalOptions="End"></Label>
-        </StackLayout>
-        
-       <StackLayout x:Name="stackDiscount" IsVisible="false" Orientation="Horizontal" Padding="20,5,20,0">
-            <Label x:Name="lblDiscountPercentage" TextColor="#EB6361" HorizontalOptions="StartAndExpand"></Label>
-            <Label x:Name="lblDiscount" TextColor="#EB6361" HorizontalOptions="End"></Label>
-        </StackLayout>
-            <StackLayout x:Name="stackVoucher" IsVisible="false" Orientation="Horizontal" Padding="20,5,20,0">
-            <Label x:Name="lblVoucherCode" TextColor="#EB6361" HorizontalOptions="StartAndExpand"></Label>
-            <Label x:Name="lblVoucherAmount" TextColor="#EB6361" HorizontalOptions="End"></Label>
-        </StackLayout>
-        <StackLayout x:Name="stackDeliveryFee" IsVisible="false" Orientation="Horizontal" Padding="20,5,20,0">
-            <Label Text="Delivery Fee"  HorizontalOptions="StartAndExpand"></Label>
-            <Label x:Name="lblDeliveryFee" HorizontalOptions="End"></Label>
-        </StackLayout>
-        <StackLayout x:Name="stackServiceCharge" IsVisible="false" Orientation="Horizontal" Padding="20,5,20,0">
-            <Label  Text="Service Charge" HorizontalOptions="StartAndExpand"></Label>
-            <Label x:Name="lblServiceCharge" Text="" HorizontalOptions="End"></Label>
-        </StackLayout>
-       
-       <StackLayout  Orientation="Horizontal" Padding="20,5,20,10">
-            <Label  Text="TOTAL" FontSize="18" FontFamily="Nunito-Light" HorizontalOptions="StartAndExpand"></Label>
-            <Label x:Name="lblSubTotal" Text="" FontSize="18" FontFamily="Nunito-Light" HorizontalOptions="End"></Label>
-        </StackLayout>
-           <BoxView Margin="0"></BoxView>
-           <Label Text="" x:Name="lblAddess" HorizontalTextAlignment="Center" Padding="20,5,20,10"></Label>
-            <BoxView Margin="0"></BoxView>
-            <StackLayout Orientation="Horizontal" Spacing="10">
-             <Image  x:Name="imgDelivery" HeightRequest="20"></Image>
-             <Label TextColor="#2E3032" x:Name="lblDelivery" HorizontalOptions="StartAndExpand" ></Label>
-         </StackLayout>
-           </StackLayout>
-              </Frame>
-   </StackLayout>
         </ScrollView>
+    </Grid>
 </ContentPage>

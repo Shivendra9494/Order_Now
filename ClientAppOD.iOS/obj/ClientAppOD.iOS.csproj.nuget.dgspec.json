@@ -56,11 +56,11 @@
             },
             "Plugin.Permissions": {
               "target": "Package",
-              "version": "[3.0.0.12, )"
+              "version": "[6.0.1, )"
             },
             "Rg.Plugins.Popup": {
               "target": "Package",
-              "version": "[1.2.0.223, )"
+              "version": "[2.0.0.2, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -69,10 +69,6 @@
             "Xamarin.Facebook.iOS": {
               "target": "Package",
               "version": "[5.12.0, )"
-            },
-            "Xamarin.Forms": {
-              "target": "Package",
-              "version": "[4.5.0.530, )"
             },
             "Xamarin.Forms.InputKit": {
               "target": "Package",
@@ -135,7 +131,7 @@
           "dependencies": {
             "Com.OneSignal": {
               "target": "Package",
-              "version": "[3.7.3, )"
+              "version": "[3.8.1, )"
             },
             "Microsoft.CSharp": {
               "target": "Package",
@@ -157,11 +153,11 @@
             },
             "Plugin.Permissions": {
               "target": "Package",
-              "version": "[3.0.0.12, )"
+              "version": "[6.0.1, )"
             },
             "Rg.Plugins.Popup": {
               "target": "Package",
-              "version": "[1.2.0.223, )"
+              "version": "[2.0.0.2, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -170,10 +166,6 @@
             "Xamarin.Facebook.iOS": {
               "target": "Package",
               "version": "[5.12.0, )"
-            },
-            "Xamarin.Forms": {
-              "target": "Package",
-              "version": "[4.5.0.530, )"
             },
             "Xamarin.Forms.InputKit": {
               "target": "Package",

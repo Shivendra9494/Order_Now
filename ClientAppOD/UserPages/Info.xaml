@@ -1,13 +1,48 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientAppOD.UserPages.Info"
-             Title="Details">
-    <ScrollView>
-        <StackLayout Padding="0">
-            <WebView x:Name="webView" VerticalOptions="FillAndExpand" BackgroundColor="Red" >
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="ClientAppOD.UserPages.Info"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    NavigationPage.HasNavigationBar="False">
+    <StackLayout Padding="0" Orientation="Vertical">
+        <Frame
+            Padding="0"
+            BackgroundColor="White"
+            HasShadow="True"
+            HeightRequest="60">
+            <StackLayout
+                Padding="0"
+                BackgroundColor="Transparent"
+                HeightRequest="60"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <ImageButton
+                    Margin="15,0,10,0"
+                    Padding="0,0,0,0"
+                    BackgroundColor="Transparent"
+                    Clicked="ImageButton_Clicked"
+                    HeightRequest="20"
+                    Source="backleft.png"
+                    VerticalOptions="Center" />
+                <Label
+                    Margin="-50,0,0,0"
+                    Padding="0"
+                    FontFamily="Nunito-Light"
+                    FontSize="18"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="Direction"
+                    VerticalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center" />
 
-            </WebView>
-        </StackLayout>
-    </ScrollView>
+            </StackLayout>
+        </Frame>
+
+        <WebView
+            x:Name="webView"
+            BackgroundColor="Red"
+            VerticalOptions="FillAndExpand" />
+
+    </StackLayout>
+
 </ContentPage>

@@ -6,4 +6,3 @@
 /Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/obj/Debug/netstandard2.0/Xamarin.AppleSignIn.AssemblyInfo.cs
 /Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/obj/Debug/netstandard2.0/Xamarin.AppleSignIn.dll
 /Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/obj/Debug/netstandard2.0/Xamarin.AppleSignIn.pdb
-/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/obj/Debug/netstandard2.0/Xamarin.AppleSignIn.csprojAssemblyReference.cache

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using ClientAppOD.CustomModels;
 using ClientAppOD.Helper;
 using ClientAppOD.OrderPages;
-using UIKit;
+
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
@@ -66,12 +66,12 @@ namespace ClientAppOD.UserPages
             {
                 Command = new Command(() => ChangeIconToOriginal())
             });
-            var name = UIApplication.SharedApplication.AlternateIconName;
+          //  var name = UIApplication.SharedApplication.AlternateIconName;
             var FromSearchPage = Preferences.ContainsKey(PreferenceFields.FromSearchPage);
-            if (name!=null && FromSearchPage)
-            {
-                stackIconChange.IsVisible = true;
-            }
+            //if (name!=null && FromSearchPage)
+            //{
+            //    stackIconChange.IsVisible = true;
+            //}
         }
         protected override void OnAppearing()
         {

@@ -1,75 +1,196 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientAppOD.MenuPages.MenuPropertyListPage" xmlns:local="clr-namespace:ClientAppOD"
-             BackgroundColor="White"
-             NavigationPage.HasNavigationBar="False"
-             NavigationPage.BackButtonTitle="">
-   
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="ClientAppOD.MenuPages.MenuPropertyListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ClientAppOD"
+    BackgroundColor="White"
+    NavigationPage.BackButtonTitle=""
+    NavigationPage.HasNavigationBar="False">
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:PriceConverter x:Key="PriceConvertor" />
             <local:ListHeightConverter x:Key="ListHeightConverter" />
             <local:OrderItemVisibilityConverter x:Key="OrderItemVisibilityConverter" />
             <local:OrderItemProVisibilityConverter x:Key="OrderItemProVisibilityConverter" />
-            <local:OrderItemQtyVisibilityConverter x:Key="OrderItemQtyVisibilityConverter"/>
-            <local:OrderItemToQtyConvertor x:Key="OrderItemToQtyConvertor"></local:OrderItemToQtyConvertor>
+            <local:OrderItemQtyVisibilityConverter x:Key="OrderItemQtyVisibilityConverter" />
+            <local:OrderItemToQtyConvertor x:Key="OrderItemToQtyConvertor" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    
-   <StackLayout Padding="0">
-           <StackLayout Padding="0" VerticalOptions="Center" Orientation="Horizontal" >
-                <ImageButton Clicked="backClicked" Source="left.png" HeightRequest="30" VerticalOptions="Center" Padding="0,0,0,0" Margin="0,0,10,0"></ImageButton>
-            <Label x:Name="lblTitle" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" FontFamily="Nunito-Light" Margin="0,0,0,0" Padding="0" FontSize="14"></Label>
-            <ImageButton Clicked="searchClicked" Source="searchblack.png" WidthRequest="20" VerticalOptions="Center" Margin="0,0,20,0"  ></ImageButton>
-             </StackLayout>                   
-        <ScrollView VerticalOptions="FillAndExpand" Padding="0">
+
+    <StackLayout Padding="0">
+        <Frame
+            Padding="0"
+            BackgroundColor="White"
+            HasShadow="True"
+            HeightRequest="70">
+            <StackLayout
+                Padding="0"
+                BackgroundColor="Transparent"
+                HeightRequest="60"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <ImageButton
+                    Margin="15,0,10,0"
+                    Padding="0,0,0,0"
+                    BackgroundColor="Transparent"
+                    Clicked="backClicked"
+                    HeightRequest="20"
+                    Source="backleft.png"
+                    VerticalOptions="Center" />
+                <Label
+                    x:Name="lblTitle"
+                    Margin="20,0,0,0"
+                    Padding="0"
+                    FontFamily="Nunito-Light"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    HorizontalTextAlignment="Start"
+                    VerticalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center" />
+                <ImageButton
+                    Margin="0,0,10,0"
+                    BackgroundColor="Transparent"
+                    Clicked="searchClicked"
+                    HeightRequest="25"
+                    Source="searchblack.png"
+                    VerticalOptions="Center"
+                    WidthRequest="20" />
+            </StackLayout>
+        </Frame>
+
+        <ScrollView Padding="0" VerticalOptions="FillAndExpand">
             <StackLayout Padding="0" Spacing="0">
                 <StackLayout Padding="0" VerticalOptions="Start">
-                    <StackLayout Orientation="Horizontal"  x:Name="alergyStack" Spacing="10"  Margin="0,15" Padding="20,0"  VerticalOptions="FillAndExpand">
-                        <Image Source="info.png" HeightRequest="20" WidthRequest="20"  Rotation="180" HorizontalOptions="Center"  ></Image>
-                        <Label HorizontalOptions="StartAndExpand" FontFamily="Nunito-ExtraLight" TextColor="#EB6361" LineBreakMode="WordWrap" Text="If you or someone you are ordering for has a food allergy or intolerance please click here"></Label>
+                    <StackLayout
+                        x:Name="alergyStack"
+                        Margin="0,15"
+                        Padding="20,0"
+                        Orientation="Horizontal"
+                        Spacing="10"
+                        VerticalOptions="FillAndExpand">
+                        <Image
+                            HeightRequest="20"
+                            HorizontalOptions="Center"
+                            Rotation="180"
+                            Source="info.png"
+                            WidthRequest="20" />
+                        <Label
+                            FontFamily="Nunito-ExtraLight"
+                            HorizontalOptions="StartAndExpand"
+                            LineBreakMode="WordWrap"
+                            Text="If you or someone you are ordering for has a food allergy or intolerance please click here"
+                            TextColor="#EB6361" />
                     </StackLayout>
-                     
-                    <StackLayout Orientation="Horizontal" Padding="20,0" x:Name="stackDesc">
-                        <Label x:Name="MenuCatDesLabel"  HorizontalOptions="StartAndExpand" FontFamily="Nunito-ExtraLight" FontSize="14" TextColor="#282728" VerticalOptions="StartAndExpand" Margin="0,10"></Label>
-                        <ImageButton Source="arrowRed.png" Clicked="DownArraowClicked" x:Name="btnDesc"  HeightRequest="20" WidthRequest="20" Rotation="0" VerticalOptions="StartAndExpand" Margin="10,10,0,0" ></ImageButton>
+
+                    <StackLayout
+                        x:Name="stackDesc"
+                        Padding="20,0"
+                        Orientation="Horizontal">
+                        <Label
+                            x:Name="MenuCatDesLabel"
+                            Margin="0,10"
+                            FontFamily="Nunito-ExtraLight"
+                            FontSize="14"
+                            HorizontalOptions="StartAndExpand"
+                            TextColor="#282728"
+                            VerticalOptions="StartAndExpand" />
+                        <ImageButton
+                            x:Name="btnDesc"
+                            Margin="10,10,0,0"
+                            BackgroundColor="Transparent"
+                            Clicked="DownArraowClicked"
+                            HeightRequest="20"
+                            Rotation="0"
+                            Source="arrowRed.png"
+                            VerticalOptions="StartAndExpand"
+                            WidthRequest="20" />
                     </StackLayout>
                     <BoxView x:Name="DescLine" Margin="0,0,0,10" />
                 </StackLayout>
-           
-                        <StackLayout Padding="0" x:Name="menuStack">
-                            
 
-                        </StackLayout>
+                <StackLayout x:Name="menuStack" Padding="0" />
+            </StackLayout>
+        </ScrollView>
+
+        <Frame
+            x:Name="frameDiscountLess"
+            Padding="5"
+            BackgroundColor="White"
+            CornerRadius="0"
+            IsVisible="false">
+
+            <Label
+                x:Name="lblDiscountLess"
+                Text=""
+                TextColor="Red" />
+        </Frame>
+
+        <Frame
+            x:Name="frameCheckOut"
+            Padding="5,0,5,0"
+            BackgroundColor="#fcf1f0"
+            CornerRadius="0"
+            HasShadow="False"
+            IsVisible="False"
+            VerticalOptions="End">
+            <StackLayout
+                Padding="15,0"
+                Orientation="Horizontal"
+                Spacing="6">
+                <RelativeLayout
+                    Padding="0"
+                    HorizontalOptions="Start"
+                    VerticalOptions="CenterAndExpand">
+                    <Image
+                        x:Name="imageBasket"
+                        HeightRequest="30"
+                        Source="BasketBlack.png" />
+                    <Button
+                        x:Name="btnOrderCount"
+                        Padding="0"
+                        BackgroundColor="Black"
+                        BorderColor="#fcf1f0"
+                        BorderWidth="2"
+                        CornerRadius="12"
+                        FontSize="14"
+                        HeightRequest="24"
+                        HorizontalOptions="CenterAndExpand"
+                        RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                          ElementName=imageBasket,
+                                                                          Property=X,
+                                                                          Factor=1,
+                                                                          Constant=20}"
+                        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,
+                                                                          ElementName=imageBasket,
+                                                                          Property=X,
+                                                                          Factor=0,
+                                                                          Constant=-5}"
+                        Text="3"
+                        TextColor="White"
+                        WidthRequest="24" />
+                </RelativeLayout>
+                <StackLayout
+                    Padding="0,10,10,10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+                    <Label
+                        x:Name="lblBasket"
+                        Margin="0,0,0,4"
+                        FontSize="18"
+                        HorizontalOptions="StartAndExpand"
+                        TextColor="Black"
+                        VerticalOptions="StartAndExpand" />
+                    <Label
+                        x:Name="lblDeliveryMessage"
+                        FontSize="16"
+                        HorizontalOptions="StartAndExpand"
+                        TextColor="#c03c45"
+                        VerticalOptions="CenterAndExpand" />
                 </StackLayout>
-                </ScrollView>          
-                  
-       <Frame IsVisible="false" Padding="5" x:Name="frameDiscountLess" BackgroundColor="White" CornerRadius="0">
+            </StackLayout>
+        </Frame>
+    </StackLayout>
 
-           <Label x:Name="lblDiscountLess"  TextColor="Red" Text=""></Label>
-       </Frame>
-   
-       <Frame IsVisible="False" x:Name="frameCheckOut" BackgroundColor="#fcf1f0" CornerRadius="0" Padding="5,0,5,0" VerticalOptions="End" HasShadow="False"  >
-           <StackLayout Orientation="Horizontal" Padding="15,0" Spacing="6">
-               <RelativeLayout HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Padding="0">
-                   <Image Source="BasketBlack.png" x:Name="imageBasket" HeightRequest="30"></Image>
-                   <Button x:Name="btnOrderCount" HorizontalOptions="CenterAndExpand" BorderColor="#fcf1f0" BorderWidth="2"  FontSize="14" BackgroundColor="Black" TextColor="White" WidthRequest="24" HeightRequest="24" CornerRadius="12"
-                           RelativeLayout.XConstraint="{ConstraintExpression
-                       Type=RelativeToView,
-                       ElementName=imageBasket,
-                       Property=X,Factor=1,Constant=20}"
-                           RelativeLayout.YConstraint="{ConstraintExpression
-                       Type=RelativeToView,
-                       ElementName=imageBasket,
-                       Property=X,Factor=0,Constant=-5}" Text="3"></Button>
-               </RelativeLayout>
-               <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Padding="0,10,10,10">
-                   <Label x:Name="lblBasket"  HorizontalOptions="StartAndExpand" Margin="0,0,0,4" TextColor="Black" FontSize="18" VerticalOptions="StartAndExpand"></Label>
-                   <Label x:Name="lblDeliveryMessage"  TextColor="#c03c45" FontSize="16" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Label>
-               </StackLayout>
-           </StackLayout>
-       </Frame>
-   </StackLayout>
-       
 </ContentPage>

@@ -4,11 +4,10 @@ Com.OneSignal
 FormsViewGroup
 Google.ZXing.Core
 OneSignal.Android.Binding
-Plugin.CurrentActivity
 Plugin.FacebookClient
 Plugin.InputKit
 Plugin.Permissions
-Rg.Plugins.Popup.Droid
+Rg.Plugins.Popup
 SQLitePCLRaw.batteries_green
 SQLitePCLRaw.batteries_v2
 SQLitePCLRaw.core

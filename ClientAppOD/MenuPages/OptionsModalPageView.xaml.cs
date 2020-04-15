@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using ClientAppOD.Helper;
 using OD.Data;
 using Rg.Plugins.Popup.Services;
-using UIKit;
+
 using Xamarin.Forms;
 namespace ClientAppOD.MenuPages
 {
@@ -20,24 +20,27 @@ namespace ClientAppOD.MenuPages
         private static ObservableCollection<OD.Data.MenuItemModel> Models;
         private static bool IsAProperty;
         private static decimal basePrice;
+      
         public OptionsModalPageView(OD.Data.MenuItem menuItem, string Name, string Desc,string price="")
         {
             InitializeComponent();
+            
             _menuItem = menuItem;
             Double top = 0;
             Double bottom = 0;
-            if (UIApplication.SharedApplication.KeyWindow != null)
-            {
-                var sa = UIApplication.SharedApplication.KeyWindow.SafeAreaInsets;
-                top = sa.Top;
-                bottom = sa.Bottom;
-            }
-            if(bottom==0)
+            //if (UIApplication.SharedApplication.KeyWindow != null)
+            //{
+            //    var sa = UIApplication.SharedApplication.KeyWindow.SafeAreaInsets;
+            //    top = sa.Top;
+            //    bottom = sa.Bottom;
+            //}
+           
+            if (bottom == 0)
             {
                 bottom = 20;
             }
             frameTop.Padding = new Thickness(0, top, 0, 0);
-            FrameAddToOrder.Padding = new Thickness(20, 10, 20, bottom+5);
+            FrameAddToOrder.Padding = new Thickness(20, 10, 20, bottom + 5);
             scroll.Scrolled += Scroll_Scrolled;
             if(string.IsNullOrEmpty(price))
             {
@@ -48,6 +51,7 @@ namespace ClientAppOD.MenuPages
                 Command = new Command(() => AddToOrderClicked()
                )
             });
+            
             Price = (decimal)_menuItem.Price;
             lblMenuName.Text = Name;
             lblTopMenuName.Text = Name;
@@ -628,7 +632,7 @@ namespace ClientAppOD.MenuPages
                 await scroll.ScrollToAsync(0, stack.Y + (stack.Parent as StackLayout).Height, true);
             }
         }
-
+       
         private void DeleteBtn_Clicked(object sender, EventArgs e)
         {
             var stack = (sender as ImageButton).Parent as StackLayout;

@@ -1,0 +1,9 @@
+/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/bin/Release/netstandard2.0/Xamarin.AppleSignIn.deps.json
+/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/bin/Release/netstandard2.0/Xamarin.AppleSignIn.dll
+/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/bin/Release/netstandard2.0/Xamarin.AppleSignIn.pdb
+/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/obj/Release/netstandard2.0/Xamarin.AppleSignIn.csproj.CoreCompileInputs.cache
+/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/obj/Release/netstandard2.0/Xamarin.AppleSignIn.AssemblyInfoInputs.cache
+/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/obj/Release/netstandard2.0/Xamarin.AppleSignIn.AssemblyInfo.cs
+/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/obj/Release/netstandard2.0/Xamarin.AppleSignIn.dll
+/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/obj/Release/netstandard2.0/Xamarin.AppleSignIn.pdb
+/Users/shivendrasingh/Downloads/OD_Indivisual_App-master/Xamarin.AppleSignIn/obj/Release/netstandard2.0/Xamarin.AppleSignIn.csprojAssemblyReference.cache

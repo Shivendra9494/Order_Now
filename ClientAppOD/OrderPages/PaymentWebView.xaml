@@ -1,11 +1,54 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ClientAppOD.OrderPages.PaymentWebView"
-             BackgroundColor="White">
-   <StackLayout Padding="0">
-       <ActivityIndicator x:Name="Loader" IsRunning="True" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></ActivityIndicator>
-       <WebView IsVisible="false" x:Name="webView" BackgroundColor="Red" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></WebView>
-     
-   </StackLayout>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="ClientAppOD.OrderPages.PaymentWebView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White">
+    <StackLayout Padding="0">
+        <Frame
+            Padding="0"
+            BackgroundColor="White"
+            HasShadow="True"
+            HeightRequest="60">
+            <StackLayout
+                Padding="0"
+                BackgroundColor="Transparent"
+                HeightRequest="60"
+                Orientation="Horizontal"
+                Spacing="20"
+                VerticalOptions="Center">
+                <ImageButton
+                    Margin="15,0,10,0"
+                    Padding="0,0,0,0"
+                    BackgroundColor="Transparent"
+                    Clicked="ImageButton_Clicked"
+                    HeightRequest="20"
+                    Source="backleft.png"
+                    VerticalOptions="Center" />
+                <Label
+                    Margin="0,0,0,0"
+                    Padding="0"
+                    FontFamily="Nunito-Light"
+                    FontSize="18"
+                    HorizontalOptions="StartAndExpand"
+                    HorizontalTextAlignment="Start"
+                    Text=" "
+                    VerticalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center" />
+
+            </StackLayout>
+        </Frame>
+        <ActivityIndicator
+            x:Name="Loader"
+            HorizontalOptions="CenterAndExpand"
+            IsRunning="True"
+            VerticalOptions="CenterAndExpand" />
+        <WebView
+            x:Name="webView"
+            BackgroundColor="Red"
+            HorizontalOptions="FillAndExpand"
+            IsVisible="false"
+            VerticalOptions="FillAndExpand" />
+
+    </StackLayout>
 </ContentPage>

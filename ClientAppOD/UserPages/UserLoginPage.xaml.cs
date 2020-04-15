@@ -10,7 +10,7 @@ using ClientAppOD.PushNotification;
 using ClientAppOD.Services;
 using Newtonsoft.Json;
 using Plugin.FacebookClient;
-using UIKit;
+
 using Xamarin.AppleSignIn;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -28,11 +28,7 @@ namespace ClientAppOD.UserPages
             InitializeComponent();
             _FromUserDetail = FromUserDetail;
             this.BindingContext = new LoginViewModel(this);
-            FrameFacebook.GestureRecognizers.Add(new TapGestureRecognizer
-            {
-                Command = new Command(() => LoginFacebookAsync()
-                )
-            });
+           
             lblCookies.GestureRecognizers.Add(new TapGestureRecognizer()
             {
                 Command = new Command(() => PushAction(new PaymentWebView("https://www.orderdirectly.com/privacypolicy/")))
@@ -57,25 +53,25 @@ namespace ClientAppOD.UserPages
             HandleLogin();
 
         }
-        private async void SignIn_Event(object sender, EventArgs e)
-        {
-            AppleAccount account = null;
-            bool Is13 = UIDevice.CurrentDevice.CheckSystemVersion(13, 0);
-            if (Is13)
-            {
-                var appleSignIn = Xamarin.Forms.DependencyService.Get<IAppleSignInService>();
+        //private async void SignIn_Event(object sender, EventArgs e)
+        //{
+        //    //AppleAccount account = null;
+        //    //bool Is13 = UIDevice.CurrentDevice.CheckSystemVersion(13, 0);
+        //    //if (Is13)
+        //    //{
+        //    //    var appleSignIn = Xamarin.Forms.DependencyService.Get<IAppleSignInService>();
 
-                account = await appleSignIn.SignInAsync();
-                await HandleLoginFromApple(account);
-            }
-            else
-            {
-                MessagingCenter.Subscribe<PaymentWebView, AppleAccount>(this, MessagingFields.LoginFromApple, HandleLoginFromApple);
-                await Navigation.PushAsync(new PaymentWebView("https://appleid.apple.com/auth/authorize?client_id=" + StaticFields.AppleLoginId + "&redirect_uri=https://orderdirectly.biz/spicy/index&response_type=code%20id_token&scope=email%20name&response_mode=form_post&state=bus_" + StaticFields.CurrentStoreInfo.ID));
-            }
+        //    //    account = await appleSignIn.SignInAsync();
+        //    //    await HandleLoginFromApple(account);
+        //    //}
+        //    //else
+        //    //{
+        //    //    MessagingCenter.Subscribe<PaymentWebView, AppleAccount>(this, MessagingFields.LoginFromApple, HandleLoginFromApple);
+        //    //    await Navigation.PushAsync(new PaymentWebView("https://appleid.apple.com/auth/authorize?client_id=" + StaticFields.AppleLoginId + "&redirect_uri=https://orderdirectly.biz/spicy/index&response_type=code%20id_token&scope=email%20name&response_mode=form_post&state=bus_" + StaticFields.CurrentStoreInfo.ID));
+        //    //}
 
 
-        }
+        //}
 
         private async Task HandleLoginFromApple(AppleAccount account)
         {
@@ -102,6 +98,7 @@ namespace ClientAppOD.UserPages
                             customer = await customerPostHelper.GetCustomer(name, email, account.UserId, StaticFields.CurrentStoreInfo.ID, StaticFields.CurrentPostCode, true);
                             if (customer == null)
                             {
+                                lblError1.IsVisible = true;
                                 lblError1.Text = "something went wrong, please try again";
                             }
                             else
@@ -183,24 +180,28 @@ namespace ClientAppOD.UserPages
         {
             if (string.IsNullOrEmpty(entryEmail.Text))
             {
+                lblError1.IsVisible = true;
                 lblError1.Text = "Email is empty";
                 Validated = false;
                 lblEmail.TextColor = Color.FromHex("EB6361");
             }
             else
             {
+                lblError1.IsVisible = true;
                 lblError1.Text = "";
                 lblEmail.TextColor = Color.FromHex("2E3032");
             }
 
             if (string.IsNullOrEmpty(entryPassword.Text))
             {
+                lblError2.IsVisible = true;
                 lblError2.Text = "Password is empty";
                 Validated = false;
                 lblPassword.TextColor = Color.FromHex("EB6361");
             }
             else
             {
+                lblError2.IsVisible = true;
                 lblError2.Text = "";
                 lblPassword.TextColor = Color.FromHex("2E3032");
             }
@@ -214,6 +215,7 @@ namespace ClientAppOD.UserPages
             }
             if (!EmailHelper.IsValidEmail(entryEmail.Text))
             {
+                lblError1.IsVisible = true;
                 lblError1.Text = "Email is invalid";
                 return;
             }

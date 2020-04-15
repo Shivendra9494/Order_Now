@@ -96,6 +96,7 @@ namespace ClientAppOD.SubPages
             {
                 HorizontalOptions = LayoutOptions.End,
                 Source = "plus.png",
+                BackgroundColor = Color.Transparent,
                 VerticalOptions = LayoutOptions.Center
             };
             but.Clicked += But_Clicked;

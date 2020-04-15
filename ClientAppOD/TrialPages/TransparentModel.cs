@@ -1,7 +1,7 @@
 ﻿using System;
 using ClientAppOD.MenuPages;
 using Rg.Plugins.Popup.Pages;
-using UIKit;
+
 using Xamarin.Forms;
 
 namespace ClientAppOD.TrialPages
@@ -15,12 +15,12 @@ namespace ClientAppOD.TrialPages
             
             double bottom = 0;
             double top = 0;
-            if (UIApplication.SharedApplication.KeyWindow != null)
-            {
-                var sa = UIApplication.SharedApplication.KeyWindow.SafeAreaInsets;
-                bottom = sa.Bottom;
-                top = sa.Top;
-            }
+            //if (UIApplication.SharedApplication.KeyWindow != null)
+            //{
+            //    var sa = UIApplication.SharedApplication.KeyWindow.SafeAreaInsets;
+            //    bottom = sa.Bottom;
+            //    top = sa.Top;
+            //}
             Content = view;
             Content.Margin = new Thickness(0,-top, 0,-bottom);
             Animation = new Rg.Plugins.Popup.Animations.ScaleAnimation()
